@@ -2,9 +2,12 @@ aid: esri
 url: https://raw.githubusercontent.com/api-evangelist/esri/refs/heads/main/apis.yml
 apis:
   - aid: esri:esri
-    name: Esri
+    name: Esri API
     tags:
-      - API
+      - Geographic
+      - Mapping
+      - Geospatial
+      - Maps
     humanURL: ' https://developers.arcgis.com/'
     properties:
       - url: ' https://developers.arcgis.com/'
