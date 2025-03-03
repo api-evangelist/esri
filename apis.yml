@@ -1,26 +1,39 @@
 aid: esri
-name: Esri
-description: 'Developer documentation for ArcGIS products and services '
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2025-01-14'
-modified: '2025-01-14'
 url: https://raw.githubusercontent.com/api-evangelist/esri/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: esri:esri
     name: Esri
-    description: 'Developer documentation for ArcGIS products and services '
-    humanURL: ' https://developers.arcgis.com/'
     tags:
       - API
+    humanURL: ' https://developers.arcgis.com/'
     properties:
-      - type: Documentation
-        url: ' https://developers.arcgis.com/'
+      - url: ' https://developers.arcgis.com/'
+        type: Documentation
+    description: 'Developer documentation for ArcGIS products and services '
+name: Esri
+tags:
+  - Geographic
+  - Mapping
+  - Geospatial
+  - Maps
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-01-14'
+modified: '2025-03-02'
+position: Consumer
+description: >-
+  Esri is a global leader in geographic information system (GIS) technology,
+  offering innovative solutions for mapping and spatial analysis. The company
+  provides software, data, and services to help organizations make better
+  decisions based on location intelligence. Esri's technology is used across a
+  wide range of industries, including government, natural resources, utilities,
+  and public safety. By harnessing the power of GIS, Esri enables users to
+  visualize, analyze, and understand the world around them in order to solve
+  complex problems and drive meaningful change. With a commitment to
+  sustainability and social responsibility, Esri is paving the way for a more
+  sustainable and connected future.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
