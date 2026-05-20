@@ -51,6 +51,8 @@ apis:
       - type: Alias
         url: https://raw.githubusercontent.com/api-evangelist/esri-arcgis/refs/heads/main/apis.yml
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/esri
   - type: Website
     url: https://www.esri.com/
     name: Esri
