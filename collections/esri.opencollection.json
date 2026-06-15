@@ -1,0 +1,312 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Esri ArcGIS Location Services API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Geocoding",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find candidate address matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates",
+            "params": [
+              {
+                "name": "SingleLine",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "postal",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outFields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxLocations",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Find candidate address matches"
+        },
+        {
+          "info": {
+            "name": "Batch geocode addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/geocodeAddresses",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "addresses",
+                  "value": ""
+                },
+                {
+                  "name": "f",
+                  "value": ""
+                },
+                {
+                  "name": "token",
+                  "value": ""
+                },
+                {
+                  "name": "outSR",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Batch geocode addresses"
+        },
+        {
+          "info": {
+            "name": "Reverse geocode a coordinate to an address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode",
+            "params": [
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "x,y coordinate or JSON point."
+              },
+              {
+                "name": "outSR",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "featureTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "locationType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Reverse geocode a coordinate to an address"
+        },
+        {
+          "info": {
+            "name": "Autocomplete suggestions for an address query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest",
+            "params": [
+              {
+                "name": "text",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxSuggestions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Autocomplete suggestions for an address query"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Routing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Solve a route between stops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve",
+            "params": [
+              {
+                "name": "stops",
+                "value": "",
+                "type": "query",
+                "description": "Semicolon-separated x,y pairs or a JSON FeatureSet."
+              },
+              {
+                "name": "returnDirections",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "directionsLanguage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "travelMode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Solve a route between stops"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Exchange OAuth credentials for an ArcGIS access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/sharing/rest/oauth2/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                },
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "code",
+                  "value": ""
+                },
+                {
+                  "name": "refresh_token",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "expiration",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchange OAuth credentials for an ArcGIS access token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

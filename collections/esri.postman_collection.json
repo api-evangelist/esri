@@ -1,0 +1,985 @@
+{
+  "item": [
+    {
+      "id": "0b11d16b-7fa7-405f-9ad1-042769ff5e23",
+      "name": "Geocoding",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "51321117-5060-4da4-b0b7-bd1307600d13",
+          "name": "Find candidate address matches",
+          "request": {
+            "name": "Find candidate address matches",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "GeocodeServer",
+                "findAddressCandidates"
+              ],
+              "host": [
+                "geocode-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SingleLine",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "postal",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "outFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxLocations",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e033e4e9-6450-46bf-bbba-00a5f1db203d",
+              "name": "Candidate matches",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "GeocodeServer",
+                    "findAddressCandidates"
+                  ],
+                  "host": [
+                    "geocode-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "SingleLine",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "postal",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "outFields",
+                      "value": "*"
+                    },
+                    {
+                      "key": "maxLocations",
+                      "value": "1"
+                    },
+                    {
+                      "key": "f",
+                      "value": "json"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"candidates\": [\n    {\n      \"address\": \"string\",\n      \"score\": 2356.4623604498956,\n      \"location\": {\n        \"x\": 2857.0706710377412,\n        \"y\": 230.19094626930192\n      },\n      \"attributes\": {\n        \"key_0\": \"string\",\n        \"key_1\": false,\n        \"key_2\": 3706.9030745916875\n      },\n      \"extent\": {\n        \"xmin\": 3021.2975636820884,\n        \"ymin\": 1321.7039845206903,\n        \"xmax\": 7811.946544561444,\n        \"ymax\": 5271.255083368051\n      }\n    },\n    {\n      \"address\": \"string\",\n      \"score\": 9818.164398133771,\n      \"location\": {\n        \"x\": 3695.958203713046,\n        \"y\": 470.1236599912628\n      },\n      \"attributes\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"extent\": {\n        \"xmin\": 1469.1862186114813,\n        \"ymin\": 7673.987821123125,\n        \"xmax\": 5468.676526577664,\n        \"ymax\": 1905.6867337888038\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0ca2e90-d1f4-4898-a596-d7008c70a12a",
+          "name": "Batch geocode addresses",
+          "request": {
+            "name": "Batch geocode addresses",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "GeocodeServer",
+                "geocodeAddresses"
+              ],
+              "host": [
+                "geocode-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "addresses",
+                  "value": "<string>",
+                  "description": "(Required) JSON string containing the batch payload"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "outSR",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b272a944-9227-4f7d-94c4-9e242131b440",
+              "name": "Batch geocoding results",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "GeocodeServer",
+                    "geocodeAddresses"
+                  ],
+                  "host": [
+                    "geocode-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string containing the batch payload",
+                        "type": "text/plain"
+                      },
+                      "key": "addresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "f",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "outSR",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ad9c761-0593-4110-9646-756467d16a8e",
+          "name": "Reverse geocode a coordinate to an address",
+          "request": {
+            "name": "Reverse geocode a coordinate to an address",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "GeocodeServer",
+                "reverseGeocode"
+              ],
+              "host": [
+                "geocode-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "(Required) x,y coordinate or JSON point."
+                },
+                {
+                  "disabled": false,
+                  "key": "outSR",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "featureTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locationType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76e3c032-0a9b-475d-924b-501f21723430",
+              "name": "Address record for the coordinate",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "GeocodeServer",
+                    "reverseGeocode"
+                  ],
+                  "host": [
+                    "geocode-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "location",
+                      "value": "-117.196,34.056"
+                    },
+                    {
+                      "key": "outSR",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "featureTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locationType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f06244fe-1c2b-4e87-9d15-1a57cebb1108",
+          "name": "Autocomplete suggestions for an address query",
+          "request": {
+            "name": "Autocomplete suggestions for an address query",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "GeocodeServer",
+                "suggest"
+              ],
+              "host": [
+                "geocode-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxSuggestions",
+                  "value": "5"
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89221fcd-1e15-4462-b613-9631948e96de",
+              "name": "Suggestion list",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "GeocodeServer",
+                    "suggest"
+                  ],
+                  "host": [
+                    "geocode-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxSuggestions",
+                      "value": "5"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"suggestions\": [\n    {\n      \"text\": \"string\",\n      \"magicKey\": \"string\",\n      \"isCollection\": false\n    },\n    {\n      \"text\": \"string\",\n      \"magicKey\": \"string\",\n      \"isCollection\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fb655ebb-5b82-484b-8c20-97486ebdd3f8",
+      "name": "Routing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9b1d21f-3b71-409f-be64-c5409ca54ee7",
+          "name": "Solve a route between stops",
+          "request": {
+            "name": "Solve a route between stops",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "Route",
+                "NAServer",
+                "Route_World",
+                "solve"
+              ],
+              "host": [
+                "route-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stops",
+                  "value": "<string>",
+                  "description": "(Required) Semicolon-separated x,y pairs or a JSON FeatureSet."
+                },
+                {
+                  "disabled": false,
+                  "key": "returnDirections",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "directionsLanguage",
+                  "value": "en"
+                },
+                {
+                  "disabled": false,
+                  "key": "travelMode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "295c5c53-5f89-4665-966b-8418e27738e9",
+              "name": "Route solution including directions and geometry",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "Route",
+                    "NAServer",
+                    "Route_World",
+                    "solve"
+                  ],
+                  "host": [
+                    "route-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "stops",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "returnDirections",
+                      "value": "true"
+                    },
+                    {
+                      "key": "directionsLanguage",
+                      "value": "en"
+                    },
+                    {
+                      "key": "travelMode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c2e61f86-6051-4125-8a4e-a8593e6c480c",
+      "name": "Auth",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3bd814fc-5a90-4684-b175-1018723ce0f1",
+          "name": "Exchange OAuth credentials for an ArcGIS access token",
+          "request": {
+            "name": "Exchange OAuth credentials for an ArcGIS access token",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "sharing",
+                "rest",
+                "oauth2",
+                "token"
+              ],
+              "host": [
+                "www",
+                "arcgis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "refresh_token",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expiration",
+                  "value": "<integer>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a4d9ac5b-e471-4ea7-8584-87128485cfd5",
+              "name": "Access token issued",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "sharing",
+                    "rest",
+                    "oauth2",
+                    "token"
+                  ],
+                  "host": [
+                    "www",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "refresh_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "expiration",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"expires_in\": 7278,\n  \"refresh_token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://geocode-api.arcgis.com/arcgis/rest/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "18f0f4ce-4ec0-4e58-8a99-f32c500f808d",
+    "name": "Esri ArcGIS Location Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Subset of Esri's ArcGIS REST location services. Covers the World Geocoding Service (findAddressCandidates, geocodeAddresses, reverseGeocode, suggest), the World Routing Service (solveRoute), and the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online apps. Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Esri Developers",
+      "type": "text/plain"
+    }
+  }
+}
