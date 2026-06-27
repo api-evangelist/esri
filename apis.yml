@@ -56,7 +56,7 @@ common:
   - type: Website
     url: https://www.esri.com/
     name: Esri
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://developers.arcgis.com/
     name: ArcGIS Developers
   - type: Alias
