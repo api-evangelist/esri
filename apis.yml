@@ -51,6 +51,10 @@ apis:
       - type: Alias
         url: https://raw.githubusercontent.com/api-evangelist/esri-arcgis/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/esri-domain-security.yml
+  - type: Authentication
+    url: authentication/esri-authentication.yml
   - type: OAuthScopes
     url: scopes/esri-scopes.yml
   - type: LinkedIn
