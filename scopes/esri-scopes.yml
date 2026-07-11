@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/esri-openapi.yml
+docs: https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/
+note: >-
+  Esri ArcGIS OAuth 2.0 does not use OAuth scopes — the /oauth2/authorize
+  endpoint has no scope parameter, and access is instead governed by
+  privileges assigned to ArcGIS accounts and developer credentials
+  (https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/).
+schemes:
+- name: oauth2
+  source: openapi/esri-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+  - flow: authorizationCode
+    authorizationUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
+    tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+scopes: []
