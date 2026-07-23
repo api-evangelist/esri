@@ -1,0 +1,90 @@
+openapi: 3.1.0
+info:
+  title: Esri ArcGIS Location Services Auth API
+  version: 1.0.0
+  description: Subset of Esri's ArcGIS REST location services. Covers the World Geocoding Service (findAddressCandidates, geocodeAddresses, reverseGeocode, suggest), the World Routing Service (solveRoute), and the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online apps. Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Esri Developers
+    url: https://developers.arcgis.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://geocode-api.arcgis.com/arcgis/rest/services
+  description: ArcGIS hosted geocoding base URL
+- url: https://route-api.arcgis.com/arcgis/rest/services
+  description: ArcGIS hosted routing base URL
+- url: https://www.arcgis.com
+  description: ArcGIS Online / OAuth base URL
+security:
+- apiKeyAuth: []
+- oauth2: []
+tags:
+- name: Auth
+paths:
+  /sharing/rest/oauth2/token:
+    post:
+      tags:
+      - Auth
+      summary: Exchange OAuth credentials for an ArcGIS access token
+      operationId: getOAuthToken
+      servers:
+      - url: https://www.arcgis.com
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - client_id
+              - grant_type
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                grant_type:
+                  type: string
+                  enum:
+                  - client_credentials
+                  - authorization_code
+                  - refresh_token
+                code:
+                  type: string
+                refresh_token:
+                  type: string
+                redirect_uri:
+                  type: string
+                expiration:
+                  type: integer
+      responses:
+        '200':
+          description: Access token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  expires_in:
+                    type: integer
+                  refresh_token:
+                    type: string
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: token
+      description: 'ArcGIS Platform API key or access token passed as the `token` query parameter (or `Authorization: Bearer <token>` header on REST services).'
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+          scopes: {}
+        authorizationCode:
+          authorizationUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
+          tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+          scopes: {}
