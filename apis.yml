@@ -10,7 +10,20 @@ description: >-
   and public safety. NOTE: This repository is an alias for the canonical Esri
   ArcGIS profile maintained at api-evangelist/esri-arcgis, which contains the
   full set of API definitions, OpenAPI artifacts, and developer resources.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/esri.png
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -26,30 +39,58 @@ created: '2025-01-14'
 modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
-  - aid: esri:esri-arcgis-platform-api
-    name: Esri ArcGIS Platform API
-    description: >-
-      The Esri ArcGIS Platform API is a set of REST APIs and SDKs from Esri,
-      provider of the ArcGIS GIS suite. It enables developers to integrate
-      Esri's mapping, geocoding, routing, and spatial analysis services into
-      applications, supporting visualization, analysis, and interaction with
-      spatial data. See the canonical esri-arcgis repository for the full set
-      of APIs and OpenAPI artifacts.
-    humanURL: https://developers.arcgis.com/
-    baseURL: https://www.arcgis.com/sharing/rest
-    tags:
-      - Geographic
-      - Geospatial
-      - GIS
-      - Mapping
-      - Maps
-    properties:
-      - type: Documentation
-        url: https://developers.arcgis.com/
-      - type: Reference
-        url: https://developers.arcgis.com/rest/
-      - type: Alias
-        url: https://raw.githubusercontent.com/api-evangelist/esri-arcgis/refs/heads/main/apis.yml
+- aid: esri:esri-arcgis-platform-api
+  name: Esri ArcGIS Platform API
+  description: >-
+    The Esri ArcGIS Platform API is a set of REST APIs and SDKs from Esri, provider of the ArcGIS GIS
+    suite. It enables developers to integrate Esri's mapping, geocoding, routing, and spatial analysis
+    services into applications, supporting visualization, analysis, and interaction with spatial data.
+    See the canonical esri-arcgis repository for the full set of APIs and OpenAPI artifacts.
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Geographic
+  - Geospatial
+  - GIS
+  - Mapping
+  - Maps
+  properties:
+  - type: Documentation
+    url: https://developers.arcgis.com/
+  - type: Reference
+    url: https://developers.arcgis.com/rest/
+  - type: Alias
+    url: https://raw.githubusercontent.com/api-evangelist/esri-arcgis/refs/heads/main/apis.yml
+- aid: esri:esri-auth-api
+  name: Esri Auth API
+  description: The Auth API from Esri — 1 operation(s) for auth.
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/esri-auth-api-openapi.yml
+- aid: esri:esri-geocoding-api
+  name: Esri Geocoding API
+  description: The Geocoding API from Esri — 4 operation(s) for geocoding.
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Geocoding
+  properties:
+  - type: OpenAPI
+    url: openapi/esri-geocoding-api-openapi.yml
+- aid: esri:esri-routing-api
+  name: Esri Routing API
+  description: The Routing API from Esri — 1 operation(s) for routing.
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Routing
+  properties:
+  - type: OpenAPI
+    url: openapi/esri-routing-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/esri-agentic-access.yml
