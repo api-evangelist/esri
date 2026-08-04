@@ -1,0 +1,18 @@
+{
+  "provider": "esri",
+  "sources": [
+    "esri-auth-api-openapi.yml",
+    "esri-geocoding-api-openapi.yml",
+    "esri-routing-api-openapi.yml"
+  ],
+  "outputs": [
+    "esri-auth-api-openapi.yml",
+    "esri-geocoding-api-openapi.yml",
+    "esri-routing-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

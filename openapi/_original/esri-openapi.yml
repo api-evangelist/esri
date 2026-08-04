@@ -1,0 +1,356 @@
+openapi: 3.1.0
+info:
+  title: Esri ArcGIS Location Services API
+  version: "1.0.0"
+  description: >-
+    Subset of Esri's ArcGIS REST location services. Covers the World
+    Geocoding Service (findAddressCandidates, geocodeAddresses,
+    reverseGeocode, suggest), the World Routing Service (solveRoute), and
+    the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online
+    apps. Best-effort spec derived from publicly documented surfaces; not
+    exhaustive.
+  contact:
+    name: Esri Developers
+    url: https://developers.arcgis.com/
+  license:
+    name: Proprietary
+servers:
+  - url: https://geocode-api.arcgis.com/arcgis/rest/services
+    description: ArcGIS hosted geocoding base URL
+  - url: https://route-api.arcgis.com/arcgis/rest/services
+    description: ArcGIS hosted routing base URL
+  - url: https://www.arcgis.com
+    description: ArcGIS Online / OAuth base URL
+security:
+  - apiKeyAuth: []
+  - oauth2: []
+tags:
+  - name: Geocoding
+  - name: Routing
+  - name: Auth
+paths:
+  /World/GeocodeServer/findAddressCandidates:
+    get:
+      tags: [Geocoding]
+      summary: Find candidate address matches
+      operationId: findAddressCandidates
+      servers:
+        - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      parameters:
+        - in: query
+          name: SingleLine
+          schema:
+            type: string
+        - in: query
+          name: address
+          schema:
+            type: string
+        - in: query
+          name: city
+          schema:
+            type: string
+        - in: query
+          name: region
+          schema:
+            type: string
+        - in: query
+          name: postal
+          schema:
+            type: string
+        - in: query
+          name: countryCode
+          schema:
+            type: string
+        - in: query
+          name: outFields
+          schema:
+            type: string
+            example: "*"
+        - in: query
+          name: maxLocations
+          schema:
+            type: integer
+            default: 1
+            maximum: 50
+        - in: query
+          name: f
+          required: true
+          schema:
+            type: string
+            enum: [json, pjson, html]
+            default: json
+        - in: query
+          name: token
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Candidate matches
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  candidates:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Candidate"
+  /World/GeocodeServer/geocodeAddresses:
+    post:
+      tags: [Geocoding]
+      summary: Batch geocode addresses
+      operationId: geocodeAddresses
+      servers:
+        - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [addresses, f]
+              properties:
+                addresses:
+                  type: string
+                  description: JSON string containing the batch payload
+                f:
+                  type: string
+                  enum: [json, pjson]
+                token:
+                  type: string
+                outSR:
+                  type: string
+      responses:
+        "200":
+          description: Batch geocoding results
+  /World/GeocodeServer/reverseGeocode:
+    get:
+      tags: [Geocoding]
+      summary: Reverse geocode a coordinate to an address
+      operationId: reverseGeocode
+      servers:
+        - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      parameters:
+        - in: query
+          name: location
+          required: true
+          description: x,y coordinate or JSON point.
+          schema:
+            type: string
+            example: "-117.196,34.056"
+        - in: query
+          name: outSR
+          schema:
+            type: string
+        - in: query
+          name: featureTypes
+          schema:
+            type: string
+        - in: query
+          name: locationType
+          schema:
+            type: string
+            enum: [rooftop, street]
+        - in: query
+          name: f
+          required: true
+          schema:
+            type: string
+            enum: [json, pjson]
+        - in: query
+          name: token
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Address record for the coordinate
+  /World/GeocodeServer/suggest:
+    get:
+      tags: [Geocoding]
+      summary: Autocomplete suggestions for an address query
+      operationId: suggestAddresses
+      servers:
+        - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      parameters:
+        - in: query
+          name: text
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: location
+          schema:
+            type: string
+        - in: query
+          name: maxSuggestions
+          schema:
+            type: integer
+            default: 5
+        - in: query
+          name: countryCode
+          schema:
+            type: string
+        - in: query
+          name: f
+          required: true
+          schema:
+            type: string
+            enum: [json, pjson]
+        - in: query
+          name: token
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Suggestion list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  suggestions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        text:
+                          type: string
+                        magicKey:
+                          type: string
+                        isCollection:
+                          type: boolean
+  /World/Route/NAServer/Route_World/solve:
+    get:
+      tags: [Routing]
+      summary: Solve a route between stops
+      operationId: solveRoute
+      servers:
+        - url: https://route-api.arcgis.com/arcgis/rest/services
+      parameters:
+        - in: query
+          name: stops
+          required: true
+          description: Semicolon-separated x,y pairs or a JSON FeatureSet.
+          schema:
+            type: string
+        - in: query
+          name: returnDirections
+          schema:
+            type: boolean
+            default: true
+        - in: query
+          name: directionsLanguage
+          schema:
+            type: string
+            default: en
+        - in: query
+          name: travelMode
+          schema:
+            type: string
+        - in: query
+          name: f
+          required: true
+          schema:
+            type: string
+            enum: [json, pjson]
+        - in: query
+          name: token
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Route solution including directions and geometry
+  /sharing/rest/oauth2/token:
+    post:
+      tags: [Auth]
+      summary: Exchange OAuth credentials for an ArcGIS access token
+      operationId: getOAuthToken
+      servers:
+        - url: https://www.arcgis.com
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [client_id, grant_type]
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                grant_type:
+                  type: string
+                  enum: [client_credentials, authorization_code, refresh_token]
+                code:
+                  type: string
+                refresh_token:
+                  type: string
+                redirect_uri:
+                  type: string
+                expiration:
+                  type: integer
+      responses:
+        "200":
+          description: Access token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  expires_in:
+                    type: integer
+                  refresh_token:
+                    type: string
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: token
+      description: >-
+        ArcGIS Platform API key or access token passed as the `token` query
+        parameter (or `Authorization: Bearer <token>` header on REST
+        services).
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+          scopes: {}
+        authorizationCode:
+          authorizationUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
+          tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+          scopes: {}
+  schemas:
+    Candidate:
+      type: object
+      properties:
+        address:
+          type: string
+        score:
+          type: number
+        location:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+        attributes:
+          type: object
+          additionalProperties: true
+        extent:
+          type: object
+          properties:
+            xmin:
+              type: number
+            ymin:
+              type: number
+            xmax:
+              type: number
+            ymax:
+              type: number
