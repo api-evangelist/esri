@@ -1,0 +1,187 @@
+{
+  "item": [
+    {
+      "id": "9e791626-bc7f-4d98-9c22-8f27d197f4ab",
+      "name": "Routing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0721d05b-be0e-48b8-a8ce-d86b92c7e86f",
+          "name": "Solve a route between stops",
+          "request": {
+            "name": "Solve a route between stops",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "arcgis",
+                "rest",
+                "services",
+                "World",
+                "Route",
+                "NAServer",
+                "Route_World",
+                "solve"
+              ],
+              "host": [
+                "route-api",
+                "arcgis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stops",
+                  "value": "<string>",
+                  "description": "(Required) Semicolon-separated x,y pairs or a JSON FeatureSet."
+                },
+                {
+                  "disabled": false,
+                  "key": "returnDirections",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "directionsLanguage",
+                  "value": "en"
+                },
+                {
+                  "disabled": false,
+                  "key": "travelMode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dc02a30-8057-4af9-ba69-fd171afa23b3",
+              "name": "Route solution including directions and geometry",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "arcgis",
+                    "rest",
+                    "services",
+                    "World",
+                    "Route",
+                    "NAServer",
+                    "Route_World",
+                    "solve"
+                  ],
+                  "host": [
+                    "route-api",
+                    "arcgis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "stops",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "returnDirections",
+                      "value": "true"
+                    },
+                    {
+                      "key": "directionsLanguage",
+                      "value": "en"
+                    },
+                    {
+                      "key": "travelMode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://geocode-api.arcgis.com/arcgis/rest/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bd1e985b-af27-4782-a19c-3141fb24341e",
+    "name": "Esri ArcGIS Location Services Auth Routing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Subset of Esri's ArcGIS REST location services. Covers the World Geocoding Service (findAddressCandidates, geocodeAddresses, reverseGeocode, suggest), the World Routing Service (solveRoute), and the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online apps. Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Esri Developers",
+      "type": "text/plain"
+    }
+  }
+}

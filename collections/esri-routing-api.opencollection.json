@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Esri ArcGIS Location Services Auth Routing API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Routing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Solve a route between stops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve",
+            "params": [
+              {
+                "name": "stops",
+                "value": "",
+                "type": "query",
+                "description": "Semicolon-separated x,y pairs or a JSON FeatureSet."
+              },
+              {
+                "name": "returnDirections",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "directionsLanguage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "travelMode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Solve a route between stops"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
