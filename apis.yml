@@ -67,6 +67,8 @@ apis:
   humanURL: https://developers.arcgis.com/
   baseURL: https://www.arcgis.com/sharing/rest
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
