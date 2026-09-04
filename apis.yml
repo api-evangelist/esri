@@ -36,7 +36,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/esri.png
 type: Index
-position: Consumer
+position: Consuming
 access: 3rd-Party
 tags:
   - Geographic
