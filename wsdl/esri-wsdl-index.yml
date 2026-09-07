@@ -1,0 +1,37 @@
+generated: '2026-09-07'
+method: searched
+source: 'https://geocode-api.arcgis.com/arcgis/services?wsdl and https://route-api.arcgis.com/arcgis/services?wsdl'
+note: >-
+  ArcGIS Server exposes a SOAP Service Catalog alongside its REST directory, and Esri's hosted
+  location-service hosts still serve it. Both documents were fetched live on 2026-09-07 (HTTP 200,
+  text/xml) and saved VERBATIM — neither was authored or edited. Ownership is unambiguous: the
+  targetNamespace is http://www.esri.com/schemas/ArcGIS/3.7.0 and each soap:address points back at
+  the Esri host it was fetched from.
+  SCOPE CAVEAT, stated plainly: this is the CATALOG service, not the geocoding or routing
+  operations. It answers "what services live here and do they need a token", nothing more. The
+  per-service WSDLs (e.g. .../World/GeocodeServer?wsdl) return HTTP 403 "The administrator has
+  disabled the Service Directory", so the operation-level SOAP contracts are not published.
+documents:
+  - file: esri-geocode-api-service-catalog.wsdl
+    url: https://geocode-api.arcgis.com/arcgis/services?wsdl
+    http_status: 200
+    content_type: text/xml;charset=UTF-8
+    bytes: 12230
+    fetched: '2026-09-07'
+    service: ArcGIS Server Service Catalog (geocoding host)
+    target_namespace: http://www.esri.com/schemas/ArcGIS/3.7.0
+    soap_address: https://geocode-api.arcgis.com:443/arcgis/services
+    operations: [GetFolders, GetMessageFormats, GetMessageVersion, GetServiceDescriptions, GetServiceDescriptionsEx, GetTokenServiceURL, RequiresTokens]
+  - file: esri-route-api-service-catalog.wsdl
+    url: https://route-api.arcgis.com/arcgis/services?wsdl
+    http_status: 200
+    content_type: text/xml;charset=UTF-8
+    bytes: 12228
+    fetched: '2026-09-07'
+    service: ArcGIS Server Service Catalog (routing host)
+    target_namespace: http://www.esri.com/schemas/ArcGIS/3.7.0
+    soap_address: https://route-api.arcgis.com:443/arcgis/services
+    operations: [GetFolders, GetMessageFormats, GetMessageVersion, GetServiceDescriptions, GetServiceDescriptionsEx, GetTokenServiceURL, RequiresTokens]
+misses:
+  - {url: 'https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer?wsdl', http_status: 403, body: 'Error: The administrator has disabled the Service Directory'}
+  - {url: 'https://www.arcgis.com/sharing/rest?wsdl', http_status: 200, content_type: text/html, note: 'ArcGIS Portal Directory HTML page, not a WSDL — the ?wsdl query is ignored.'}

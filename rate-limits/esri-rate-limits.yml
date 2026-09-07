@@ -4,10 +4,19 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Esri
 providerId: esri
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://doc.arcgis.com/en/arcgis-online/manage-data/limit-usage-of-secure-services.htm,
+  https://developers.arcgis.com/rest/geoenrichment/service-limits/,
+  https://developers.arcgis.com/rest/geoenrichment/error-codes/,
+  https://location.arcgis.com/pricing/
+supersedes: >-
+  The 2026-05-04 bulk-sweep scaffold, which asserted X-RateLimit-Limit / X-RateLimit-Remaining /
+  X-RateLimit-Reset / RateLimit-Policy response headers and three invented per-minute tiers.
+  Esri publishes none of those headers and none of those tiers. Replaced with what is actually
+  documented, including the honest gaps.
 tags:
   - Geographic
   - Geospatial
@@ -19,76 +28,108 @@ tags:
   - Rate Limiting
   - Quotas
   - Throttling
-description: Machine-readable rate limit definitions for the Esri API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
+description: >-
+  Esri does not publish a numeric per-key request rate for ArcGIS Location Services. What is
+  documented is (a) a per-organization query rate ceiling on ArcGIS Online with a one-minute
+  cooling-off period and HTTP 429, (b) hard per-operation size limits on GeoEnrichment and
+  routing, and (c) monthly usage allowances that are metering, not throttling. No rate-limit
+  response headers are documented on any surface.
+limit_count: 6
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  limit: null
+  remaining: null
+  reset: null
+  retryAfter: null
+  policy: null
+headers_note: >-
+  NO rate-limit response headers are documented for ArcGIS Location Services or the ArcGIS REST
+  API. Not X-RateLimit-*, not RateLimit-*, and no Retry-After on 429. An agent has no runtime
+  signal to back off against and must use a fixed 60-second wait after a 429, because that is
+  the documented cooling-off window. This is a real and material gap for agent use.
 responseCodes:
   throttled: 429
   quotaExceeded: 429
+  authFailure: 401
+  authFailureBodyCodes: [498, 499]
   serviceUnavailable: 503
+body_error_caution: >-
+  ArcGIS also signals failures inside a 200 body as {"error":{"code":...}}. Do not treat a 200
+  as success without parsing.
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
+  - name: ArcGIS Online organization query rate
+    scope: per-organization
+    metric: queries_per_minute
+    limit: 10000
+    burst: null
     timeFrame: minute
-    applies:
-      - Esri ArcGIS Platform API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
+    tier: standard
+    source: https://doc.arcgis.com/en/arcgis-online/manage-data/limit-usage-of-secure-services.htm
+    note: >-
+      Standard organizations share a 10K/minute query ceiling; premium data stores scale up to
+      96K/minute (M4). Exceeding it triggers a one-minute cooling-off period during which
+      non-repeatable queries return HTTP 429.
+  - name: ArcGIS Online organization query rate (premium data store, M4)
+    scope: per-organization
+    metric: queries_per_minute
+    limit: 96000
+    timeFrame: minute
+    tier: premium
+    source: https://doc.arcgis.com/en/arcgis-online/manage-data/limit-usage-of-secure-services.htm
+  - name: Cooling-off period after throttle
+    scope: per-organization
+    metric: seconds
+    limit: 60
+    timeFrame: incident
+    note: >-
+      A one-minute cooling-off window is triggered when the rate ceiling is hit. No Retry-After
+      header is sent; 60 seconds is the documented wait.
+  - name: GeoEnrichment study areas per request
+    scope: per-request
+    metric: study_areas
     limit: 1000
-    timeFrame: month
-    applies:
-      - Esri ArcGIS Platform API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Esri ArcGIS Platform API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Esri ArcGIS Platform API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
+    source: https://developers.arcgis.com/rest/geoenrichment/error-codes/
+    error_code: 10040001
+  - name: GeoEnrichment maximum ring buffer
+    scope: per-request
+    metric: miles
     limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Esri ArcGIS Platform API
+    source: https://developers.arcgis.com/rest/geoenrichment/error-codes/
+    error_code: 10040004
+  - name: GeoEnrichment service area ceiling
+    scope: per-request
+    metric: composite
+    limit: '300 miles drive distance / 300 minutes drive time / 27 miles walking distance / 540 walking minutes'
+    source: https://developers.arcgis.com/rest/geoenrichment/error-codes/
+    error_code: 10040006
+service_limits_discovery:
+  endpoint: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/serviceLimits?f=pjson
+  note: >-
+    GeoEnrichment exposes its own machine-readable limits via a serviceLimits discover method —
+    a genuinely good pattern, and the only self-describing limits surface Esri publishes.
+usage_allowances:
+  note: >-
+    The monthly free allowances on location.arcgis.com/pricing (2M basemap tiles, 20K geocodes
+    not stored, 20K routes, 50K elevation values, 5K service areas, 1K static maps, 1K basemap
+    sessions, 500 places searches) are BILLING thresholds, not rate limits. Crossing them
+    charges the account; it does not throttle it. See plans/esri-plans-pricing.yml.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Always send a token
+    description: >-
+      Esri documents that rate limiting is applied to free operations and that including a token
+      with every request — even a free one — raises the applicable limit and reduces throttling.
+      Anonymous calls are the ones that get slowed down.
+  - name: Backoff
+    description: >-
+      With no Retry-After and no RateLimit-* headers, use a fixed 60-second wait on 429 followed
+      by exponential backoff with jitter.
+  - name: Retries are billable
+    description: >-
+      Successful location-service calls are metered. Retrying a call that actually succeeded
+      (200 with an error body misread, or a client timeout after server success) bills twice.
+undocumented:
+  - Per-API-key request rate for ArcGIS Location Services (geocode-api, route-api, places-api, elevation-api)
+  - Concurrent-request ceilings
+  - Any rate-limit response header on any surface
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,0 +1,116 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://trust.arcgis.com/en/compliance/compliance.htm,
+  https://trust.arcgis.com/en/compliance/fedramp.htm,
+  https://trust.arcgis.com/en/compliance/iso-information.htm,
+  https://www.arcgis.com/.well-known/oauth-authorization-server,
+  https://location-services-mcp.arcgis.com/.well-known/oauth-protected-resource,
+  openapi/esri-*-openapi.yml
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      OpenAPI securitySchemes declare oauth2 (authorizationCode + clientCredentials) and the live
+      /.well-known/oauth-authorization-server document at www.arcgis.com names
+      authorization_endpoint https://www.arcgis.com/sharing/rest/oauth2/authorize and
+      token_endpoint https://www.arcgis.com/sharing/rest/oauth2/token.
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: >-
+      https://www.arcgis.com/.well-known/oauth-authorization-server returns HTTP 200 with issuer,
+      authorization_endpoint, token_endpoint, response_types_supported and grant_types_supported.
+      Saved verbatim to well-known/esri-oauth-authorization-server.json.
+  - id: rfc9728-oauth-protected-resource-metadata
+    conforms: true
+    evidence: >-
+      https://location-services-mcp.arcgis.com/.well-known/oauth-protected-resource returns HTTP 200
+      with resource + authorization_servers. Saved verbatim to
+      well-known/esri-oauth-protected-resource.json.
+  - id: rfc7636-pkce
+    conforms: true
+    evidence: 'code_challenge_methods_supported: ["S256"] in the authorization-server metadata document.'
+  - id: mcp
+    conforms: true
+    version: Streamable HTTP transport
+    evidence: >-
+      Esri-hosted MCP server at https://location-services-mcp.arcgis.com/beta/mcp, documented at
+      https://developers.arcgis.com/ai/mcp-arcgis-location-services/. Anonymous POST tools/list
+      returns 401 "Token Required", confirming a live JSON-RPC endpoint behind auth.
+  - id: oidc
+    conforms: false
+    evidence: >-
+      /.well-known/openid-configuration returns 404 on every ArcGIS host probed; ArcGIS OAuth is
+      OAuth 2.0 without an OIDC discovery document.
+  - id: oauth2-scopes
+    conforms: false
+    evidence: >-
+      The ArcGIS /oauth2/authorize endpoint has no scope parameter. Access is governed by
+      account/credential PRIVILEGES rather than OAuth scopes — see scopes/esri-scopes.yml.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      ArcGIS uses a proprietary JSON error envelope, not application/problem+json. Observed live:
+      {"error":{"code":499,"message":"Token Required.","details":[...]}}.
+  - id: rest
+    conforms: true
+    evidence: HTTP+JSON resource APIs across all ArcGIS location and portal services (f=json/pjson).
+  - id: json-api
+    conforms: false
+  - id: graphql
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: fhir-r4
+    conforms: false
+domain_standards:
+  note: >-
+    REWARD-ONLY. The geospatial market's domain standards are the OGC suite and ISO/TC 211.
+    Esri co-founded the OGC and implements OGC service interfaces broadly in ArcGIS Server,
+    ArcGIS Enterprise and ArcGIS Online hosted feature layers. HOWEVER: no first-party
+    Esri-operated OGC endpoint was probed for this record. OGC surfaces in the ArcGIS world are
+    served from CUSTOMER tenants (services*.arcgis.com/<orgId>/..., or a customer's own
+    ArcGIS Server), not from an Esri-operated base URL this profile owns, and probing a customer
+    tenant would attribute a customer's contract to Esri. No conformsTo[] document and no
+    *_Capabilities XML was fetched, so no OGC conformance is asserted here. This is a recorded
+    gap, not a negative finding about Esri.
+  entries: []
+compliance_programs:
+  - id: fedramp-moderate
+    name: FedRAMP Moderate
+    conforms: true
+    scope: ArcGIS Online
+    evidence: >-
+      https://trust.arcgis.com/en/compliance/fedramp.htm — Moderate Agency Authorization obtained
+      May 2023; FedRAMP Marketplace Moderate designation issued July 2024; controls assessed
+      annually by a third-party assessment organization (3PAO).
+  - id: iso-27001
+    name: ISO/IEC 27001:2022
+    conforms: true
+    scope: >-
+      Esri's ISMS covering ArcGIS Online and ArcGIS Location Platform hosted in the EU region,
+      plus physical security controls of US-based operations administration (2025); a separate
+      2026 certification covers additional Esri Information Systems Technology operations.
+    evidence: https://trust.arcgis.com/en/compliance/iso-information.htm
+  - id: soc2
+    name: SOC 2
+    conforms: partial
+    scope: >-
+      Select internal systems only. Esri states explicitly that its SOC 2 does NOT cover the
+      assurance of its products, their operation, or customer datasets.
+    evidence: https://trust.arcgis.com/en/compliance/compliance.htm
+  - id: gdpr
+    name: EU GDPR
+    conforms: true
+    scope: Privacy program alignment
+    evidence: https://trust.arcgis.com/en/compliance/compliance.htm
+  - id: eu-us-dpf
+    name: EU-U.S. Data Privacy Framework
+    conforms: true
+    evidence: https://trust.arcgis.com/en/compliance/compliance.htm
+  - id: ccpa-cpra
+    name: California Consumer Privacy Act / CPRA
+    conforms: true
+    evidence: https://trust.arcgis.com/en/compliance/compliance.htm

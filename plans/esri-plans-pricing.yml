@@ -4,10 +4,14 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Esri
 providerId: esri
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+generated: '2026-09-07'
+method: searched
+source: https://location.arcgis.com/pricing/
+supersedes: >-
+  The 2026-05-04 bulk-sweep scaffold, which invented three tiers (Free / Professional /
+  Enterprise) with placeholder request quotas that Esri does not publish. Replaced in full with
+  the values read from the ArcGIS Location Platform pricing page on 2026-09-07.
 tags:
   - Geographic
   - Geospatial
@@ -16,137 +20,80 @@ tags:
   - Mapping
   - Maps
   - Spatial Analysis
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: >-
+  ArcGIS Location Platform is priced per-operation, not per-tier. There is one self-serve
+  configuration: create a free account, get a per-service monthly free allowance, and pay a
+  published per-1,000 rate for anything above it. Some operations have no free allowance at all
+  and bill from the first call. Support is the only thing sold as a plan.
+plan_count: 1
+pricing_model: usage-based
+currency: USD
+billing_period: monthly
 plans:
-  - id: esri-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Esri API surface. Intended for evaluation, prototyping, and low-volume
-      integrations. Real limits and pricing must be reconciled with the provider's published plan documentation.
+  - id: arcgis-location-platform
+    name: ArcGIS Location Platform
+    type: pay-as-you-go
+    price: '0.00'
+    currency: USD
+    billing_period: monthly
+    signup: https://location.arcgis.com/sign-up/
+    description: >-
+      A single self-serve pay-as-you-go configuration. Each service carries its own monthly free
+      allowance and its own overage rate; there is no bundled request quota and no rate-limited
+      "free tier" in the usual sense.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
+      - {label: Basemap tiles, name: basemap_tiles, type: metered, metric: tiles, free_allowance: 2000000, timeFrame: month, unit: 1000, price: '0.15', hosts: [basemaps-api.arcgis.com, ibasemaps-api.arcgis.com, static-map-tiles-api.arcgis.com]}
+      - {label: Basemap sessions, name: basemap_sessions, type: metered, metric: sessions, free_allowance: 1000, timeFrame: month, unit: 1000, price: '4.00', billed_on: sessions/start}
+      - {label: Static maps, name: static_maps, type: metered, metric: static_maps, free_allowance: 1000, timeFrame: month, unit: 1000, price: '0.90', billed_on: '/with-point, /with-many-points, /with-polyline, /with-polygon, /with-overlay'}
+      - {label: Places nearby and extent search, name: places_search, type: metered, metric: requests, free_allowance: 500, timeFrame: month, unit: 1000, price: '8.00', billed_on: '/places/near-point/, /places/within-extent/'}
+      - {label: Place attributes, name: place_attributes, type: metered, metric: places, free_allowance: 100, timeFrame: month, unit: 1000, price: '0.05'}
+      - {label: Address attributes, name: address_attributes, type: metered, metric: places, free_allowance: 100, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Details attributes, name: details_attributes, type: metered, metric: places, free_allowance: 100, timeFrame: month, unit: 1000, price: '0.13'}
+      - {label: Location attributes, name: location_attributes, type: metered, metric: places, free_allowance: 100, timeFrame: month, unit: 1000, price: '0.35'}
+      - {label: Geocodes (not stored), name: geocodes_not_stored, type: metered, metric: geocodes, free_allowance: 20000, timeFrame: month, unit: 1000, price: '0.50', billed_on: findAddressCandidates}
+      - {label: Geocodes (stored), name: geocodes_stored, type: metered, metric: geocodes, free_allowance: 0, timeFrame: month, unit: 1000, price: '4.00', billed_on: 'findAddressCandidates with forStorage=true'}
+      - {label: Batch geocodes (stored), name: batch_geocodes_stored, type: metered, metric: geocodes, free_allowance: 0, timeFrame: month, unit: 1000, price: '4.00', billed_on: batchGeocode}
+      - {label: Routes, name: routes, type: metered, metric: routes, free_allowance: 20000, timeFrame: month, unit: 1000, price: '0.50', billed_on: 'solve, submitJob'}
+      - {label: Routes (stop-optimized), name: routes_optimized, type: metered, metric: routes, free_allowance: 0, timeFrame: month, unit: 1000, price: '50.00', billed_on: findBestSequence}
+      - {label: Service areas, name: service_areas, type: metered, metric: service_areas, free_allowance: 5000, timeFrame: month, unit: 1000, price: '50.00', billed_on: solveServiceArea}
+      - {label: Fleet routes, name: fleet_routes, type: metered, metric: routes, free_allowance: 0, timeFrame: month, unit: 1000, price: '100.00'}
+      - {label: Last mile delivery, name: last_mile_delivery, type: metered, metric: orders, free_allowance: 0, timeFrame: month, unit: 1000, price: '25.00'}
+      - {label: Closest facility routes, name: closest_facility, type: metered, metric: routes, free_allowance: 0, timeFrame: month, unit: 1000, price: '50.00', billed_on: solveClosestFacility}
+      - {label: Location-allocation demand points, name: location_allocation, type: metered, metric: demand_points, free_allowance: 0, timeFrame: month, unit: 1000, price: '10.00'}
+      - {label: Travel cost matrix, name: od_cost_matrix, type: metered, metric: origin_destination_pairs, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.05', billed_on: solveODCostMatrix}
+      - {label: Snap to roads, name: snap_to_roads, type: metered, metric: points, free_allowance: 0, timeFrame: month, unit: 1000, price: '4.00', billed_on: SnapToRoads}
+      - {label: Enrichment attributes, name: enrichment_attributes, type: metered, metric: attributes, free_allowance: 0, timeFrame: month, unit: 1000, price: '1.00', billed_on: enrich}
+      - {label: Demographic reports, name: demographic_reports, type: metered, metric: reports, free_allowance: 0, timeFrame: month, unit: 1, price: '1.00', billed_on: Reports}
+      - {label: Elevation values, name: elevation_values, type: metered, metric: points, free_allowance: 50000, timeFrame: month, unit: 1000, price: '1.00', billed_on: 'at-point, at-many-points'}
+      - {label: Spatial analysis — find data, name: sa_find_data, type: metered, metric: features, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Spatial analysis — combine data, name: sa_combine_data, type: metered, metric: features, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Spatial analysis — summarize data, name: sa_summarize_data, type: metered, metric: features, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Spatial analysis — analyze patterns, name: sa_analyze_patterns, type: metered, metric: features, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Spatial analysis — calculate geometries, name: sa_calculate_geometries, type: metered, metric: features, free_allowance: 0, timeFrame: month, unit: 1000, price: '0.10'}
+      - {label: Features (storage), name: features_storage, type: metered, metric: MB, free_allowance: 250, timeFrame: month, unit: 1, price: '0.0044'}
+      - {label: Tiles, files and attachments (storage), name: tiles_files_storage, type: metered, metric: MB, free_allowance: 250, timeFrame: month, unit: 1, price: '0.00012'}
+      - {label: Feature queries (bandwidth), name: feature_query_bandwidth, type: metered, metric: MB, free_allowance: 125, timeFrame: month, unit: 1, price: '0.0008'}
+      - {label: Feature edits (bandwidth), name: feature_edit_bandwidth, type: metered, metric: MB, free_allowance: 125, timeFrame: month, unit: 1, price: '0.0008'}
+      - {label: Vector tiles (bandwidth), name: vector_tile_bandwidth, type: metered, metric: GB, free_allowance: 25, timeFrame: month, unit: 1, price: '0.43'}
+      - {label: Map tiles (bandwidth), name: map_tile_bandwidth, type: metered, metric: GB, free_allowance: 25, timeFrame: month, unit: 1, price: '0.43'}
+      - {label: Tiles generated, name: tiles_generated, type: metered, metric: tiles, free_allowance: 25000, timeFrame: month, unit: 1000, price: '0.12'}
     elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Esri ArcGIS Platform API
-  - id: esri-pro
-    name: Professional
-    type: paid
-    description: Production tier for Esri. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Esri ArcGIS Platform API
-  - id: esri-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Esri. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://www.arcgis.com/sharing/rest
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Esri ArcGIS Platform API
+      - {name: Community support, price: '0.00'}
+      - {name: Self-serve signup, url: 'https://location.arcgis.com/sign-up/'}
+      - {name: Public documentation, url: 'https://developers.arcgis.com/'}
+support_plans:
+  - {id: community, name: Community support, price: '0.00', currency: USD, description: 'Esri Community developer forum. Included with every configuration.', url: 'https://community.esri.com/t5/developers/ct-p/developers'}
+  - {id: technical, name: Technical support, price: '2500.00', currency: USD, billing_period: annual, description: 'Unlimited live support via chat, phone and email, plus interactive system access within My Esri.'}
+  - {id: additional, name: Additional support services, price: custom, currency: USD, description: '24/7/365 on-call coverage for mission-critical applications. Contact sales.'}
+notes:
+  - >-
+    An agent should read the free_allowance: 0 rows carefully. Geocodes (stored) — the exact
+    privilege the ArcGIS MCP server requires for its geocoding tools — bills from the first call
+    at $4 per 1,000, and is only available on accounts with pay-as-you-go enabled.
+  - >-
+    ArcGIS Online and ArcGIS Enterprise are separately licensed products with credit-based and
+    seat-based pricing that is not published on this page. This artifact covers ArcGIS Location
+    Platform only.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Esri ArcGIS Location Services Auth Routing API
   version: 1.0.0

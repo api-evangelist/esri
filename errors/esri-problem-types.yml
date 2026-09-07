@@ -1,0 +1,56 @@
+generated: '2026-09-07'
+method: derived
+source: >-
+  openapi/esri-*-openapi.yml (4xx/5xx responses), a live anonymous probe of
+  https://location-services-mcp.arcgis.com/beta/mcp, and the published GeoEnrichment error-code
+  reference https://developers.arcgis.com/rest/geoenrichment/error-codes/
+format: proprietary-json
+format_note: >-
+  ArcGIS does NOT use RFC 9457 application/problem+json. Every service returns a proprietary JSON
+  envelope, and — importantly for agents — it often returns it with HTTP 200. The error is carried
+  in the body, not the status line.
+envelope:
+  shape: '{"error": {"code": <int>, "message": <string>, "details": [<string>, ...]}}'
+  observed_live:
+    url: https://location-services-mcp.arcgis.com/beta/mcp
+    http_status: 401
+    body: '{"error":{"code":499,"message":"Token Required.","details":["The required authentication information is missing. Unable to authorize access without a valid token."]}}'
+    fetched: '2026-09-07'
+  observed_live_2:
+    url: https://places-api.arcgis.com/openapi.json
+    http_status: 404
+    body: '{"error":{"code":404,"message":"Path not found.","details":["The path: ''/openapi.json'' did not match any known endpoints."]}}'
+    fetched: '2026-09-07'
+  agent_warning: >-
+    An agent must parse the body of a 200 response for an `error` key before treating the call as
+    successful. ArcGIS's token errors historically surface as HTTP 200 with error.code 498/499 in
+    the body on the classic REST endpoints; the newer location-service hosts do set a matching
+    HTTP status.
+problems:
+  - {code: 498, title: Invalid token, remediation: 'Re-acquire an access token; the presented token is malformed or expired.', family: auth}
+  - {code: 499, title: Token required, remediation: 'Send an ArcGIS access token (Authorization Bearer, or the token query parameter).', family: auth, evidence: 'observed live on location-services-mcp.arcgis.com'}
+  - {code: 403, title: Forbidden / insufficient privileges, remediation: 'Grant the credential the required privilege — e.g. Location services > Geocoding > Geocode (stored).', family: auth}
+  - {code: 404, title: Path not found, remediation: Check the service endpoint path., family: routing, evidence: 'observed live on places-api.arcgis.com'}
+  - {code: 429, title: Request rate exceeded, remediation: 'Back off for the one-minute cooling-off period and retry; include a token to raise the limit.', family: rate-limit, source: rate-limits/esri-rate-limits.yml}
+  - {status: 400, source_operation: 'openapi/esri-geocoding-api-openapi.yml#findAddressCandidates', title: Bad request}
+  - {status: 400, source_operation: 'openapi/esri-routing-api-openapi.yml#solveRoute', title: Bad request}
+service_error_registries:
+  - service: GeoEnrichment
+    url: https://developers.arcgis.com/rest/geoenrichment/error-codes/
+    scheme: 8-digit extended error codes
+    sample:
+      - {code: 10020007, title: Parameter is invalid, cause: 'An unsupported value was used in one of the enrich request parameters (e.g. buffer radius of 0).'}
+      - {code: 10040001, title: The number of study areas was exceeded, cause: 'studyAreas exceeds the service limit of 1000 features.'}
+      - {code: 10040004, title: The maximum ring size was exceeded, cause: 'Ring buffer exceeds the 1000-mile service limit.'}
+      - {code: 10040006, title: Service area exceeds limit, cause: 'Exceeds 300 miles drive distance, 300 minutes drive time, 27 miles walking distance or 540 walking minutes.'}
+      - {code: 10050011, title: Unable to find hierarchy, cause: 'Invalid useData hierarchy — e.g. the retired esri2022 US hierarchy.'}
+      - {code: 10050024, title: Variables are not defined, cause: 'Invalid value in analysisVariables.'}
+      - {code: 10050025, title: Standard Geography IDs are invalid, cause: 'Invalid standard geography ID in studyAreas; the IDs are dropped from the output.'}
+      - {code: 10050032, title: "Data collections or reports not associated", cause: 'The dataCollections/report ID does not exist.'}
+      - {code: 20010404, title: Failed to format report, cause: Server error creating the report; retry later.}
+      - {code: 20010604, title: Unable to detect country for study area, cause: 'The study area is not inside a country with data coverage.'}
+      - {code: 10010021, title: Neither geographyIds nor geographyQuery specified, cause: 'Standard Geography Query requires one of the two.'}
+      - {code: 10020088, title: Invalid output field, cause: Invalid value in outFields.}
+    note: >-
+      Esri describes this as "some of the most common" extended error codes, not the full registry.
+      Only the codes published on that page are recorded here; none were invented.

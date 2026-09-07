@@ -1,0 +1,223 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, api.nuget.org and the ArcGIS developer SDK reference
+  (https://developers.arcgis.com/). Versions and dates read from each registry's metadata
+  endpoint on 2026-09-07.
+note: >-
+  Esri ships first-party client libraries across JavaScript, Python and .NET. The core
+  JavaScript mapping SDK (@arcgis/core) and its web-component families release on one
+  version train (5.1.x, shipped 2026-09-03); the arcgis-rest-js service wrappers release
+  separately (4.11.0, 2026-08-07). Every first-party package listed here has a release in
+  the last two months — there is no SDK-abandonment signal for this provider. esri-loader
+  is included as the one exception: it is a first-party package Esri has explicitly
+  superseded by ES-module imports of @arcgis/core and has not released since 2022.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@arcgis/core"
+    url: https://www.npmjs.com/package/@arcgis/core
+    install: npm install @arcgis/core
+    official: true
+    version: 5.1.22
+    published: '2026-09-03'
+    role: ArcGIS Maps SDK for JavaScript — the core mapping/analysis library
+  - language: javascript
+    registry: npm
+    name: "@arcgis/map-components"
+    url: https://www.npmjs.com/package/@arcgis/map-components
+    install: npm install @arcgis/map-components
+    official: true
+    version: 5.1.22
+    published: '2026-09-03'
+    role: Map web components built on @arcgis/core
+  - language: javascript
+    registry: npm
+    name: "@arcgis/charts-components"
+    url: https://www.npmjs.com/package/@arcgis/charts-components
+    install: npm install @arcgis/charts-components
+    official: true
+    version: 5.1.22
+    published: '2026-09-03'
+    role: Charting web components
+  - language: javascript
+    registry: npm
+    name: "@arcgis/coding-components"
+    url: https://www.npmjs.com/package/@arcgis/coding-components
+    install: npm install @arcgis/coding-components
+    official: true
+    version: 5.1.22
+    published: '2026-09-03'
+    role: Arcade / expression editor web components
+  - language: javascript
+    registry: npm
+    name: "@esri/calcite-components"
+    url: https://www.npmjs.com/package/@esri/calcite-components
+    install: npm install @esri/calcite-components
+    official: true
+    version: 5.1.2
+    published: '2026-07-03'
+    role: Calcite Design System web components (Esri's UI kit)
+  - language: javascript
+    registry: npm
+    name: "@esri/calcite-components-react"
+    url: https://www.npmjs.com/package/@esri/calcite-components-react
+    install: npm install @esri/calcite-components-react
+    official: true
+    version: 5.1.2
+    published: '2026-07-03'
+    role: React bindings for Calcite components
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-request"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-request
+    install: npm install @esri/arcgis-rest-request
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: arcgis-rest-js core request + authentication module
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-geocoding"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-geocoding
+    install: npm install @esri/arcgis-rest-geocoding
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Geocoding service wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-routing"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-routing
+    install: npm install @esri/arcgis-rest-routing
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Routing service wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-places"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-places
+    install: npm install @esri/arcgis-rest-places
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Places service wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-elevation"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-elevation
+    install: npm install @esri/arcgis-rest-elevation
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Elevation service wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-demographics"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-demographics
+    install: npm install @esri/arcgis-rest-demographics
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: GeoEnrichment / demographics service wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-basemap-sessions"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-basemap-sessions
+    install: npm install @esri/arcgis-rest-basemap-sessions
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Basemap session management
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-portal"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-portal
+    install: npm install @esri/arcgis-rest-portal
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Portal / sharing REST API wrapper
+  - language: javascript
+    registry: npm
+    name: "@esri/arcgis-rest-feature-service"
+    url: https://www.npmjs.com/package/@esri/arcgis-rest-feature-service
+    install: npm install @esri/arcgis-rest-feature-service
+    official: true
+    version: 4.11.0
+    published: '2026-08-07'
+    role: Feature service query/edit wrapper
+  - language: javascript
+    registry: npm
+    name: esri-loader
+    url: https://www.npmjs.com/package/esri-loader
+    install: npm install esri-loader
+    official: true
+    version: 3.7.0
+    published: '2022-11-16'
+    deprecated: true
+    role: >-
+      Legacy AMD loader for the ArcGIS API for JavaScript. Superseded by ES-module imports
+      of @arcgis/core; no release since 2022 and it should not be used for new work.
+  - language: python
+    registry: pypi
+    name: arcgis
+    url: https://pypi.org/project/arcgis/
+    install: pip install arcgis
+    official: true
+    version: 2.4.3
+    published: '2026-04-21'
+    role: ArcGIS API for Python
+    docs: https://developers.arcgis.com/python/
+  - language: python
+    registry: pypi
+    name: arcgis-mapping
+    url: https://pypi.org/project/arcgis-mapping/
+    install: pip install arcgis-mapping
+    official: true
+    version: 5.0.0
+    published: '2026-04-21'
+    role: Map-rendering companion package for the ArcGIS API for Python
+  - language: dotnet
+    registry: nuget
+    name: Esri.ArcGISRuntime
+    url: https://www.nuget.org/packages/Esri.ArcGISRuntime
+    install: dotnet add package Esri.ArcGISRuntime
+    official: true
+    version: 300.1.0
+    published: null
+    note: >-
+      NuGet flat-container index gives the version but not a publish date; the date was not
+      recorded rather than guessed.
+    role: ArcGIS Maps SDK for .NET core assembly
+  - language: dotnet
+    registry: nuget
+    name: Esri.ArcGISRuntime.WPF
+    url: https://www.nuget.org/packages/Esri.ArcGISRuntime.WPF
+    install: dotnet add package Esri.ArcGISRuntime.WPF
+    official: true
+    version: 300.1.0
+    published: null
+    role: WPF UI bindings for the ArcGIS Maps SDK for .NET
+  - language: dotnet
+    registry: nuget
+    name: Esri.ArcGISRuntime.Maui
+    url: https://www.nuget.org/packages/Esri.ArcGISRuntime.Maui
+    install: dotnet add package Esri.ArcGISRuntime.Maui
+    official: true
+    version: 300.1.0
+    published: null
+    role: .NET MAUI UI bindings for the ArcGIS Maps SDK for .NET
+not_found:
+  - registry: maven-central
+    query: "g:com.esri.arcgisruntime"
+    result: search.maven.org timed out on 2026-09-07; the ArcGIS Maps SDK for Kotlin/Java is
+      distributed from Esri's own Maven repository (esri.jfrog.io), not Maven Central, so a
+      Central lookup is the wrong endpoint rather than an absence.
+  - registry: rubygems
+    result: no first-party Esri gem
+  - registry: crates.io
+    result: no first-party Esri crate
+  - registry: packagist
+    result: no first-party Esri PHP package

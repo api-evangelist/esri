@@ -1,0 +1,68 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://location.arcgis.com/help/release-notes/2026-07/,
+  https://status.location.arcgis.com/,
+  https://trust.arcgis.com/en/system-status/,
+  https://developers.arcgis.com/ai/mcp-arcgis-location-services/
+versioning:
+  scheme: service-versioned-endpoints
+  current: 'ArcGIS Location Platform — July 2026 release'
+  docs: https://location.arcgis.com/help/release-notes/2026-07/
+  note: >-
+    ArcGIS Location Services are not versioned in the URI in the usual /v1/ sense. The REST
+    surface is versioned by service (e.g. /arcgis/rest/services/World/GeocodeServer) and the
+    platform ships dated monthly releases; the ArcGIS Maps SDKs carry their own semver trains
+    (JavaScript 5.1.x, .NET 300.x, arcgis-rest-js 4.11.x, Python 2.4.x).
+deprecation:
+  policy_url: https://location.arcgis.com/help/release-notes/2026-07/
+  sunset_header: false
+  sunset_header_note: >-
+    No RFC 8594 Sunset/Deprecation header support is documented. Deprecations are announced in
+    the dated release notes and on the ArcGIS Blog instead.
+  observed_retirements:
+    - item: API key (legacy) authentication
+      status: retired
+      date: '2026-07'
+      evidence: >-
+        July 2026 release notes — "API key (legacy) have been fully retired. Going forward,
+        only new API keys are supported."
+    - item: Esri 2024 GeoEnrichment US data hierarchy
+      status: retired
+      date: '2026-07'
+      evidence: >-
+        July 2026 release notes — "Esri2024 retired, and Esri 2026 added as the default current
+        year hierarchy."
+    - item: esri2022 GeoEnrichment data hierarchy
+      status: retired
+      evidence: >-
+        GeoEnrichment error code 10050011 documents "the esri2022 hierarchy of US data is no
+        longer available."
+beta_surfaces:
+  - name: MCP for ArcGIS Location Services
+    stage: beta
+    gate: 'Portal service > General privileges > Apps and capabilities > Allow beta access'
+    docs: https://developers.arcgis.com/ai/mcp-arcgis-location-services/
+  - name: ArcGIS Static Maps service
+    stage: general-availability
+    promoted: '2026-07'
+    note: Went from beta to GA in the July 2026 release.
+status_page: https://status.location.arcgis.com/
+status_pages:
+  - {name: ArcGIS Location Platform Status, url: 'https://status.location.arcgis.com/', http_status: 200}
+  - {name: ArcGIS Online Health / System Status, url: 'https://trust.arcgis.com/en/system-status/', http_status: 200}
+sla:
+  url: https://location.arcgis.com/help/service-reliability-and-support/
+  uptime_target: null
+  note: >-
+    Esri publishes a "Service reliability and support" page for ArcGIS Location Platform. No
+    numeric uptime commitment was read from a public page, so none is asserted.
+support:
+  community: https://community.esri.com/t5/developers/ct-p/developers
+  technical_support: https://support.esri.com/en-us/products/arcgis-location-platform
+  technical_support_pricing: >-
+    Community support is free; paid technical support for ArcGIS Location Platform starts at
+    $2,500/year billed annually (https://location.arcgis.com/pricing/).
+deprecated_operations: []
+deprecated_operations_note: >-
+  No operation in openapi/ carries deprecated: true.

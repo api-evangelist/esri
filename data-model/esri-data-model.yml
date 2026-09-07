@@ -1,0 +1,54 @@
+generated: '2026-09-07'
+method: derived
+source: openapi/_original/esri-openapi.yml + https://developers.arcgis.com/rest/
+note: >-
+  The captured contract is thin on schemas — it defines exactly one reusable component
+  (Candidate) and returns loosely-typed JSON elsewhere, so this graph is small by necessity.
+  The entities below are those genuinely named in the spec or in Esri's own REST reference for
+  the captured services; nothing was invented to fill the model out.
+entities:
+  - name: Candidate
+    source: openapi/_original/esri-openapi.yml#/components/schemas/Candidate
+    description: A single geocode match returned by the World Geocoding Service.
+    fields:
+      - {name: address, type: string, role: matched address label}
+      - {name: score, type: number, role: match confidence 0-100}
+      - {name: location, type: object, role: 'point geometry {x, y}'}
+      - {name: extent, type: object, role: 'bounding box {xmin, ymin, xmax, ymax}'}
+      - {name: attributes, type: object, role: open attribute bag, additional_properties: true}
+    identifier: none
+    identifier_note: >-
+      A geocode candidate carries no stable id — it is a computation result, not a stored
+      resource. Nothing in the location-services surface is addressable by id.
+  - name: Point
+    description: 'The x/y geometry primitive shared by geocoding, routing and elevation.'
+    spatial_reference_field: outSR
+    source: derived from the location/extent objects and the location parameter of reverseGeocode
+  - name: Route
+    description: The result of solveRoute — a geometry plus directions and summary attributes.
+    source: 'openapi/esri-routing-api-openapi.yml#solveRoute'
+    inputs: [stops, startTime, travelMode]
+  - name: AccessToken
+    description: An ArcGIS OAuth 2.0 access token.
+    source: 'openapi/esri-auth-api-openapi.yml#getOAuthToken'
+    fields: [access_token, expires_in]
+    scoped_by: privileges
+relationships:
+  - {from: findAddressCandidates, to: Candidate, kind: has_many, via: candidates}
+  - {from: geocodeAddresses, to: Candidate, kind: has_many, via: locations}
+  - {from: suggestAddresses, to: Candidate, kind: has_many, via: suggestions, note: 'suggest returns text + magicKey, which is then passed back to findAddressCandidates'}
+  - {from: reverseGeocode, to: Candidate, kind: has_one, via: address}
+  - {from: Candidate, to: Point, kind: has_one, via: location}
+  - {from: Route, to: Point, kind: has_many, via: stops}
+  - {from: AccessToken, to: '*', kind: authorizes, via: token, note: 'every other operation requires it'}
+id_prefixes: []
+id_prefixes_note: >-
+  ArcGIS uses 32-character hex item IDs on the portal/content surface (itemId, groupId,
+  webhook id, ownerId — see the webhook sample in asyncapi/esri-webhooks.yml), with no
+  human-readable type prefix. The location-services surface captured here has no IDs at all.
+gaps:
+  - >-
+    The wider ArcGIS object model (Item, User, Group, Folder, FeatureLayer, WebMap, Portal)
+    is documented in the REST reference but is not in this repo's OpenAPI, so it is not
+    modelled here. Capturing the portal/sharing surface would be the single largest
+    improvement to this artifact.

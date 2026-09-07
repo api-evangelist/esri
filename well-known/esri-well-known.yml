@@ -1,0 +1,196 @@
+generated: '2026-09-07'
+method: probed
+source: live GET of the named /.well-known/ path list on every host in apis.yml + OpenAPI servers[] + docs/console hosts
+note: >-
+  Two real documents were served. www.arcgis.com (and the apex arcgis.com) publish an RFC 8414
+  OAuth 2.0 Authorization Server Metadata document, and the Esri-hosted MCP server host
+  location-services-mcp.arcgis.com publishes an RFC 9728 OAuth 2.0 Protected Resource Metadata
+  document naming arcgis.com as its authorization server. Both hosts returned 404 on the
+  negative-control path, so neither is a path-echoing host. status.location.arcgis.com is a
+  single-page-app catch-all that answers 200 with the same HTML shell for every path including
+  the negative control — no document is recorded for it and it earns no credit. esri.com,
+  www.esri.com, developers.arcgis.com and the location-service API hosts serve nothing at any
+  probed path.
+hit_count: 2
+path_echo_control: passed
+hosts:
+  - host: https://www.esri.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://esri.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://developers.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://www.arcgis.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: esri-oauth-authorization-server.json
+        note: RFC 8414 — issuer https://www.arcgis.com, authorization_code + implicit, PKCE S256
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://arcgis.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: esri-oauth-authorization-server.json
+        note: same document as www.arcgis.com; this is the apex named by the MCP protected-resource doc
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://location-services-mcp.arcgis.com
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: esri-oauth-protected-resource.json
+        note: >-
+          RFC 9728 — resource https://location-services-mcp.arcgis.com/,
+          authorization_servers ["https://arcgis.com/"]. This is the host serving the
+          Esri MCP for ArcGIS Location Services (beta) endpoint.
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://geocode-api.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://route-api.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://places-api.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://location.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 404, control: negative}
+  - host: https://trust.arcgis.com
+    documents:
+      - {path: /.well-known/security.txt, status: 300, note: "Apache mod_negotiation 'Multiple Choices' — no document served"}
+      - {path: /.well-known/openid-configuration, status: 300}
+      - {path: /.well-known/oauth-authorization-server, status: 300}
+      - {path: /.well-known/oauth-protected-resource, status: 300}
+      - {path: /.well-known/api-catalog, status: 300}
+      - {path: /.well-known/agent-card.json, status: 300}
+      - {path: /.well-known/agent.json, status: 300}
+      - {path: /.well-known/apis.json, status: 300}
+      - {path: /apis.json, status: 404}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 300, control: negative}
+  - host: https://status.location.arcgis.com
+    soft_404_control: failed
+    note: >-
+      Single-page-app catch-all. Every probed path returned HTTP 200 with the identical
+      5,343-byte HTML shell, including /.well-known/esri-negative-control-7f3ab91c.json,
+      which cannot exist. No documents are recorded for this host and it earns no
+      WellKnown credit.
+    documents:
+      - {path: /.well-known/security.txt, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/openid-configuration, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/api-catalog, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/agent-card.json, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/agent.json, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/apis.json, status: 200, body: html-shell, file: null}
+      - {path: /apis.json, status: 200, body: html-shell, file: null}
+      - {path: /.well-known/esri-negative-control-7f3ab91c.json, status: 200, body: html-shell, file: null, control: negative}

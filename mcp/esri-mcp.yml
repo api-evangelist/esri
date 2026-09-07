@@ -1,0 +1,145 @@
+generated: '2026-09-07'
+method: searched
+source: https://developers.arcgis.com/ai/mcp-arcgis-location-services/
+status: published
+maturity: beta
+name: MCP for ArcGIS Location Services (beta)
+description: >-
+  An Esri-hosted Model Context Protocol server that exposes ArcGIS Location Services —
+  geocoding, routing, elevation, static maps and GeoEnrichment — to MCP-compliant clients
+  and AI agents without calling the ArcGIS REST APIs directly. Announced in the July 2026
+  ArcGIS Location Platform release; still labelled beta and gated behind an "Allow beta
+  access" portal privilege.
+deployment:
+  mode: remote
+  endpoint: https://location-services-mcp.arcgis.com/beta/mcp
+  install: null
+  package: null
+  auth: oauth
+  verified: probed
+server:
+  name: arcgis-location-services
+  transport: http
+  transport_detail: Streamable HTTP
+  url: https://location-services-mcp.arcgis.com/beta/mcp
+  stdio_available: false
+  stdio_note: >-
+    Esri's own FAQ answers "Is there a local version that uses Stdio transport?" with
+    "No. Currently, MCP for ArcGIS Location Services (beta) is only available via a hosted
+    URL using the Streamable HTTP transport protocol."
+authentication:
+  methods:
+    - type: api-key
+      header: Authorization
+      scheme: Bearer
+      note: ArcGIS API key credential passed as "Bearer <access token>"
+    - type: oauth2
+      note: User authentication or app authentication with an ArcGIS OAuth 2.0 credential
+      authorization_endpoint: https://www.arcgis.com/sharing/rest/oauth2/authorize
+      token_endpoint: https://www.arcgis.com/sharing/rest/oauth2/token
+  protected_resource_metadata: https://location-services-mcp.arcgis.com/.well-known/oauth-protected-resource
+  authorization_servers:
+    - https://arcgis.com/
+  required_privileges:
+    - Portal service > General privileges > Apps and capabilities > Allow beta access
+    - Location services > Geocoding > Geocode (stored)
+    - Location services > Routing > Simple routing
+    - Location services > Elevation > Elevation service
+    - Location services > Static maps > Static maps service
+    - Location services > Data Enrichment > GeoEnrichment service
+  note: >-
+    Tools are filtered by the privileges on the presented access token — an under-privileged
+    token sees a smaller tools/list.
+tools:
+  - name: find_address_candidates
+    category: geocoding
+    description: Takes an address or place string and returns coordinates.
+    required_privilege: Location services > Geocoding > Geocode (stored)
+    source_operation: openapi/esri-geocoding-api-openapi.yml#findAddressCandidates
+  - name: reverse_geocode
+    category: geocoding
+    description: Converts coordinates to the nearest address.
+    required_privilege: Location services > Geocoding > Geocode (stored)
+    source_operation: openapi/esri-geocoding-api-openapi.yml#reverseGeocode
+  - name: solve_route
+    category: routing
+    description: >-
+      Solves a route between a start and end point, with optional intermediate stops and the
+      ability to specify departure time for more accurate results.
+    required_privilege: Location services > Routing > Simple routing
+    source_operation: openapi/esri-routing-api-openapi.yml#solveRoute
+  - name: elevation_at_locations
+    category: elevation
+    description: >-
+      Get the elevation for a given point (latitude and longitude) using the WGS84
+      coordinate system.
+    required_privilege: Location services > Elevation
+    source_operation: null
+  - name: map_with_overlay
+    category: static-maps
+    description: Returns a static map in an ArcGIS Basemap style with points, polylines and/or polygons.
+    required_privilege: Location services > Static maps
+    source_operation: null
+    note: Returns a base64-encoded PNG; some clients cap MCP response payload size.
+  - name: get_topic_fields
+    category: data-enrichment
+    description: >-
+      Returns a set of fields for a topic (e.g. "population") that are available for a
+      specified country. Not all topics are available for every country.
+    required_privilege: Location services > Geoenrichment
+    source_operation: null
+  - name: describe_location
+    category: data-enrichment
+    description: Describes the specified location using the fields obtained from get_topic_fields.
+    required_privilege: Location services > Geoenrichment
+    source_operation: null
+prompts:
+  note: >-
+    The server also advertises MCP prompts (prompts/list). Captured from the published
+    prompts reference; names and templates only.
+  list:
+    - {name: elevation_at_a_location, template: "Find elevation for the location at {latitude}, {longitude}."}
+    - {name: elevation_at_an_address, template: "What is the elevation of {address}?"}
+    - {name: find_address_candidates, template: "Find address candidates for {single_line}."}
+    - {name: highest_point_on_a_route, template: "What is the highest point on the route from {start_address} to {end_address}?"}
+    - {name: map_comparing_routes, template: "Show me a map comparing fastest route from {start_address} to {end_address}, with the same journey, but going via {waypoint_address}."}
+    - {name: map_of_a_route, template: "Show a map of the route from {start_address} to {end_address}."}
+    - {name: map_of_an_address, template: "Show a map centered on {address}."}
+    - {name: reverse_geocode, template: "Return the address information for the location at {latitude}, {longitude}."}
+    - {name: route_between_two_addresses, template: "How can I drive from {start_address} to {end_address}?"}
+    - {name: route_distance, template: "How far is it from {start_address} to {end_address}?"}
+    - {name: unsimplified_route_between_two_addresses, template: "Give me the unsimplified route from {start_address} to {end_address}."}
+    - {name: journey_duration_at_specific_time, template: "How long will it take to drive from {start_address} to {end_address} at {date_time}?"}
+    - {name: describe_area, template: "Describe the {topics} characteristics within {buffer_distance} meters of {address}."}
+    - {name: compare_areas, template: "Compare the areas within {buffer_distance} meters of {address1} and {address2} using information about {topics}."}
+pricing:
+  note: >-
+    No charge for the MCP protocol itself; each successful tool call is metered against the
+    underlying ArcGIS Location Services operation (Geocodes stored, Routes, Elevation values,
+    Static maps, GeoEnrichment).
+  docs: https://developers.arcgis.com/ai/mcp-arcgis-location-services/pricing/
+clients_documented: [Microsoft Copilot Studio, VS Code with GitHub Copilot, Goose, Claude, AWS Kiro, Postman]
+docs:
+  overview: https://developers.arcgis.com/ai/mcp-arcgis-location-services/
+  get_started: https://developers.arcgis.com/ai/mcp-arcgis-location-services/get-started/
+  tools: https://developers.arcgis.com/ai/mcp-arcgis-location-services/tools/
+  prompts: https://developers.arcgis.com/ai/mcp-arcgis-location-services/prompts/
+  faq: https://developers.arcgis.com/ai/mcp-arcgis-location-services/faq/
+  early_adopter: https://earlyadopter.esri.com/key/MCPsupportforArcGISLocationServices
+x-evidence:
+  - fetched: '2026-09-07'
+    url: https://location-services-mcp.arcgis.com/beta/mcp
+    method: POST tools/list (anonymous)
+    http_status: 401
+    body: '{"error":{"code":499,"message":"Token Required.","details":["The required authentication information is missing. Unable to authorize access without a valid token."]}}'
+    note: >-
+      Live tools/list is auth-gated, so the tool inputSchemas above are NOT machine-introspected —
+      names, descriptions and privileges come from Esri's published tools reference. Input schemas
+      require an authenticated introspection pass.
+  - fetched: '2026-09-07'
+    url: https://location-services-mcp.arcgis.com/.well-known/oauth-protected-resource
+    http_status: 200
+    content_type: application/json
+  - fetched: '2026-09-07'
+    url: https://developers.arcgis.com/ai/mcp-arcgis-location-services/tools/
+    http_status: 200

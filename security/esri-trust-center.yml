@@ -1,0 +1,32 @@
+generated: '2026-09-07'
+method: searched
+probe: true
+url: https://trust.arcgis.com/en/
+note: >-
+  The ArcGIS Trust Center is Esri's published security, privacy and compliance surface. It
+  carries a compliance section with per-program pages, a security capabilities overview, a
+  privacy section, a system-status page, a Security Advisor self-assessment tool and the PSIRT
+  reporting process.
+certifications:
+  - FedRAMP Moderate
+  - ISO/IEC 27001:2022
+  - SOC 2
+  - GDPR
+  - EU-U.S. Data Privacy Framework
+  - CCPA / CPRA
+certification_scope_note: >-
+  Read the scope carefully before treating these as equivalent. FedRAMP Moderate and ISO 27001
+  cover the online services and customer datasets; Esri states its SOC 2 covers only "select
+  internal systems" and explicitly NOT the assurance of its products, their operation, or
+  customer datasets.
+sections:
+  compliance: https://trust.arcgis.com/en/compliance/compliance.htm
+  fedramp: https://trust.arcgis.com/en/compliance/fedramp.htm
+  iso: https://trust.arcgis.com/en/compliance/iso-information.htm
+  security: https://trust.arcgis.com/en/security/
+  privacy: https://trust.arcgis.com/en/privacy/
+  system_status: https://trust.arcgis.com/en/system-status/
+  report_a_concern: https://trust.arcgis.com/en/security-concern/
+evidence:
+  - {source: 'https://trust.arcgis.com/en/', http_status: 200, fetched: '2026-09-07', keywords: [trust center, security, privacy, compliance, fedramp, gdpr]}
+  - {source: 'https://trust.arcgis.com/en/compliance/compliance.htm', http_status: 200, fetched: '2026-09-07', keywords: [fedramp moderate, iso 27001, soc 2, gdpr, dpf, cpra]}

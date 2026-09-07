@@ -1,0 +1,20 @@
+generated: '2026-09-07'
+method: generated
+source: openapi/esri-*-openapi.yml + mcp/esri-mcp.yml + developers.arcgis.com
+note: >-
+  Skills are grounded in operationIds verified present in this repo's OpenAPI
+  (getOAuthToken, findAddressCandidates, suggestAddresses, solveRoute) and in the tool names
+  published in Esri's MCP tools reference. No operation or tool name here was invented.
+skills:
+  - file: esri-geocode-an-address.md
+    name: Geocode an address with ArcGIS
+    api: openapi/esri-geocoding-api-openapi.yml
+    operations: [getOAuthToken, findAddressCandidates, suggestAddresses]
+  - file: esri-solve-a-route.md
+    name: Solve a route with ArcGIS
+    api: openapi/esri-routing-api-openapi.yml
+    operations: [getOAuthToken, findAddressCandidates, solveRoute]
+  - file: esri-call-the-mcp-server.md
+    name: Call the Esri ArcGIS Location Services MCP server
+    api: mcp/esri-mcp.yml
+    operations: [getOAuthToken]

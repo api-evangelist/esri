@@ -1,6 +1,6 @@
-generated: '2026-07-11'
+generated: '2026-09-07'
 method: derived
-source: openapi/esri-openapi.yml
+source: openapi/esri-auth-api-openapi.yml, openapi/esri-geocoding-api-openapi.yml, openapi/esri-routing-api-openapi.yml
 summary:
   types:
   - apiKey
@@ -18,7 +18,9 @@ schemes:
   description: 'ArcGIS Platform API key or access token passed as the `token` query parameter
     (or `Authorization: Bearer <token>` header on REST services).'
   sources:
-  - openapi/esri-openapi.yml
+  - openapi/esri-auth-api-openapi.yml
+  - openapi/esri-geocoding-api-openapi.yml
+  - openapi/esri-routing-api-openapi.yml
 - name: oauth2
   type: oauth2
   flows:
@@ -30,4 +32,6 @@ schemes:
     tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
     scopes: 0
   sources:
-  - openapi/esri-openapi.yml
+  - openapi/esri-auth-api-openapi.yml
+  - openapi/esri-geocoding-api-openapi.yml
+  - openapi/esri-routing-api-openapi.yml

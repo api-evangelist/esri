@@ -1,0 +1,50 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://developers.arcgis.com/javascript/latest/,
+  https://developers.arcgis.com/calcite-design-system/,
+  registry.npmjs.org
+note: >-
+  Esri ships three distinct first-party client-side component families as standards-based custom
+  elements. These are UI building blocks loaded into a page, not server-side SDKs — the SDK
+  packages themselves are catalogued in packages/esri-packages.yml.
+families:
+  - name: ArcGIS Map Components
+    kind: web-components
+    loader: "@arcgis/map-components"
+    version: 5.1.22
+    published: '2026-09-03'
+    depends_on: "@arcgis/core"
+    docs: https://developers.arcgis.com/javascript/latest/
+    description: >-
+      Custom elements wrapping the ArcGIS Maps SDK for JavaScript — map and scene views,
+      widgets (legend, search, basemap gallery, sketch, measurement), and layer controls —
+      usable directly in HTML or inside any framework.
+  - name: ArcGIS Charts Components
+    kind: web-components
+    loader: "@arcgis/charts-components"
+    version: 5.1.22
+    published: '2026-09-03'
+    description: Charting elements (bar, line, scatter, histogram, box plot) bound to ArcGIS layers.
+  - name: ArcGIS Coding Components
+    kind: web-components
+    loader: "@arcgis/coding-components"
+    version: 5.1.22
+    published: '2026-09-03'
+    description: Arcade expression editor and code-input elements.
+  - name: Calcite Design System
+    kind: web-components
+    loader: "@esri/calcite-components"
+    react_bindings: "@esri/calcite-components-react"
+    version: 5.1.2
+    published: '2026-07-03'
+    docs: https://developers.arcgis.com/calcite-design-system/
+    description: >-
+      Esri's open-source design system — the ~180 general-purpose UI custom elements (buttons,
+      panels, shells, blocks, notices, pickers) that the ArcGIS map components are built to sit
+      inside.
+distribution:
+  registries: [npm]
+  cdn: >-
+    All four families are also served from Esri's CDN (js.arcgis.com) as pinned versioned paths;
+    the pinned form carries the version in the URL, the /next/ and unversioned forms float.

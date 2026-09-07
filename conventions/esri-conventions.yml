@@ -1,0 +1,127 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://developers.arcgis.com/rest/, https://developers.arcgis.com/documentation/security-and-authentication/,
+  https://developers.arcgis.com/rest/users-groups-and-items/search/,
+  https://developers.arcgis.com/ai/mcp-arcgis-location-services/,
+  plus derivation from openapi/esri-*-openapi.yml and live probes recorded in errors/esri-problem-types.yml
+scope_note: >-
+  This document describes the ArcGIS REST / ArcGIS Location Services surface captured in this
+  repo (geocoding, routing, OAuth token) plus the cross-cutting conventions Esri documents for
+  the wider ArcGIS REST API. The ArcGIS Enterprise administration and feature-service editing
+  surfaces are not captured here.
+authentication:
+  styles:
+    - {name: API key, transport: 'Authorization: Bearer <api key>', also_accepted: 'token query parameter', docs: 'https://developers.arcgis.com/documentation/security-and-authentication/'}
+    - {name: OAuth 2.0 user authentication, flow: authorization_code, pkce: S256}
+    - {name: OAuth 2.0 app authentication, flow: client_credentials}
+  authorization_model: privileges
+  authorization_note: >-
+    ArcGIS OAuth has no scope parameter. What a credential may do is decided by PRIVILEGES
+    assigned to the account or developer credential, e.g. "Location services > Geocoding >
+    Geocode (stored)". See scopes/esri-scopes.yml.
+  discovery: https://www.arcgis.com/.well-known/oauth-authorization-server
+  reference: authentication/esri-authentication.yml
+response_format:
+  negotiation: query-parameter
+  parameter: f
+  values: [json, pjson, html, geojson, pbf, kmz, image]
+  default: html
+  note: >-
+    Format is selected with the `f` query parameter, not the Accept header, and the default on
+    many endpoints is HTML. An agent MUST send f=json (or f=pjson) explicitly.
+pagination:
+  style: offset
+  surface: portal / sharing REST (search, content listing)
+  request_params: {offset: start, limit: num}
+  request_note: '`start` is 1-based; default 1.'
+  response_fields: [total, start, num, nextStart, results]
+  cursor_field: nextStart
+  cursor_note: '`nextStart` carries the result number of the next page; -1 signals the last page.'
+  location_services_note: >-
+    The location services (geocoding, routing, elevation, static maps) are not paginated —
+    result-set size is bounded per operation instead (e.g. maxLocations on findAddressCandidates,
+    the 1000-study-area GeoEnrichment limit).
+  feature_services_note: 'Feature service queries page with resultOffset / resultRecordCount.'
+idempotency:
+  coverage: na
+  scope: []
+  header: null
+  supported: false
+  reason: >-
+    The captured contract and the entire published MCP tool set are READ / COMPUTE operations —
+    geocode, reverse geocode, suggest, solve route, elevation lookup, static map render,
+    GeoEnrichment describe. There is no mutating operation in openapi/ (getOAuthToken mints a
+    token, which is idempotent-by-nature in the sense that repeating it costs nothing and
+    creates no durable resource), so there is nothing for a replay-protection mechanism to
+    protect. Esri documents no Idempotency-Key header anywhere in the ArcGIS REST API.
+  na_note: >-
+    Recorded as `na` rather than `none` per the pipeline contract: a provider with no write
+    surface should leave the denominator, not score zero. If the feature-service editing surface
+    (addFeatures / updateFeatures / deleteFeatures / applyEdits) is later captured in openapi/,
+    this must be re-evaluated as `none` — ArcGIS applyEdits has no idempotency key and repeated
+    submission does duplicate features.
+  metering_caution: >-
+    Retries are NOT free. Every successful location-services call is metered (Geocodes stored,
+    Routes, Elevation values, Static maps), so a naive retry loop bills twice even though it
+    corrupts nothing.
+reversibility:
+  applicable: na
+  grade: na
+  reason: >-
+    No write surface in the captured contract or the MCP tool set, so there is nothing to
+    reverse. Every operation is a query or a computation that creates no durable provider-side
+    state.
+  reversal_operations: []
+  caveat: >-
+    Two side effects are irreversible in the ordinary sense and worth an agent knowing about:
+    (1) a "Geocode (stored)" call permanently consumes a billable stored-geocode credit, and
+    (2) GeoEnrichment and routing calls are metered on success. Neither can be un-billed.
+  wider_platform_note: >-
+    The ArcGIS Portal / feature-service surface DOES have write and delete operations (deleteItem,
+    deleteFeatures) with no documented undo window. That surface is not captured in this repo,
+    so no reversibility claim is made for it here.
+dry_run_mode:
+  supported: na
+  reason: Read-only surface; no rehearsal mode is needed or documented.
+field_selection:
+  supported: true
+  params: [outFields, returnGeometry, outSR, resultType]
+  note: >-
+    Most ArcGIS query/geocode operations accept outFields for sparse responses and outSR to
+    select the output spatial reference. There is no generic expansion/embedding mechanism.
+metadata:
+  supported: false
+  note: No generic user-defined metadata bag on location-service requests.
+request_tracing:
+  request_id_header: null
+  note: >-
+    No request-id / correlation header is documented for ArcGIS Location Services. An agent
+    debugging a failure has the error envelope's `details[]` array and nothing else to correlate
+    with. This is a real gap.
+versioning:
+  style: dated-platform-release + per-service endpoint path
+  header: null
+  reference: lifecycle/esri-lifecycle.yml
+error_envelope:
+  shape: '{"error": {"code": <int>, "message": <string>, "details": [<string>...]}}'
+  rfc9457: false
+  http_status_caution: >-
+    Classic ArcGIS REST endpoints frequently return HTTP 200 with an `error` object in the body.
+    Parse the body before trusting the status line.
+  reference: errors/esri-problem-types.yml
+rate_limit_signaling:
+  headers: []
+  headers_note: >-
+    No X-RateLimit-* or RateLimit-* response headers are documented. Exhaustion surfaces as HTTP
+    429 with a one-minute cooling-off period; Esri does not document a Retry-After header either,
+    so an agent has no machine-readable backoff signal and must use a fixed 60-second wait.
+  status_on_exhaustion: 429
+  reference: rate-limits/esri-rate-limits.yml
+agent_surface:
+  mcp: mcp/esri-mcp.yml
+  crosswalk: mcp/esri-tool-crosswalk.yml
+  llms_txt: llms/esri-llms.txt
+  note: >-
+    The MCP server filters tools/list by the privileges on the presented token, so two agents
+    with different credentials see different tool sets from the same endpoint.

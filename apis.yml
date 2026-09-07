@@ -47,7 +47,7 @@ tags:
   - Maps
   - Spatial Analysis
 created: '2025-01-14'
-modified: '2026-04-28'
+modified: '2026-09-07'
 specificationVersion: '0.23'
 apis:
 - aid: esri:esri-arcgis-platform-api
@@ -84,26 +84,32 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/esri-auth-api-openapi.yml
+  - type: Overlay
+    url: overlays/esri-auth-api-overlay.yaml
 - aid: esri:esri-geocoding-api
   name: Esri Geocoding API
   description: The Geocoding API from Esri — 4 operation(s) for geocoding.
-  humanURL: https://developers.arcgis.com/
-  baseURL: https://www.arcgis.com/sharing/rest
+  humanURL: https://developers.arcgis.com/rest/geocode/
+  baseURL: https://geocode-api.arcgis.com/arcgis/rest/services
   tags:
   - Geocoding
   properties:
   - type: OpenAPI
     url: openapi/esri-geocoding-api-openapi.yml
+  - type: Overlay
+    url: overlays/esri-geocoding-api-overlay.yaml
 - aid: esri:esri-routing-api
   name: Esri Routing API
   description: The Routing API from Esri — 1 operation(s) for routing.
-  humanURL: https://developers.arcgis.com/
-  baseURL: https://www.arcgis.com/sharing/rest
+  humanURL: https://developers.arcgis.com/rest/routing/
+  baseURL: https://route-api.arcgis.com/arcgis/rest/services
   tags:
   - Routing
   properties:
   - type: OpenAPI
     url: openapi/esri-routing-api-openapi.yml
+  - type: Overlay
+    url: overlays/esri-routing-api-overlay.yaml
 common:
   - type: AgenticAccess
     url: agentic-access/esri-agentic-access.yml
@@ -124,6 +130,104 @@ common:
   - type: Alias
     url: https://github.com/api-evangelist/esri-arcgis
     name: Canonical esri-arcgis profile
+  - type: MCPServer
+    url: mcp/esri-mcp.yml
+    name: MCP for ArcGIS Location Services (beta)
+  - type: ToolCrosswalk
+    url: mcp/esri-tool-crosswalk.yml
+  - type: LLMsTxt
+    url: llms/esri-llms.txt
+  - type: WellKnown
+    url: well-known/esri-well-known.yml
+  - type: Packages
+    url: packages/esri-packages.yml
+  - type: SDKs
+    url: packages/esri-packages.yml
+    name: ArcGIS SDKs and client libraries
+  - type: Components
+    url: components/esri-components.yml
+  - type: Conventions
+    url: conventions/esri-conventions.yml
+  - type: ErrorCatalog
+    url: errors/esri-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/esri-lifecycle.yml
+  - type: StatusPage
+    url: https://status.location.arcgis.com/
+    name: ArcGIS Location Platform Status
+  - type: Deprecation
+    url: https://location.arcgis.com/help/release-notes/2026-07/
+    name: Deprecations and retirements in the dated release notes
+  - type: ChangeLog
+    url: changelog/esri-changelog.yml
+  - type: Conformance
+    url: conformance/esri-conformance.yml
+  - type: Compliance
+    url: https://trust.arcgis.com/en/compliance/compliance.htm
+    name: ArcGIS Trust Center compliance
+  - type: TrustCenter
+    url: security/esri-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/esri-vulnerability-disclosure.yml
+  - type: Security
+    url: https://trust.arcgis.com/en/security-concern/
+    name: Report a security or privacy concern (Esri PSIRT)
+  - type: Webhooks
+    url: asyncapi/esri-webhooks.yml
+  - type: DataModel
+    url: data-model/esri-data-model.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: WSDL
+    url: wsdl/esri-wsdl-index.yml
+    name: ArcGIS Server SOAP Service Catalog
+  - type: RateLimits
+    url: rate-limits/esri-rate-limits.yml
+  - type: Plans
+    url: plans/esri-plans-pricing.yml
+  - type: FinOps
+    url: finops/esri-finops.yml
+  - type: Documentation
+    url: https://developers.arcgis.com/documentation/
+    name: ArcGIS developer documentation
+  - type: APIReference
+    url: https://developers.arcgis.com/rest/
+    name: ArcGIS REST APIs reference
+  - type: GettingStarted
+    url: https://developers.arcgis.com/documentation/mapping-and-location-services/get-started/
+    name: Get started with ArcGIS location services
+  - type: Support
+    url: https://support.esri.com/en-us/products/arcgis-location-platform
+    name: ArcGIS Location Platform technical support
+  - type: HelpCenter
+    url: https://community.esri.com/t5/developers/ct-p/developers
+    name: Esri Community developers
+  - type: Blog
+    url: https://community.esri.com/t5/developers-blog/bg-p/developers-blog
+    name: Esri developers blog
+  - type: GitHubOrganization
+    url: https://github.com/Esri
+    name: Esri on GitHub
+  - type: Postman
+    url: https://www.postman.com/esridevs/workspace/esri-arcgis-services
+    name: Esri ArcGIS Services public Postman workspace
+  - type: Pricing
+    url: https://location.arcgis.com/pricing/
+    name: ArcGIS Location Platform pricing
+  - type: SignUp
+    url: https://location.arcgis.com/sign-up/
+    name: Create a free ArcGIS Location Platform account
+  - type: TermsOfService
+    url: https://www.esri.com/en-us/legal/terms/full-master-agreement
+    name: Esri Master Agreement
+  - type: PrivacyPolicy
+    url: https://www.esri.com/en-us/privacy/overview
+    name: Esri privacy
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-07'
+  status: enriched
+  artifacts_added: 27
+  pass: local-v3

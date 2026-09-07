@@ -1,0 +1,38 @@
+generated: '2026-09-07'
+method: searched
+source: https://location.arcgis.com/help/release-notes/2026-07/
+note: >-
+  ArcGIS Location Platform publishes dated release notes under location.arcgis.com/help/release-notes/.
+  Only the current dated release page resolves — earlier month slugs (2026-06, 2026-04, 2026-03,
+  2026-01, 2025-11) all returned 404, and the page's "Prior releases" nav item exposes no archive
+  URL, so a historical window could not be captured. The individual ArcGIS SDKs and REST services
+  each carry their own release notes elsewhere in the docs.
+scheme: dated-monthly-release
+current_version: '2026-07'
+url: https://location.arcgis.com/help/release-notes/2026-07/
+entries:
+  - version: '2026-07'
+    date: '2026-07'
+    url: https://location.arcgis.com/help/release-notes/2026-07/
+    breaking:
+      - >-
+        API key (legacy) authentication has been fully retired. Only new-style API keys are
+        supported going forward.
+    additions:
+      - >-
+        ArcGIS Static Maps service promoted from beta to general availability.
+      - >-
+        MCP for ArcGIS Location Services (beta) — geocoding, routing, elevation and static maps
+        exposed to AI agents over Model Context Protocol.
+    updates:
+      - >-
+        ArcGIS GeoEnrichment service: annual US data update. Esri2024 retired; Esri 2026 added as
+        the default current-year hierarchy; Esri 2025 becomes the previous-year hierarchy.
+      - Documentation and FAQ updates.
+    highlights: >-
+      The release that made Esri an agent-callable provider: a hosted MCP endpoint plus the
+      static-maps GA that one of its tools depends on.
+related_changelogs:
+  - {name: ArcGIS Maps SDK for JavaScript, url: 'https://developers.arcgis.com/javascript/latest/'}
+  - {name: ArcGIS API for Python, url: 'https://developers.arcgis.com/python/latest/'}
+  - {name: GeoEnrichment service release notes, url: 'https://developers.arcgis.com/rest/geoenrichment/'}

@@ -1,0 +1,47 @@
+generated: '2026-09-07'
+method: searched
+source: https://developers.arcgis.com/rest/users-groups-and-items/webhooks/
+spec_type: none
+spec_note: >-
+  Esri publishes NO AsyncAPI document for any ArcGIS surface — the GitHub org (716 public repos)
+  returns zero results for asyncapi, and no /asyncapi.yaml is served on any ArcGIS host. What
+  Esri does publish is a documented webhook catalog on the ArcGIS REST API, captured below.
+  This artifact therefore carries a Webhooks pointer, not an AsyncAPI one.
+webhooks:
+  surface: ArcGIS organization webhooks (portal / sharing REST)
+  introduced: '10.7'
+  resource_url: 'https://[root]/portals/[portalID]/webhooks'
+  docs: https://developers.arcgis.com/rest/users-groups-and-items/webhooks/
+  operations:
+    - {name: Create Webhook, path: '/portals/[portalID]/webhooks/createWebhook', method: POST}
+    - {name: List Service Webhooks, path: '/portals/[portalID]/webhooks', method: GET}
+    - {name: Webhook settings, path: '/portals/[portalID]/webhooks/settings', method: GET}
+    - {name: Update webhook settings, path: '/portals/[portalID]/webhooks/settings/update', method: POST}
+    - {name: Get a specific webhook, path: '/portals/[portalID]/webhooks/[webhookID]', method: GET}
+    - {name: Activate webhook, path: '/portals/[portalID]/webhooks/[webhookID]/activate', method: POST}
+    - {name: Deactivate webhook, path: '/portals/[portalID]/webhooks/[webhookID]/deactivate', method: POST}
+    - {name: Delete webhook, path: '/portals/[portalID]/webhooks/[webhookID]/delete', method: POST}
+    - {name: Update webhook, path: '/portals/[portalID]/webhooks/[webhookID]/update', method: POST}
+    - {name: Notification status, path: '/portals/[portalID]/webhooks/[webhookID]/notificationStatus', method: GET}
+  subscription_shape:
+    fields: [id, accountId, payloadUrl, secret, isActive, name, config, ownerId, created, modified, events]
+    events_field: events
+    events_note: >-
+      Event triggers are expressed as path-like strings; "/" subscribes to all organization events.
+    secret: >-
+      A shared `secret` field is supported for payload signing; it is empty in Esri's published
+      sample.
+  delivery_policy:
+    deactivation_policy:
+      numberOfFailures: 5
+      daysInPast: 5
+      note: >-
+        Esri's published sample config deactivates a webhook after 5 delivery failures within 5
+        days. These are the documented sample values, configurable per webhook.
+  hosting_note: >-
+    Organization webhooks are configured against an ArcGIS Enterprise portal or an ArcGIS Online
+    organization — i.e. against the CUSTOMER's tenant, not against an Esri-operated multi-tenant
+    endpoint. There is no event surface on the ArcGIS Location Services hosts (geocode-api,
+    route-api, places-api, elevation-api) at all.
+  related:
+    - {name: Feature service webhooks, note: 'Hosted feature layers support their own webhook subscriptions in ArcGIS Online / Enterprise.'}

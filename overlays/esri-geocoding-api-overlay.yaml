@@ -1,0 +1,47 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Esri geocoding-api
+  version: 1.0.0
+x-generated: '2026-09-07'
+x-method: generated
+x-source: openapi/esri-geocoding-api-openapi.yml
+extends: openapi/esri-geocoding-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: esri
+      x-apievangelist-artifacts:
+        authentication: authentication/esri-authentication.yml
+        conventions: conventions/esri-conventions.yml
+        errors: errors/esri-problem-types.yml
+        lifecycle: lifecycle/esri-lifecycle.yml
+        rate-limits: rate-limits/esri-rate-limits.yml
+        plans: plans/esri-plans-pricing.yml
+        mcp: mcp/esri-mcp.yml
+        crosswalk: mcp/esri-tool-crosswalk.yml
+      x-error-envelope:
+        shape: '{"error": {"code": <int>, "message": <string>, "details": [<string>...]}}'
+        rfc9457: false
+        note: >-
+          Classic ArcGIS REST endpoints can return HTTP 200 carrying an error object.
+          Parse the body, not just the status line.
+      x-response-format:
+        parameter: f
+        recommended: json
+        note: The default response format is HTML; send f=json explicitly.
+      x-idempotency:
+        coverage: na
+        note: Read/compute surface only; no mutating operation to protect.
+      x-metering:
+        note: >-
+          Successful calls are metered against the ArcGIS Location Platform usage plan.
+          Retries are billable.
+        pricing: https://location.arcgis.com/pricing/
+  - target: $.components.securitySchemes.oauth2
+    update:
+      x-authorization-model: privileges
+      x-privileges-reference: https://developers.arcgis.com/documentation/security-and-authentication/reference/privileges/
+      x-discovery: https://www.arcgis.com/.well-known/oauth-authorization-server
+      description: >-
+        ArcGIS OAuth 2.0 declares no scopes. Authorization is granted by PRIVILEGES on the
+        account or developer credential, not by an OAuth scope string.

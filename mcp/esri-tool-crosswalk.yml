@@ -1,0 +1,103 @@
+generated: '2026-09-07'
+method: derived
+source: mcp/esri-mcp.yml + openapi/esri-geocoding-api-openapi.yml + openapi/esri-routing-api-openapi.yml + openapi/esri-auth-api-openapi.yml
+note: >-
+  Binds each published tool of MCP for ArcGIS Location Services (beta) to the backing
+  ArcGIS REST operation captured in this repo's OpenAPI. The live tools/list is auth-gated
+  (HTTP 401, "Token Required"), so bindings are made by name and documented semantics
+  against Esri's published tools reference, never by introspected inputSchema — confidence
+  is set accordingly. The captured OpenAPI covers only the geocoding, routing and OAuth
+  token surfaces, so the elevation, static-maps and GeoEnrichment tools have no counterpart
+  operation IN THIS REPO; that is a gap in our spec coverage, not an MCP-only capability of
+  Esri's, and each row says so.
+surfaces:
+  openapi:
+    files:
+      - openapi/esri-geocoding-api-openapi.yml
+      - openapi/esri-routing-api-openapi.yml
+      - openapi/esri-auth-api-openapi.yml
+    operations: 6
+    gated: false
+    note: Best-effort spec derived from Esri's published REST reference; Esri publishes no OpenAPI.
+  graphql:
+    endpoint: null
+    note: Esri publishes no GraphQL surface for ArcGIS Location Services.
+  mcp:
+    url: https://location-services-mcp.arcgis.com/beta/mcp
+    transport: Streamable HTTP
+    gated: true
+    gate_evidence: 'POST tools/list anonymous -> 401 {"error":{"code":499,"message":"Token Required."}}'
+crosswalk:
+  - tool: find_address_candidates
+    category: geocoding
+    rest: [findAddressCandidates]
+    binding: rest
+    confidence: high
+    note: >-
+      Tool name matches the ArcGIS World Geocoding Service operation verbatim
+      (/World/GeocodeServer/findAddressCandidates); inputs inherit that operation's query parameters.
+  - tool: reverse_geocode
+    category: geocoding
+    rest: [reverseGeocode]
+    binding: rest
+    confidence: high
+    note: Backed by /World/GeocodeServer/reverseGeocode; inherits the location + outSR parameters.
+  - tool: solve_route
+    category: routing
+    rest: [solveRoute]
+    binding: rest
+    confidence: high
+    note: >-
+      Backed by the World Routing Service /World/Route/solve operation. The tool exposes a
+      departure-time argument which maps to the operation's time parameters.
+  - tool: elevation_at_locations
+    category: elevation
+    rest: []
+    binding: unbound
+    confidence: low
+    note: >-
+      Backed by the ArcGIS Elevation service (elevation-api.arcgis.com), which is NOT in this
+      repo's captured OpenAPI. Esri publishes no machine-readable contract for it.
+  - tool: map_with_overlay
+    category: static-maps
+    rest: []
+    binding: unbound
+    confidence: low
+    note: >-
+      Backed by the ArcGIS Static Maps service, which went GA in the July 2026 release and is
+      not in this repo's captured OpenAPI.
+  - tool: get_topic_fields
+    category: data-enrichment
+    rest: []
+    binding: unbound
+    confidence: low
+    note: Backed by the ArcGIS GeoEnrichment service (geoenrich.arcgis.com); not in the captured OpenAPI.
+  - tool: describe_location
+    category: data-enrichment
+    rest: []
+    binding: unbound
+    confidence: low
+    note: >-
+      Backed by the GeoEnrichment enrich operation; used as the second stage after
+      get_topic_fields. Not in the captured OpenAPI.
+mcp_only: []
+rest_only:
+  - operation: geocodeAddresses
+    capability: geocoding
+    reason: >-
+      Batch geocoding has no MCP tool — the server exposes only single-address
+      find_address_candidates and reverse_geocode.
+  - operation: suggestAddresses
+    capability: geocoding
+    reason: Autocomplete/suggest has no MCP tool.
+  - operation: getOAuthToken
+    capability: auth
+    reason: >-
+      Token acquisition is a client-side prerequisite for the MCP server, not a tool it exposes.
+coverage:
+  tools_named: 7
+  tools_bound_to_rest: 3
+  tools_unbound: 4
+  mcp_only: 0
+  rest_operations_total: 6
+  rest_operations_with_a_tool: 3
