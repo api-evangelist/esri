@@ -1,0 +1,14 @@
+{
+  "repo": "esri",
+  "feeds": [
+    {
+      "source": "https://community.esri.com/t5/developers/ct-p/developers",
+      "feed_url": "https://community.esri.com/t5/developers/ct-p/developers",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-09-13T13:00:00Z"
+}
