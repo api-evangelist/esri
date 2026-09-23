@@ -1,9 +1,7 @@
 {
   "provider": "esri",
   "sources": [
-    "esri-auth-api-openapi.yml",
-    "esri-geocoding-api-openapi.yml",
-    "esri-routing-api-openapi.yml"
+    "_original/esri-openapi.yml"
   ],
   "outputs": [
     "esri-auth-api-openapi.yml",
@@ -14,10 +12,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "esri-auth-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "esri-geocoding-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "esri-routing-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "esri-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "esri-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "esri-geocoding-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "esri-routing-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

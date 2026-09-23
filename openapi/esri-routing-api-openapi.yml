@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Esri ArcGIS Location Services Auth Routing API
+  title: Esri ArcGIS Location Services Routing API
   version: 1.0.0
   description: Subset of Esri's ArcGIS REST location services. Covers the World Geocoding Service (findAddressCandidates, geocodeAddresses, reverseGeocode, suggest), the World Routing Service (solveRoute), and the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online apps. Best-effort spec derived from publicly documented surfaces; not exhaustive.
   contact:
