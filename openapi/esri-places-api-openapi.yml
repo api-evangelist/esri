@@ -128,40 +128,6 @@ paths:
           description: Place not found
 components:
   schemas:
-    Point:
-      type: object
-      properties:
-        x:
-          type: number
-          description: Longitude
-        y:
-          type: number
-          description: Latitude
-        spatialReference:
-          $ref: '#/components/schemas/SpatialReference'
-    PlaceSummary:
-      type: object
-      properties:
-        placeId:
-          type: string
-        name:
-          type: string
-        location:
-          $ref: '#/components/schemas/Point'
-        distance:
-          type: number
-          description: Distance from search point in meters
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'
-    Category:
-      type: object
-      properties:
-        categoryId:
-          type: string
-        label:
-          type: string
     Place:
       type: object
       properties:
@@ -213,6 +179,22 @@ components:
               type: string
             open:
               type: boolean
+    PlaceSummary:
+      type: object
+      properties:
+        placeId:
+          type: string
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/Point'
+        distance:
+          type: number
+          description: Distance from search point in meters
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
     PlacesResponse:
       type: object
       properties:
@@ -235,6 +217,24 @@ components:
           description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
         latestWkid:
           type: integer
+    Point:
+      type: object
+      properties:
+        x:
+          type: number
+          description: Longitude
+        y:
+          type: number
+          description: Latitude
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+    Category:
+      type: object
+      properties:
+        categoryId:
+          type: string
+        label:
+          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

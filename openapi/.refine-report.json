@@ -1,20 +1,33 @@
 {
   "provider": "esri",
   "sources": [
-    "_original/esri-openapi.yml"
+    "_original/esri-openapi.yml",
+    "esri-arcgis-geocoding-api-openapi.yml",
+    "esri-arcgis-places-api-openapi.yml",
+    "esri-arcgis-portal-api-openapi.yml"
   ],
   "outputs": [
     "esri-auth-api-openapi.yml",
     "esri-geocoding-api-openapi.yml",
-    "esri-routing-api-openapi.yml"
+    "esri-routing-api-openapi.yml",
+    "esri-places-api-openapi.yml",
+    "esri-portal-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "esri-arcgis-geocoding-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /findAddressCandidates get, /reverseGeocode get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "esri-arcgis-places-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /places/near-point get, /places/{placeId} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "esri-arcgis-portal-api-openapi.yml: previously refined output kept for 5 operation(s) no archived document covers (e.g. /community/users/{username} get, /content/items/{itemId} get, /content/users/{username}/items get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "esri-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "tag 'Geocoding' spans 2 source specs (esri-openapi.yml, esri-arcgis-geocoding-api-openapi.yml): per-path servers applied",
+    "superseded outputs removed: esri-arcgis-geocoding-api-openapi.yml, esri-arcgis-places-api-openapi.yml, esri-arcgis-portal-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 11 total)"
   ],
   "skipped": [
     "esri-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",

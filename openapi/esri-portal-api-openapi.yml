@@ -242,38 +242,15 @@ paths:
                 $ref: '#/components/schemas/SearchResults'
 components:
   schemas:
-    SearchResults:
+    GroupRef:
       type: object
       properties:
-        query:
+        id:
           type: string
-        total:
-          type: integer
-        start:
-          type: integer
-        num:
-          type: integer
-        nextStart:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
-    ItemCollection:
-      type: object
-      properties:
-        total:
-          type: integer
-        start:
-          type: integer
-        num:
-          type: integer
-        nextStart:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
+        title:
+          type: string
+        access:
+          type: string
     Item:
       type: object
       properties:
@@ -325,6 +302,31 @@ components:
             items:
               type: number
           description: Bounding box [[xmin,ymin],[xmax,ymax]]
+    Portal:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Portal organization ID
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        thumbnail:
+          type: string
+        culture:
+          type: string
+          description: Default language/locale (e.g., "en")
+        region:
+          type: string
+        created:
+          type: integer
+          description: Creation timestamp (milliseconds since epoch)
+        modified:
+          type: integer
     User:
       type: object
       properties:
@@ -358,40 +360,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupRef'
-    Portal:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Portal organization ID
-        name:
-          type: string
-        description:
-          type: string
-        url:
-          type: string
-          format: uri
-        thumbnail:
-          type: string
-        culture:
-          type: string
-          description: Default language/locale (e.g., "en")
-        region:
-          type: string
-        created:
-          type: integer
-          description: Creation timestamp (milliseconds since epoch)
-        modified:
-          type: integer
-    GroupRef:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        access:
-          type: string
     Error:
       type: object
       properties:
@@ -406,6 +374,38 @@ components:
               type: array
               items:
                 type: string
+    SearchResults:
+      type: object
+      properties:
+        query:
+          type: string
+        total:
+          type: integer
+        start:
+          type: integer
+        num:
+          type: integer
+        nextStart:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+    ItemCollection:
+      type: object
+      properties:
+        total:
+          type: integer
+        start:
+          type: integer
+        num:
+          type: integer
+        nextStart:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

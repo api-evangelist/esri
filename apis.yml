@@ -46,6 +46,8 @@ tags:
   - Mapping
   - Maps
   - Spatial Analysis
+  - Geocoding
+  - Routing
 created: '2025-01-14'
 modified: '2026-09-07'
 specificationVersion: '0.23'
@@ -125,9 +127,10 @@ apis:
     type: Documentation
   - url: https://developers.arcgis.com/javascript/latest/
     type: GettingStarted
-  description: The ArcGIS Maps SDK for JavaScript enables web developers to build compelling 2D and 3D
-    mapping applications with interactive visualizations, spatial analysis tools, geocoding, routing,
-    and portal content management for ArcGIS Online and ArcGIS Enterprise.
+  description: >-
+    The ArcGIS Maps SDK for JavaScript enables web developers to build compelling 2D and 3D mapping applications
+    with interactive visualizations, spatial analysis tools, geocoding, routing, and portal content management
+    for ArcGIS Online and ArcGIS Enterprise.
 - aid: esri:esri-arcgis-api-for-python
   name: ArcGIS API for Python
   tags:
@@ -147,76 +150,16 @@ apis:
     type: Reference
   - url: https://developers.arcgis.com/python/latest/guide/release-notes-242/
     type: ChangeLog
-  description: The ArcGIS API for Python provides a Pythonic interface for GIS capabilities including
-    data management, spatial analysis, geocoding, routing, and administration of ArcGIS Online and ArcGIS
-    Enterprise deployments.
-- aid: esri:esri-arcgis-geocoding-api
-  name: Esri Geocoding API
-  description: Address search, reverse geocoding, and batch geocoding
-  humanURL: https://developers.arcgis.com/
-  baseURL: https://www.arcgis.com/sharing/rest
-  tags:
-  - Geocoding
-  properties:
-  - type: OpenAPI
-    url: openapi/esri-arcgis-geocoding-api-openapi.yml
-  - type: Overlay
-    url: overlays/esri-arcgis-geocoding-api-overlay.yaml
-  - type: Portal
-    url: https://developers.arcgis.com/
-  - type: Documentation
-    url: https://developers.arcgis.com/documentation/
-  - type: Authentication
-    url: https://developers.arcgis.com/documentation/security-and-authentication/
-  - type: Reference
-    url: https://developers.arcgis.com/rest/
-- aid: esri:esri-arcgis-places-api
-  name: Esri Places API
-  description: Points of interest search and retrieval
-  humanURL: https://developers.arcgis.com/
-  baseURL: https://www.arcgis.com/sharing/rest
-  tags:
-  - Places
-  properties:
-  - type: OpenAPI
-    url: openapi/esri-arcgis-places-api-openapi.yml
-  - type: Overlay
-    url: overlays/esri-arcgis-places-api-overlay.yaml
-  - type: Portal
-    url: https://developers.arcgis.com/
-  - type: Documentation
-    url: https://developers.arcgis.com/documentation/
-  - type: Authentication
-    url: https://developers.arcgis.com/documentation/security-and-authentication/
-  - type: Reference
-    url: https://developers.arcgis.com/rest/
-- aid: esri:esri-arcgis-portal-api
-  name: Esri Portal API
-  description: Portal items, users, groups, and organizational management
-  humanURL: https://developers.arcgis.com/
-  baseURL: https://www.arcgis.com/sharing/rest
-  tags:
-  - Portal
-  properties:
-  - type: OpenAPI
-    url: openapi/esri-arcgis-portal-api-openapi.yml
-  - type: Overlay
-    url: overlays/esri-arcgis-portal-api-overlay.yaml
-  - type: Portal
-    url: https://developers.arcgis.com/
-  - type: Documentation
-    url: https://developers.arcgis.com/documentation/
-  - type: Authentication
-    url: https://developers.arcgis.com/documentation/security-and-authentication/
-  - type: Reference
-    url: https://developers.arcgis.com/rest/
+  description: >-
+    The ArcGIS API for Python provides a Pythonic interface for GIS capabilities including data management,
+    spatial analysis, geocoding, routing, and administration of ArcGIS Online and ArcGIS Enterprise deployments.
 - aid: esri:esri-arcgis-urban-api
   name: ArcGIS Urban API
-  description: A GraphQL API for ArcGIS Urban - urban models, plans, projects, branches, parcels, zones,
-    spaces, building types, indicators, metrics, overlays, viewpoints and scenario analyses (elevation
-    profile, line of sight, shadowcast, viewshed, suitability, sunlight). Anonymous introspection is open,
-    so the full schema is machine-readable without a credential; executing queries requires an ArcGIS
-    token.
+  description: >-
+    A GraphQL API for ArcGIS Urban - urban models, plans, projects, branches, parcels, zones, spaces,
+    building types, indicators, metrics, overlays, viewpoints and scenario analyses (elevation profile,
+    line of sight, shadowcast, viewshed, suitability, sunlight). Anonymous introspection is open, so the
+    full schema is machine-readable without a credential; executing queries requires an ArcGIS token.
   humanURL: https://developers.arcgis.com/arcgis-urban-api/
   baseURL: https://urban-api.arcgis.com/graphql
   tags:
@@ -234,9 +177,10 @@ apis:
     url: https://developers.arcgis.com/documentation/security-and-authentication/
 - aid: esri:esri-arcgis-mcp-location-services
   name: MCP for ArcGIS Location Services (beta)
-  description: Esri-hosted Model Context Protocol server exposing ArcGIS Location Services - geocoding,
-    reverse geocoding, routing, elevation, static maps and GeoEnrichment - as seven MCP tools. Remote
-    HTTP transport; an ArcGIS API key or OAuth 2.0 access token is required.
+  description: >-
+    Esri-hosted Model Context Protocol server exposing ArcGIS Location Services - geocoding, reverse geocoding,
+    routing, elevation, static maps and GeoEnrichment - as seven MCP tools. Remote HTTP transport; an
+    ArcGIS API key or OAuth 2.0 access token is required.
   humanURL: https://developers.arcgis.com/ai/mcp-arcgis-location-services/
   baseURL: https://location-services-mcp.arcgis.com/beta/mcp
   tags:
@@ -264,12 +208,13 @@ apis:
     url: https://developers.arcgis.com/ai/mcp-arcgis-location-services/tools/
 - aid: esri:esri-arcgis-ogc-services
   name: ArcGIS Server OGC Web Services
-  description: ArcGIS Server publishes any map or feature service through the OGC interfaces - WMS, WFS,
-    WCS, WMTS and KML. The two capabilities documents registered here were fetched from Esri's public
-    ArcGIS Server sample deployment on arcgisonline.com and are the self-describing contracts of that
-    interface; every production OGC endpoint is a customer deployment of the same product on the customer's
-    own domain.
-  humanURL: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-services-in-arcgis-server.htm
+  description: >-
+    ArcGIS Server publishes any map or feature service through the OGC interfaces - WMS, WFS, WCS, WMTS
+    and KML. The two capabilities documents registered here were fetched from Esri's public ArcGIS Server
+    sample deployment on arcgisonline.com and are the self-describing contracts of that interface; every
+    production OGC endpoint is a customer deployment of the same product on the customer's own domain.
+  humanURL: >-
+    https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-services-in-arcgis-server.htm
   baseURL: https://sampleserver6.arcgisonline.com/arcgis/services
   tags:
   - OGC
@@ -283,10 +228,53 @@ apis:
   - type: GetCapabilities
     url: openapi/esri-arcgis-arcgis-server-wfs-capabilities.xml
   - type: Documentation
-    url: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-services-in-arcgis-server.htm
+    url: >-
+      https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-services-in-arcgis-server.htm
   - type: Conformance
     url: conformance/esri-arcgis-conformance.yml
+- aid: esri:esri-places-api
+  name: Esri Places API
+  description: Points of interest search and retrieval
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Places
+  properties:
+  - type: OpenAPI
+    url: openapi/esri-places-api-openapi.yml
+  - type: Portal
+    url: https://developers.arcgis.com/
+  - type: Documentation
+    url: https://developers.arcgis.com/documentation/
+  - type: Authentication
+    url: https://developers.arcgis.com/documentation/security-and-authentication/
+  - type: Reference
+    url: https://developers.arcgis.com/rest/
+- aid: esri:esri-portal-api
+  name: Esri Portal API
+  description: Portal items, users, groups, and organizational management
+  humanURL: https://developers.arcgis.com/
+  baseURL: https://www.arcgis.com/sharing/rest
+  tags:
+  - Portal
+  properties:
+  - type: OpenAPI
+    url: openapi/esri-portal-api-openapi.yml
+  - type: Portal
+    url: https://developers.arcgis.com/
+  - type: Documentation
+    url: https://developers.arcgis.com/documentation/
+  - type: Authentication
+    url: https://developers.arcgis.com/documentation/security-and-authentication/
+  - type: Reference
+    url: https://developers.arcgis.com/rest/
 common:
+  - type: Overlay
+    url: overlays/esri-arcgis-geocoding-api-overlay.yaml
+  - type: Overlay
+    url: overlays/esri-arcgis-places-api-overlay.yaml
+  - type: Overlay
+    url: overlays/esri-arcgis-portal-api-overlay.yaml
   - type: AgenticAccess
     url: agentic-access/esri-agentic-access.yml
   - type: DomainSecurity

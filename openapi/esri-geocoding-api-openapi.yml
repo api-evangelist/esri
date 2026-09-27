@@ -1,13 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Esri ArcGIS Location Services Geocoding API
+  title: Esri Geocoding API
   version: 1.0.0
-  description: Subset of Esri's ArcGIS REST location services. Covers the World Geocoding Service (findAddressCandidates, geocodeAddresses, reverseGeocode, suggest), the World Routing Service (solveRoute), and the OAuth 2.0 token endpoint used by ArcGIS Platform / ArcGIS Online apps. Best-effort spec derived from publicly documented surfaces; not exhaustive.
-  contact:
-    name: Esri Developers
-    url: https://developers.arcgis.com/
-  license:
-    name: Proprietary
+  description: 'Operations tagged Geocoding across 2 of this provider''s published API definitions: esri-openapi.yml, esri-arcgis-geocoding-api-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://geocode-api.arcgis.com/arcgis/rest/services
   description: ArcGIS hosted geocoding base URL
@@ -15,9 +10,14 @@ servers:
   description: ArcGIS hosted routing base URL
 - url: https://www.arcgis.com
   description: ArcGIS Online / OAuth base URL
-security:
-- apiKeyAuth: []
-- oauth2: []
+- url: https://www.arcgis.com/sharing/rest
+  description: ArcGIS Online production
+- url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+  description: ArcGIS Geocoding Service
+- url: https://route.arcgis.com/arcgis/rest/services
+  description: ArcGIS Routing Service
+- url: https://places-api.arcgis.com/arcgis/rest/services/v1
+  description: ArcGIS Places Service
 tags:
 - name: Geocoding
 paths:
@@ -91,6 +91,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Candidate'
+      security:
+      - apiKeyAuth: []
+      - oauth2: []
+    servers:
+    - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted geocoding base URL
+    - url: https://route-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted routing base URL
+    - url: https://www.arcgis.com
+      description: ArcGIS Online / OAuth base URL
   /World/GeocodeServer/geocodeAddresses:
     post:
       tags:
@@ -124,6 +134,16 @@ paths:
       responses:
         '200':
           description: Batch geocoding results
+      security:
+      - apiKeyAuth: []
+      - oauth2: []
+    servers:
+    - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted geocoding base URL
+    - url: https://route-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted routing base URL
+    - url: https://www.arcgis.com
+      description: ArcGIS Online / OAuth base URL
   /World/GeocodeServer/reverseGeocode:
     get:
       tags:
@@ -170,6 +190,16 @@ paths:
       responses:
         '200':
           description: Address record for the coordinate
+      security:
+      - apiKeyAuth: []
+      - oauth2: []
+    servers:
+    - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted geocoding base URL
+    - url: https://route-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted routing base URL
+    - url: https://www.arcgis.com
+      description: ArcGIS Online / OAuth base URL
   /World/GeocodeServer/suggest:
     get:
       tags:
@@ -228,6 +258,165 @@ paths:
                           type: string
                         isCollection:
                           type: boolean
+      security:
+      - apiKeyAuth: []
+      - oauth2: []
+    servers:
+    - url: https://geocode-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted geocoding base URL
+    - url: https://route-api.arcgis.com/arcgis/rest/services
+      description: ArcGIS hosted routing base URL
+    - url: https://www.arcgis.com
+      description: ArcGIS Online / OAuth base URL
+  /findAddressCandidates:
+    get:
+      operationId: getFindAddressCandidates
+      summary: Geocode an address
+      description: Converts address text into geographic coordinates (forward geocoding). Returns a list of address candidates with location coordinates and match scores.
+      tags:
+      - Geocoding
+      servers:
+      - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+      parameters:
+      - name: SingleLine
+        in: query
+        schema:
+          type: string
+        description: Single-line address string (e.g., "380 New York St, Redlands, CA 92373")
+      - name: Address
+        in: query
+        schema:
+          type: string
+        description: Street address component
+      - name: City
+        in: query
+        schema:
+          type: string
+      - name: Region
+        in: query
+        schema:
+          type: string
+        description: State or province
+      - name: Postal
+        in: query
+        schema:
+          type: string
+      - name: CountryCode
+        in: query
+        schema:
+          type: string
+        description: ISO 3166-1 alpha-2 or alpha-3 country code
+      - name: maxLocations
+        in: query
+        schema:
+          type: integer
+          default: 1
+          maximum: 50
+      - name: outFields
+        in: query
+        schema:
+          type: string
+        description: Comma-separated list of output fields (* for all)
+      - name: outSR
+        in: query
+        schema:
+          type: integer
+          default: 4326
+        description: Output spatial reference WKID
+      - name: token
+        in: query
+        schema:
+          type: string
+      - name: f
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          - pjson
+          default: json
+      responses:
+        '200':
+          description: Address candidates returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeocodeResponse'
+      security:
+      - ApiKeyAuth: []
+      - OAuth2:
+        - openid
+      x-operation-id-source: normalized
+      x-operation-id-original: findAddressCandidates
+    servers:
+    - url: https://www.arcgis.com/sharing/rest
+      description: ArcGIS Online production
+    - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+      description: ArcGIS Geocoding Service
+    - url: https://route.arcgis.com/arcgis/rest/services
+      description: ArcGIS Routing Service
+    - url: https://places-api.arcgis.com/arcgis/rest/services/v1
+      description: ArcGIS Places Service
+  /reverseGeocode:
+    get:
+      operationId: getReverseGeocode
+      summary: Reverse geocode coordinates
+      description: Converts geographic coordinates to a readable address (reverse geocoding).
+      tags:
+      - Geocoding
+      servers:
+      - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+      parameters:
+      - name: location
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Point location as JSON (e.g., {"x":-117.2,"y":34.06,"spatialReference":{"wkid":4326}})
+      - name: distance
+        in: query
+        schema:
+          type: number
+        description: Distance in meters to search from the input location
+      - name: outSR
+        in: query
+        schema:
+          type: integer
+          default: 4326
+      - name: token
+        in: query
+        schema:
+          type: string
+      - name: f
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          - pjson
+          default: json
+      responses:
+        '200':
+          description: Reverse geocode result returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReverseGeocodeResponse'
+      security:
+      - ApiKeyAuth: []
+      - OAuth2:
+        - openid
+      x-operation-id-source: normalized
+      x-operation-id-original: reverseGeocode
+    servers:
+    - url: https://www.arcgis.com/sharing/rest
+      description: ArcGIS Online production
+    - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+      description: ArcGIS Geocoding Service
+    - url: https://route.arcgis.com/arcgis/rest/services
+      description: ArcGIS Routing Service
+    - url: https://places-api.arcgis.com/arcgis/rest/services/v1
+      description: ArcGIS Places Service
 components:
   schemas:
     Candidate:
@@ -258,6 +447,77 @@ components:
               type: number
             ymax:
               type: number
+    GeocodeCandidate:
+      type: object
+      properties:
+        address:
+          type: string
+        location:
+          $ref: '#/components/schemas/Point'
+        score:
+          type: number
+          description: Match quality score (0-100)
+        attributes:
+          type: object
+          additionalProperties: true
+    SpatialReference:
+      type: object
+      properties:
+        wkid:
+          type: integer
+          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
+        latestWkid:
+          type: integer
+    Point:
+      type: object
+      properties:
+        x:
+          type: number
+          description: Longitude
+        y:
+          type: number
+          description: Latitude
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+    GeocodeResponse:
+      type: object
+      properties:
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeocodeCandidate'
+    ReverseGeocodeResponse:
+      type: object
+      properties:
+        address:
+          type: object
+          properties:
+            Match_addr:
+              type: string
+            LongLabel:
+              type: string
+            ShortLabel:
+              type: string
+            Addr_type:
+              type: string
+            AddNum:
+              type: string
+            Address:
+              type: string
+            City:
+              type: string
+            Region:
+              type: string
+            RegionAbbr:
+              type: string
+            Postal:
+              type: string
+            CountryCode:
+              type: string
+        location:
+          $ref: '#/components/schemas/Point'
   securitySchemes:
     apiKeyAuth:
       type: apiKey
@@ -274,3 +534,23 @@ components:
           authorizationUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
           tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
           scopes: {}
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: token
+      description: ArcGIS API key or token
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
+          tokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token
+          scopes:
+            openid: OpenID Connect identity
+            urn:arcgis:scope:root: Full access to ArcGIS Online
+externalDocs:
+  description: ArcGIS REST API Reference
+  url: https://developers.arcgis.com/rest/
+x-refined-from:
+- esri-openapi.yml
+- esri-arcgis-geocoding-api-openapi.yml
