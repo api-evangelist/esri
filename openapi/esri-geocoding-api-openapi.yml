@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: Esri Geocoding API
   version: 1.0.0
-  description: 'Operations tagged Geocoding across 2 of this provider''s published API definitions: esri-openapi.yml, esri-arcgis-geocoding-api-openapi.yml. Each path carries the servers of the definition it was published in.'
+  description: 'Operations tagged Geocoding across 2 of this provider''s published API definitions: esri-openapi.yml, esri-geocoding-api-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://geocode-api.arcgis.com/arcgis/rest/services
   description: ArcGIS hosted geocoding base URL
@@ -269,6 +269,15 @@ paths:
     - url: https://www.arcgis.com
       description: ArcGIS Online / OAuth base URL
   /findAddressCandidates:
+    servers:
+    - url: https://www.arcgis.com/sharing/rest
+      description: ArcGIS Online production
+    - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
+      description: ArcGIS Geocoding Service
+    - url: https://route.arcgis.com/arcgis/rest/services
+      description: ArcGIS Routing Service
+    - url: https://places-api.arcgis.com/arcgis/rest/services/v1
+      description: ArcGIS Places Service
     get:
       operationId: getFindAddressCandidates
       summary: Geocode an address
@@ -348,6 +357,7 @@ paths:
         - openid
       x-operation-id-source: normalized
       x-operation-id-original: findAddressCandidates
+  /reverseGeocode:
     servers:
     - url: https://www.arcgis.com/sharing/rest
       description: ArcGIS Online production
@@ -357,7 +367,6 @@ paths:
       description: ArcGIS Routing Service
     - url: https://places-api.arcgis.com/arcgis/rest/services/v1
       description: ArcGIS Places Service
-  /reverseGeocode:
     get:
       operationId: getReverseGeocode
       summary: Reverse geocode coordinates
@@ -408,15 +417,6 @@ paths:
         - openid
       x-operation-id-source: normalized
       x-operation-id-original: reverseGeocode
-    servers:
-    - url: https://www.arcgis.com/sharing/rest
-      description: ArcGIS Online production
-    - url: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer
-      description: ArcGIS Geocoding Service
-    - url: https://route.arcgis.com/arcgis/rest/services
-      description: ArcGIS Routing Service
-    - url: https://places-api.arcgis.com/arcgis/rest/services/v1
-      description: ArcGIS Places Service
 components:
   schemas:
     Candidate:
@@ -447,19 +447,6 @@ components:
               type: number
             ymax:
               type: number
-    GeocodeCandidate:
-      type: object
-      properties:
-        address:
-          type: string
-        location:
-          $ref: '#/components/schemas/Point'
-        score:
-          type: number
-          description: Match quality score (0-100)
-        attributes:
-          type: object
-          additionalProperties: true
     SpatialReference:
       type: object
       properties:
@@ -468,26 +455,6 @@ components:
           description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
         latestWkid:
           type: integer
-    Point:
-      type: object
-      properties:
-        x:
-          type: number
-          description: Longitude
-        y:
-          type: number
-          description: Latitude
-        spatialReference:
-          $ref: '#/components/schemas/SpatialReference'
-    GeocodeResponse:
-      type: object
-      properties:
-        spatialReference:
-          $ref: '#/components/schemas/SpatialReference'
-        candidates:
-          type: array
-          items:
-            $ref: '#/components/schemas/GeocodeCandidate'
     ReverseGeocodeResponse:
       type: object
       properties:
@@ -518,6 +485,39 @@ components:
               type: string
         location:
           $ref: '#/components/schemas/Point'
+    Point:
+      type: object
+      properties:
+        x:
+          type: number
+          description: Longitude
+        y:
+          type: number
+          description: Latitude
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+    GeocodeResponse:
+      type: object
+      properties:
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeocodeCandidate'
+    GeocodeCandidate:
+      type: object
+      properties:
+        address:
+          type: string
+        location:
+          $ref: '#/components/schemas/Point'
+        score:
+          type: number
+          description: Match quality score (0-100)
+        attributes:
+          type: object
+          additionalProperties: true
   securitySchemes:
     apiKeyAuth:
       type: apiKey
@@ -553,4 +553,4 @@ externalDocs:
   url: https://developers.arcgis.com/rest/
 x-refined-from:
 - esri-openapi.yml
-- esri-arcgis-geocoding-api-openapi.yml
+- esri-geocoding-api-openapi.yml
