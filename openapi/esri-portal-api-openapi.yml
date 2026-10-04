@@ -242,6 +242,20 @@ paths:
                 $ref: '#/components/schemas/SearchResults'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                type: string
     User:
       type: object
       properties:
@@ -275,6 +289,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupRef'
+    ItemCollection:
+      type: object
+      properties:
+        total:
+          type: integer
+        start:
+          type: integer
+        num:
+          type: integer
+        nextStart:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
     Item:
       type: object
       properties:
@@ -326,6 +355,23 @@ components:
             items:
               type: number
           description: Bounding box [[xmin,ymin],[xmax,ymax]]
+    SearchResults:
+      type: object
+      properties:
+        query:
+          type: string
+        total:
+          type: integer
+        start:
+          type: integer
+        num:
+          type: integer
+        nextStart:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
     Portal:
       type: object
       properties:
@@ -351,52 +397,6 @@ components:
           description: Creation timestamp (milliseconds since epoch)
         modified:
           type: integer
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-            details:
-              type: array
-              items:
-                type: string
-    ItemCollection:
-      type: object
-      properties:
-        total:
-          type: integer
-        start:
-          type: integer
-        num:
-          type: integer
-        nextStart:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
-    SearchResults:
-      type: object
-      properties:
-        query:
-          type: string
-        total:
-          type: integer
-        start:
-          type: integer
-        num:
-          type: integer
-        nextStart:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
     GroupRef:
       type: object
       properties:

@@ -447,14 +447,15 @@ components:
               type: number
             ymax:
               type: number
-    SpatialReference:
+    GeocodeResponse:
       type: object
       properties:
-        wkid:
-          type: integer
-          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
-        latestWkid:
-          type: integer
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeocodeCandidate'
     ReverseGeocodeResponse:
       type: object
       properties:
@@ -496,15 +497,6 @@ components:
           description: Latitude
         spatialReference:
           $ref: '#/components/schemas/SpatialReference'
-    GeocodeResponse:
-      type: object
-      properties:
-        spatialReference:
-          $ref: '#/components/schemas/SpatialReference'
-        candidates:
-          type: array
-          items:
-            $ref: '#/components/schemas/GeocodeCandidate'
     GeocodeCandidate:
       type: object
       properties:
@@ -518,6 +510,14 @@ components:
         attributes:
           type: object
           additionalProperties: true
+    SpatialReference:
+      type: object
+      properties:
+        wkid:
+          type: integer
+          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
+        latestWkid:
+          type: integer
   securitySchemes:
     apiKeyAuth:
       type: apiKey
