@@ -5,7 +5,7 @@ description: >-
   Service, including the token you need first and the traps that make ArcGIS look like it
   succeeded when it did not.
 api: openapi/esri-geocoding-api-openapi.yml
-operations: [getOAuthToken, findAddressCandidates, suggestAddresses]
+operations: [getOAuthToken, getFindAddressCandidates, suggestAddresses]
 generated: '2026-09-07'
 method: generated
 source: openapi/esri-geocoding-api-openapi.yml + https://developers.arcgis.com/rest/geocode/

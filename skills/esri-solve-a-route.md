@@ -4,7 +4,7 @@ description: >-
   Get turn-by-turn directions and travel time between stops using the Esri ArcGIS World Routing
   Service, chaining geocoding first when you start from addresses rather than coordinates.
 api: openapi/esri-routing-api-openapi.yml
-operations: [getOAuthToken, findAddressCandidates, solveRoute]
+operations: [getOAuthToken, getFindAddressCandidates, solveRoute]
 generated: '2026-09-07'
 method: generated
 source: openapi/esri-routing-api-openapi.yml + https://developers.arcgis.com/rest/routing/

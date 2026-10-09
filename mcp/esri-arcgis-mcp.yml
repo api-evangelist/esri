@@ -111,3 +111,14 @@ docs:
   get_started: https://developers.arcgis.com/ai/mcp-arcgis-location-services/get-started/
   tools: https://developers.arcgis.com/ai/mcp-arcgis-location-services/tools/
   early_adopter: https://earlyadopter.esri.com/key/MCPsupportforArcGISLocationServices
+rfc9728:
+  endpoint: https://location-services-mcp.arcgis.com/beta/mcp
+  metadata_url: https://location-services-mcp.arcgis.com/.well-known/oauth-protected-resource
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://location-services-mcp.arcgis.com/
+    authorization_servers:
+    - https://arcgis.com/
