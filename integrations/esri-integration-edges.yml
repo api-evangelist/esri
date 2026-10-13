@@ -1,0 +1,45 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://aws.amazon.com/marketplace/
+- https://azuremarketplace.microsoft.com/
+marketplace_apps: []
+edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=98a100e1-04d1-40b2-aa8a-619411d037d2
+  listing_count: 5
+  apps:
+  - ArcGIS Online
+  - Site Scan for ArcGIS
+  - ArcGIS Business Analyst Web App
+  - ArcGIS Telecom Management
+  - ArcGIS Online for Telecom
+  seller_name: Esri
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Esri%2C%20Inc.
+  listing_count: 10
+  apps:
+  - ArcGIS for Microsoft Planetary Computer
+  - ArcGIS Indoors Maps
+  - ArcGIS for Microsoft Fabric
+  - ArcGIS Pro
+  - ArcGIS System
+  seller_name: Esri, Inc.
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
