@@ -3,6 +3,7 @@ method: searched
 checked:
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
+- https://marketplace.visualstudio.com/vscode
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -2589,3 +2590,23 @@ edges:
     specification for serving digital maps over the web using cached image tiles. When you create a cached map or
     image service using ArcG
   evidence_file: https://github.com/api-evangelist/esri/blob/main/evidence/compatibility/esri-ogc-3.md
+- partner_name: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
+  partner_match: aggregator
+  type: marketplace
+  marketplace: vscode
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.visualstudio.com/publishers/Esri
+  listing_count: 1
+  apps:
+  - ArcGIS API for JavaScript Snippets
+  publisher_name: Esri
+  badges:
+  - Verified publisher
+  - Verified domain
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+source:
+- https://marketplace.visualstudio.com/vscode
