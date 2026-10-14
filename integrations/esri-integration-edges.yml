@@ -43,3 +43,2549 @@ edges:
   seller_name: Esri, Inc.
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://portal.ogc.org/public_ogc/compliance/implementing.php?org_match=Esri
+  conformance:
+    organization: Esri
+    domain: esri.com
+    products: 207
+    compliant_specs:
+    - Catalogue Service Implementation Specification 2.0.2
+    - GeoPackage Encoding Standard - With Corrigendum 1.0.1
+    - GeoPackage Encoding Standard - With Corrigendum 1.0.1 Early Implementer
+    - GeoPackage Encoding Standard 1.2
+    - GeoPackage Encoding Standard 1.2 Early Implementer
+    - GeoRSS Encoding Standard 1.0 Early Implementer
+    - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1'
+    - KML 2.2.0
+    - 'OGC API - Features - Part 1: Core 1.0'
+    - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0'
+    - Simple Features Implementation Specification for OLE/COM 1.1
+    - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+    - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+    - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+    - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+    - Web Feature Service 1.0.0
+    - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+    - Web Map Service (WMS) Implementation Specification 1.3.0
+    - Web Map Service 1.1.1
+    - Web Map Service Client (WMS) Implementation Specification 1.3.0
+    implementing_specs:
+    - 'CSW-ebRIM Registry Service - Part 1: ebRIM profile of CSW 1.0.0'
+    - Catalog Interface 1.0
+    - Catalog Interface 1.1.1
+    - Catalogue Service Implementation Specification 2.0.2
+    - Catalogue Services - ebRIM (ISO/TS 15000-3) profile of CSW 1.0.0
+    - City Geography Markup Language (CityGML) Encoding Standard 1.0
+    - City Geography Markup Language (CityGML) Encoding Standard 2.0
+    - Filter Encoding 1.0
+    - Filter Encoding 2.0 Encoding Standard 2.0
+    - Filter Encoding Implementation Specification 1.1
+    - GeoPackage Encoding Standard - With Corrigendum 1.0.1
+    - GeoPackage Encoding Standard 1.0
+    - GeoPackage Encoding Standard 1.1
+    - GeoPackage Encoding Standard 1.2
+    - GeoPackage Encoding Standard 1.3
+    - GeoPackage Encoding Standard 1.3.1
+    - GeoPackage Encoding Standard – With Corrigendum 1.0.1
+    - GeoPackage Extension for Tiled Gridded Coverage Data 1.0
+    - GeoRSS, An Introduction to 1.0.0
+    - Geography Markup Language (GML) - Extended schemas and encoding rules 3.3
+    - Geography Markup Language (GML) Encoding Specification 3.0
+    - Geography Markup Language (GML) Encoding Specification 3.1.1
+    - Geography Markup Language (GML) Encoding Standard - with corrigendum 3.2.2
+    - Geography Markup Language (GML) Encoding Standard 3.2.1
+    - Geography Markup Language 2.1.1
+    - Geography Markup Language 2.1.2
+    - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1'
+    - Indexed 3d Scene Layer (I3S) and Scene Layer Package Format Specification 1.0
+    - Indexed 3d Scene Layer (I3S) and Scene Layer Package Format Specification 1.1
+    - KML 2.1 Reference - An OGC Best Practice 2.1.0
+    - KML 2.2.0
+    - KML 2.3 1.0
+    - 'Location Service (OpenLS) Implementation Specification: Core Services 1.1'
+    - 'Location Services (OpenLS): Core Services [Parts 1-5] 1.0'
+    - 'OGC API - Features - Part 1: Core 1.0'
+    - 'OGC API - Features - Part 1: Core corrigendum 1.0.1'
+    - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0'
+    - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference corrigendum 1.0.1'
+    - OGC® GeoPackage Encoding Standard - with Corrigendum 1.2.1
+    - PDF Geo-registration Encoding Best Practice Version 2.2 1.1
+    - Sensor Observation Service 1.0.0
+    - Simple Features Implementation Specification for OLE/COM 1.1
+    - Styled Layer Descriptor (SLD) Implementation Specification 1.0
+    - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+    - WCS Core 2.1 2.1
+    - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+    - Web Coverage Service (WCS) Implementation Specification 1.1.0
+    - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+    - Web Coverage Service (WCS) Implementation Standard 1.1.2
+    - Web Coverage Service Interface Standard – Transaction Extension 2.0
+    - Web Feature Service (WFS) Implementation Specification 1.1.0
+    - Web Feature Service 1.0.0
+    - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+    - Web Feature Service 2.0 Interface Standard - With Corrigendum 2.0.2
+    - Web Map Context Documents 1.0
+    - Web Map Context Implementation Specification 1.1
+    - Web Map Service (Recommendation Paper) 1.3.0
+    - Web Map Service (WMS) Implementation Specification 1.3.0
+    - Web Map Service 1.0
+    - Web Map Service 1.1
+    - Web Map Service 1.1.1
+    - Web Map Service Client (WMS) Implementation Specification 1.3.0
+    - Web Map Tile Service Implementation Standard 1.0.0
+    - Web Processing Service 1.0.0
+    - Web Service Common Implementation Specification 1.0
+    - Web Service Common Implementation Specification 1.1.0
+    products_list:
+    - name: ArcIMS
+      version: '3.0'
+      type: Server
+      pid: '46'
+      valid_until: null
+      compliant: []
+    - name: Spatial Database Engine for Informix
+      version: 3.0.2
+      type: Client (Desktop, Mobile, or Web)
+      pid: '75'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (1999-12-23)'
+    - name: Spatial Database Engine for DB2 Datajoiner
+      version: 3.0.2
+      type: Client (Desktop, Mobile, or Web)
+      pid: '76'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (1999-12-23)'
+    - name: Spatial Database Engine for Oracle
+      version: 3.0.2
+      type: Client (Desktop, Mobile, or Web)
+      pid: '77'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (1999-12-23)'
+    - name: ArcSDE for DB2
+      version: '8.1'
+      type: Client and Server
+      pid: '78'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2001-06-21)'
+    - name: ArcSDE for Informix
+      version: '8.1'
+      type: Client and Server
+      pid: '79'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2001-06-21)'
+    - name: ArcGIS
+      version: '8.1'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '80'
+      valid_until: '2027-06-22'
+      compliant:
+      - Simple Features Implementation Specification for OLE/COM 1.1 (2001-06-21)
+    - name: ArcIMS
+      version: '4.0'
+      type: Server
+      pid: '194'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS
+      version: 4.0,4.0.1
+      type: Server
+      pid: '224'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS Metadata server
+      version: 4.0,4.0.1
+      type: Client and Server
+      pid: '227'
+      valid_until: null
+      compliant: []
+    - name: GIS Portal Tool Kit
+      version: '2.0'
+      type: Client and Server
+      pid: '367'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS Metadata Server
+      version: '9.0'
+      type: Client and Server
+      pid: '368'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS
+      version: '9.0'
+      type: Server
+      pid: '369'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service 1.1.1 (2005-08-25)
+    - name: ArcIMS
+      version: '9.1'
+      type: Client and Server
+      pid: '370'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service 1.1.1 (2005-08-25)
+    - name: ArcGIS Server
+      version: '9.0'
+      type: Server
+      pid: '371'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS Interoperability Tool Bar Add-on
+      version: '8.3'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '372'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS
+      version: '9.0'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '373'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS Data Interoperability Extension
+      version: '9.0'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '375'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS Data Delivery Extension
+      version: '9.0'
+      type: Server
+      pid: '376'
+      valid_until: null
+      compliant: []
+    - name: ArcExplorer Web
+      version: ''
+      type: Client (Desktop, Mobile, or Web)
+      pid: '377'
+      valid_until: null
+      compliant: []
+    - name: ArcSDE for Oracle
+      version: '9.0'
+      type: Server
+      pid: '378'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for SQL Server
+      version: '9.0'
+      type: Server
+      pid: '379'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for Oracle
+      version: '9.1'
+      type: Server
+      pid: '422'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for SQL Server
+      version: '9.1'
+      type: Server
+      pid: '423'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for Informix
+      version: '9.0'
+      type: Server
+      pid: '424'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for Informix
+      version: '9.1'
+      type: Server
+      pid: '425'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for DB2
+      version: '9.0'
+      type: Server
+      pid: '426'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcSDE for DB2
+      version: '9.1'
+      type: Server
+      pid: '427'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2005-08-22)'
+    - name: ArcIMS
+      version: 9.1 SP1
+      type: Server
+      pid: '449'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Feature Service 1.0.0 (2005-11-01)
+    - name: ArcIMS
+      version: 9.0, 9.1
+      type: Server
+      pid: '467'
+      valid_until: null
+      compliant: []
+    - name: ArcWeb Services
+      version: '2006'
+      type: Server
+      pid: '468'
+      valid_until: null
+      compliant: []
+    - name: ArcIMS
+      version: '9.2'
+      type: Server
+      pid: '537'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Feature Service 1.0.0 (2006-10-24)
+      - Web Map Service 1.1.1 (2006-10-24)
+    - name: 'ArcGIS Server Enterprise: DB2 - Spatial Types and Functions'
+      version: '9.2'
+      type: Server
+      pid: '538'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: 'ArcGIS Server Enterprise: Informix - Spatial Types and Functions'
+      version: '9.2'
+      type: Server
+      pid: '539'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: 'ArcGIS Server Enterprise: Oracle - Spatial Types and Functions'
+      version: '9.2'
+      type: Server
+      pid: '540'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: 'ArcGIS Server Enterprise: Oracle - Binary Schema'
+      version: '9.2'
+      type: Server
+      pid: '541'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: 'ArcGIS Server Enterprise: SQL - Binary Schema'
+      version: '9.2'
+      type: Server
+      pid: '542'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: 'ArcGIS Server Enterprise: SQL Server Express - Binary Schema'
+      version: '9.2'
+      type: Server
+      pid: '543'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2006-10-24)'
+    - name: ArcGIS Server
+      version: '9.2'
+      type: Server
+      pid: '544'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service 1.1.1 (2006-10-24)
+    - name: ArcGIS Server
+      version: 9.3 SP1
+      type: Server
+      pid: '635'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Feature Service 1.0.0 (2009-06-22)
+    - name: ArcGIS Explorer
+      version: ''
+      type: Client (Desktop, Mobile, or Web)
+      pid: '636'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS
+      version: '9.2'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '640'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS
+      version: '9.3'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '641'
+      valid_until: null
+      compliant: []
+    - name: GIS Portal Toolkit
+      version: '3.1'
+      type: Client and Server
+      pid: '642'
+      valid_until: null
+      compliant: []
+    - name: ArcSDE for Informix
+      version: '9.3'
+      type: Server
+      pid: '670'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2008-10-09)'
+    - name: ArcSDE for Oracle
+      version: '9.3'
+      type: Server
+      pid: '671'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2008-10-09)'
+    - name: ArcSDE for Postgres
+      version: '9.3'
+      type: Server
+      pid: '672'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2008-10-09)'
+    - name: ArcSDE for SQL Server
+      version: '9.3'
+      type: Server
+      pid: '673'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2008-10-09)'
+    - name: ArcGIS Server for DB2
+      version: '9.3'
+      type: Server
+      pid: '674'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2008-10-09)'
+    - name: ArcIMS
+      version: '9.3'
+      type: Server
+      pid: '675'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Feature Service 1.0.0 (2008-10-09)
+      - Web Map Service 1.1.1 (2008-10-09)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2008-10-09)
+    - name: GIS Portal Tool Kit
+      version: '9.3'
+      type: Client and Server
+      pid: '698'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS Server Enterprise (ArcSDE) for DB2 - Spatial Types and Functions
+      version: 9.3.1
+      type: Server
+      pid: '745'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for Informix - Spatial Types and Function
+      version: 9.3.1
+      type: Server
+      pid: '746'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for Oracle - Spatial Types and Functions
+      version: 9.3.1
+      type: Server
+      pid: '747'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for Oracle - Binary Schema
+      version: 9.3.1
+      type: Server
+      pid: '748'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for Postgresql - Spatial Types and Functi
+      version: 9.3.1
+      type: Server
+      pid: '749'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for SQL Server - Binary Schema
+      version: 9.3.1
+      type: Server
+      pid: '750'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2009-07-06)'
+    - name: ArcGIS Server
+      version: 9.3.1
+      type: Server
+      pid: '751'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Feature Service 1.0.0 (2009-07-01)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2009-07-01)
+    - name: ArcGIS Server Geoportal Extension
+      version: 9.3.1
+      type: Client and Server
+      pid: '753'
+      valid_until: '2027-06-22'
+      compliant:
+      - Catalogue Service Implementation Specification 2.0.2 (2009-07-01)
+    - name: ArcGIS Server
+      version: '9.3'
+      type: Server
+      pid: '789'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2008-10-09)
+      - Web Map Service 1.1.1 (2008-10-09)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2008-10-09)
+    - name: ArcGIS Server Geoportal Extension
+      version: '10.0'
+      type: Server
+      pid: '862'
+      valid_until: '2027-06-22'
+      compliant:
+      - Catalogue Service Implementation Specification 2.0.2 (2010-06-01)
+    - name: ArcGIS Server Enterprise (ArcSDE) for Oracle
+      version: '10.0'
+      type: Server
+      pid: '863'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2010-06-01)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for Informix
+      version: '10.0'
+      type: Server
+      pid: '864'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2010-06-01)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for PostgreSQL
+      version: '10.0'
+      type: Server
+      pid: '865'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2010-06-01)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for DB2
+      version: '10.0'
+      type: Server
+      pid: '866'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2010-06-01)'
+    - name: ArcGIS Server Enterprise (ArcSDE) for SQL Server
+      version: '10.0'
+      type: Server
+      pid: '867'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2010-06-01)'
+    - name: ArcGIS Server
+      version: '10.0'
+      type: Server
+      pid: '868'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2010-06-01)
+      - Web Feature Service 1.0.0 (2010-06-01)
+      - Web Map Service 1.1.1 (2010-06-01)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2010-06-01)
+    - name: ArcGIS
+      version: '10'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '907'
+      valid_until: null
+      compliant: []
+    - name: Esri Geoportal Server
+      version: 1.2.4
+      type: Server
+      pid: '921'
+      valid_until: '2027-06-22'
+      compliant:
+      - Catalogue Service Implementation Specification 2.0.2 (2013-08-01)
+    - name: ArcGIS for Server
+      version: '10.1'
+      type: Server
+      pid: '1066'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2012-06-26)
+      - Web Feature Service 1.0.0 (2012-06-26)
+      - Web Map Service 1.1.1 (2012-06-26)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2012-06-26)
+    - name: Esri Geoportal Server
+      version: 1.2.2
+      type: Server
+      pid: '1067'
+      valid_until: '2027-06-22'
+      compliant:
+      - Catalogue Service Implementation Specification 2.0.2 (2012-06-26)
+    - name: ArcGIS for Server Enterprise (ArcSDE) for Oracle
+      version: '10.1'
+      type: Server
+      pid: '1068'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2012-06-26)'
+    - name: ArcGIS for Server Enterprise (ArcSDE) for Informix
+      version: '10.1'
+      type: Server
+      pid: '1069'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2012-06-26)'
+    - name: ArcGIS for Server Enterprise (ArcSDE) for DB2
+      version: '10.1'
+      type: Server
+      pid: '1070'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2012-06-26)'
+    - name: ArcGIS for Server Enterprise (ArcSDE) for PostgreSQL
+      version: '10.1'
+      type: Server
+      pid: '1071'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2012-06-26)'
+    - name: ArcGIS for Server Enterprise (ArcSDE) for SQL Server
+      version: '10.1'
+      type: Server
+      pid: '1072'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2012-06-26)'
+    - name: ArcGIS
+      version: '10.1'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1087'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS for Server
+      version: '10.2'
+      type: Server
+      pid: '1142'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2013-07-10)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2013-07-10)
+      - Web Feature Service 1.0.0 (2013-08-12)
+      - Web Map Service 1.1.1 (2013-07-10)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2013-07-10)
+    - name: ArcGIS for Server - Netezza Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1144'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - SQL Server Binary Schema
+      version: '10.2'
+      type: Server
+      pid: '1145'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - SQLite Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1146'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - PostgreSQL Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1147'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - DB2 Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1148'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - Informix Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1149'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - Oracle Binary Schema
+      version: '10.2'
+      type: Server
+      pid: '1150'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - Oracle Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1156'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-07-10)'
+    - name: ArcGIS for Server - Teradata Spatial Types and Functions
+      version: '10.2'
+      type: Server
+      pid: '1157'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2013-08-12)'
+    - name: ArcGIS
+      version: 10.2.1
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1213'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS
+      version: 10.2.2
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1214'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS for Server
+      version: 10.2.1
+      type: Server
+      pid: '1217'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS for Server
+      version: 10.2.2
+      type: Server
+      pid: '1231'
+      valid_until: null
+      compliant: []
+    - name: Esri Geoportal Server
+      version: 1.2.5
+      type: Server
+      pid: '1238'
+      valid_until: '2027-06-22'
+      compliant:
+      - Catalogue Service Implementation Specification 2.0.2 (2014-09-15)
+    - name: ArcGIS 10.3 for Server
+      version: ''
+      type: Server
+      pid: '1251'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2015-01-06)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2015-01-06)
+      - Web Feature Service 1.0.0 (2015-01-06)
+      - Web Map Service 1.1.1 (2015-01-06)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2015-01-06)
+    - name: ArcGIS 10.3 for Server - Oracle Binary Schema
+      version: ''
+      type: Server
+      pid: '1259'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - Oracle Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1260'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - Informix Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1261'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - DB2 Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1262'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - PostgreSQL Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1263'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - SQL Server Binary Schema
+      version: ''
+      type: Server
+      pid: '1264'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - Netezza Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1265'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - SQLite Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1266'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS 10.3 for Server - Teradata Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1267'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2015-01-06)'
+    - name: ArcGIS for Desktop
+      version: '10.3'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1269'
+      valid_until: null
+      compliant: []
+    - name: Esri Geoportal server
+      version: 1.2.6
+      type: Server
+      pid: '1307'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS 10.4 for Server
+      version: ''
+      type: Server
+      pid: '1327'
+      valid_until: '2027-06-22'
+      compliant:
+      - KML 2.2.0 (2016-02-12)
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2016-02-12)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2016-02-12)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2016-02-12)
+      - Web Feature Service 1.0.0 (2016-02-12)
+      - Web Map Service 1.1.1 (2016-02-12)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2016-02-12)
+    - name: ArcGIS 10.4 for Server - Oracle Binary Schema
+      version: ''
+      type: Server
+      pid: '1328'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - Oracle Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1329'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - Informix Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1330'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - DB2 Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1331'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - PostgreSQL Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1332'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - SQL Server Binary Schema
+      version: ''
+      type: Server
+      pid: '1333'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - Netezza Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1334'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - SQLite Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1335'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - Teradata Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1336'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: ArcGIS 10.4 for Server - SAP HANA Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1337'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-02-18)'
+    - name: arcgis for server
+      version: 10.3.1
+      type: Server
+      pid: '1340'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS for Desktop
+      version: '10.4'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1344'
+      valid_until: null
+      compliant: []
+    - name: 易智瑞地理信息系统服务器软件10.4.1 – DB2空间类型与函数
+      version: ''
+      type: Server
+      pid: '1378'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–Netezza空间类型与函数
+      version: ''
+      type: Server
+      pid: '1379'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–Oracle二进制模式
+      version: ''
+      type: Server
+      pid: '1380'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–Oracle空间类型与函数
+      version: ''
+      type: Server
+      pid: '1381'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–PostgreSQL空间类型与函数
+      version: ''
+      type: Server
+      pid: '1382'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–SAP HANA空间类型与函数
+      version: ''
+      type: Server
+      pid: '1383'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–SQLite空间类型与函数
+      version: ''
+      type: Server
+      pid: '1384'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–SQL Server二进制模式
+      version: ''
+      type: Server
+      pid: '1385'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–Terradata空间类型与函数
+      version: ''
+      type: Server
+      pid: '1386'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–DAMENG空间类型与函数
+      version: ''
+      type: Server
+      pid: '1387'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-19)'
+    - name: 易智瑞地理信息系统服务器软件10.4.1–Informix空间类型与函数
+      version: ''
+      type: Server
+      pid: '1388'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-09-02)'
+    - name: ArcGIS for Desktop
+      version: 10.4.1
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1390'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard - With Corrigendum 1.0.1 Early Implementer (2016-12-02)
+    - name: ArcGIS Enterprise
+      version: '10.5'
+      type: Client and Server
+      pid: '1395'
+      valid_until: '2027-06-22'
+      compliant:
+      - KML 2.2.0 (2016-11-17)
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2016-12-02)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2016-11-17)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2016-11-17)
+      - Web Feature Service 1.0.0 (2016-11-17)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2016-11-17)
+      - Web Map Service 1.1.1 (2016-11-17)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2016-11-17)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2016-11-17)
+    - name: ArcGIS PRO
+      version: '1.4'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1396'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard - With Corrigendum 1.0.1 (2016-11-17)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2016-11-17)
+    - name: ArcMap
+      version: '10.5'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1397'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard - With Corrigendum 1.0.1 (2016-11-17)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2016-11-17)
+    - name: ArcGIS Enterprise 10.5 - DB2 Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1405'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Oracle Binary Schema
+      version: ''
+      type: Server
+      pid: '1407'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Oracle Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1408'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - PostgreSQL Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1409'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - SAP HANA Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1410'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - SQLite Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1411'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - SQL Server Binary Schema
+      version: ''
+      type: Server
+      pid: '1412'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Terradata Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1413'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Informix Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1415'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Dameng Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1416'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS Enterprise 10.5 - Netezza Spatial Types and Functions
+      version: ''
+      type: Server
+      pid: '1417'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2016-12-02)'
+    - name: ArcGIS PRO
+      version: '2.0'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1449'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS Enterprise 10.6
+      version: ''
+      type: Server
+      pid: '1470'
+      valid_until: '2027-06-22'
+      compliant:
+      - KML 2.2.0 (2018-02-23)
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2018-02-23)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2018-02-23)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2018-02-23)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2018-03-07)
+      - Web Map Service 1.1.1 (2018-03-07)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2018-02-23)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2018-03-07)
+    - name: ArcGIS Enterprise 10.6-DB2 Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1471'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-Informix Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1472'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-Netezza Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1473'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-Oracle Binary Schema
+      version: ''
+      type: Server
+      pid: '1474'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-Oracle Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1475'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-PostgreSQL Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1476'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-SAP HANA Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1477'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-SQL Server Binary Schema
+      version: ''
+      type: Server
+      pid: '1478'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-SQLite Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1479'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Enterprise 10.6-Terradata Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1480'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS PRO 2.1
+      version: ''
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1481'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2018-03-07)
+    - name: ArcMap 10.6
+      version: ''
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1482'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2018-03-07)
+    - name: ArcGIS Enterprise 10.6-Dameng Spatial Types & Functions
+      version: ''
+      type: Server
+      pid: '1484'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2018-03-07)'
+    - name: ArcGIS Online 5.4
+      version: ''
+      type: Client and Server
+      pid: '1486'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS PRO
+      version: '2.2'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1502'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 Early Implementer (2018-07-24)
+    - name: ArcGIS Desktop
+      version: 10.6.1
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1503'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 Early Implementer (2018-07-24)
+    - name: ArcGIS Enterprise
+      version: '10.7'
+      type: Server
+      pid: '1543'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2019-04-10)'
+      - KML 2.2.0 (2019-04-10)
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2019-04-10)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2019-04-10)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2019-04-10)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2019-04-10)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2019-04-10)
+      - Web Map Service 1.1.1 (2019-04-10)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2019-04-10)
+    - name: ArcMap
+      version: '10.7'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1544'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2019-04-10)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2019-04-10)
+    - name: ArcGIS PRO
+      version: '2.3'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1545'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2019-04-10)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2019-04-10)
+    - name: ArcGIS Enterprise
+      version: '10.8'
+      type: Server
+      pid: '1602'
+      valid_until: '2027-06-22'
+      compliant:
+      - KML 2.2.0 (2020-03-09)
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2020-03-09)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2020-03-09)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2020-03-09)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2020-03-09)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2020-03-09)
+      - Web Map Service 1.1.1 (2020-03-09)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2020-03-09)
+    - name: ArcMap
+      version: '10.8'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1603'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2020-03-09)
+    - name: ArcGIS Enterprise 10.8-Dameng Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1612'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-DB2 Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1613'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-Informix Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1614'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-Netezza Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1615'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-Oracle Binary Schema
+      version: '10.8'
+      type: Server
+      pid: '1616'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-Oracle Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1617'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-PostgreSQL Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1618'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-SAP HANA Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1619'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-SQL Server Binary Schema
+      version: '10.8'
+      type: Server
+      pid: '1620'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-SQLite Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1621'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS Enterprise 10.8-Terradata Spatial Types & Functions
+      version: '10.8'
+      type: Server
+      pid: '1622'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2020-02-19)'
+    - name: ArcGIS PRO
+      version: '2.5'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1623'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2020-03-09)
+    - name: ArcGIS Desktop
+      version: '10.8'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1624'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2020-03-09)
+    - name: ArcGIS Desktop
+      version: 10.8.1
+      type: Server
+      pid: '1656'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2020-11-19)
+    - name: ArcGIS PRO
+      version: '2.6'
+      type: Server
+      pid: '1657'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2020-11-19)
+    - name: ogcapi-js
+      version: 0.2.0
+      type: Library
+      pid: '1673'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS PRO
+      version: '2.8'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1689'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2021-07-16)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2021-07-16)
+    - name: ArcGIS Enterprise
+      version: '10.9'
+      type: Server
+      pid: '1690'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2021-07-28)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2021-07-28)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2021-07-28)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2021-07-28)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2021-07-16)
+      - Web Map Service 1.1.1 (2021-07-16)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2021-07-16)
+    - name: ArcGIS Enterprise 10.9-Dameng Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1692'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-DB2 Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1693'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-Informix Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1694'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-Oracle Binary Schema
+      version: '10.9'
+      type: Server
+      pid: '1696'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-Oracle Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1697'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-PostgreSQL Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1698'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-SAP HANA Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1699'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-SQL Server Binary Schema
+      version: '10.9'
+      type: Server
+      pid: '1700'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: ArcGIS Enterprise 10.9-Terradata Spatial Types & Functions
+      version: '10.9'
+      type: Server
+      pid: '1702'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'Implementation Specification for Geographic information - Simple feature access - Part 2: SQL option 1.1
+        (2021-07-28)'
+    - name: Esri Geoportal Server
+      version: 2.6.5
+      type: Server
+      pid: '1735'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoRSS Encoding Standard 1.0 Early Implementer (2022-04-21)
+    - name: ArcGIS Enterprise
+      version: '11.0'
+      type: Server
+      pid: '1744'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2022-08-08)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2022-08-08)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2022-08-08)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2022-08-08)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2022-08-08)
+      - Web Map Service 1.1.1 (2022-08-08)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2022-08-08)
+    - name: ArcGIS PRO
+      version: '3.0'
+      type: Server
+      pid: '1745'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2022-08-08)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2022-08-08)
+    - name: ArcGIS PRO
+      version: '2.9'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1774'
+      valid_until: null
+      compliant: []
+    - name: ArcGIS Enterprise
+      version: '11.1'
+      type: Server
+      pid: '1780'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2023-06-26)'
+      - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0 (2023-06-26)'
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2023-06-26)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2023-06-26)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2023-06-26)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2023-06-26)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2023-06-26)
+      - Web Map Service 1.1.1 (2023-06-26)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2023-06-26)
+    - name: ArcGIS PRO
+      version: '3.1'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1781'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2023-06-26)
+    - name: ArcGIS PRO
+      version: '3.2'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1811'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2024-02-06)
+    - name: ArcGIS Enterprise
+      version: '11.2'
+      type: Server
+      pid: '1812'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2024-02-06)'
+      - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0 (2024-02-06)'
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2024-02-06)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2024-02-06)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2024-02-06)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2024-02-06)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2024-02-06)
+      - Web Map Service 1.1.1 (2024-02-06)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2024-02-06)
+    - name: ArcGIS PRO
+      version: '3.4'
+      type: Client (Desktop, Mobile, or Web)
+      pid: '1860'
+      valid_until: '2027-06-22'
+      compliant:
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2025-09-11)
+    - name: ArcGIS Enterprise
+      version: '11.4'
+      type: Server
+      pid: '1863'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2025-09-11)'
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2025-09-11)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2025-09-11)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2025-09-11)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2025-09-11)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2025-09-11)
+      - Web Map Service 1.1.1 (2025-09-11)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2025-09-11)
+    - name: ArcGIS Enterprise
+      version: '11.5'
+      type: Server
+      pid: '1864'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2025-09-11)'
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2025-09-11)
+      - Web Map Service 1.1.1 (2025-09-11)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2025-09-11)
+    - name: ArcGIS Enterprise
+      version: '11.3'
+      type: Server
+      pid: '1865'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2025-09-11)'
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2025-09-11)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2025-09-11)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2025-09-11)
+      - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0 (2025-09-11)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2025-09-11)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2025-09-25)
+    - name: ArcGIS Enterprise
+      version: '12.1'
+      type: Server
+      pid: '1895'
+      valid_until: '2027-06-22'
+      compliant:
+      - 'OGC API - Features - Part 1: Core 1.0 (2026-09-17)'
+      - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1 (2026-09-17)'
+      - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0 (2026-09-17)
+      - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1 (2026-09-17)
+      - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0 (2026-09-17)
+      - Web Map Service 1.1.1 (2026-09-17)
+      - Web Map Service (WMS) Implementation Specification 1.3.0 (2026-09-17)
+    - name: ArcGIS Pro
+      version: '3.7'
+      type: Server
+      pid: '1896'
+      valid_until: '2027-06-22'
+      compliant:
+      - GeoPackage Encoding Standard 1.2 (2026-09-17)
+      - Web Map Service Client (WMS) Implementation Specification 1.3.0 (2026-09-17)
+  match:
+    method: domain
+    domain: esri.com
+  contract_reference:
+    register: portal.ogc.org/public_ogc/compliance
+    spec_file: null
+    role: implementation-registration
+    registered_name: Esri
+    register_id: Esri
+    detected_by: sweep-geospatial.py
+    detected: '2026-10-14'
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: compatible
+  shape: ogc-wms
+  degree: full
+  evidence_kind: conformance-register
+  evidence: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+  conformance:
+    certifications:
+    - product: ArcGIS Enterprise 12.1
+      spec: Web Map Service 1.1.1
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 12.1
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 11.3
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2025-09-25'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Map Service 1.1.1
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.5
+      spec: Web Map Service 1.1.1
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1864
+    - product: ArcGIS Enterprise 11.5
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1864
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Map Service 1.1.1
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Map Service 1.1.1
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Map Service 1.1.1
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Map Service 1.1.1
+      certified: '2021-07-16'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2021-07-16'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Map Service 1.1.1
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Map Service 1.1.1
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.6
+      spec: Web Map Service 1.1.1
+      certified: '2018-03-07'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.6
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2018-02-23'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Map Service 1.1.1
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS 10.4 for Server
+      spec: Web Map Service 1.1.1
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.4 for Server
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.3 for Server
+      spec: Web Map Service 1.1.1
+      certified: '2015-01-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1251
+    - product: ArcGIS 10.3 for Server
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2015-01-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1251
+    - product: ArcGIS for Server 10.2
+      spec: Web Map Service 1.1.1
+      certified: '2013-07-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1142
+    - product: ArcGIS for Server 10.2
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2013-07-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1142
+    - product: ArcGIS for Server 10.1
+      spec: Web Map Service 1.1.1
+      certified: '2012-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1066
+    - product: ArcGIS for Server 10.1
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2012-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1066
+    - product: ArcGIS Server 10.0
+      spec: Web Map Service 1.1.1
+      certified: '2010-06-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=868
+    - product: ArcGIS Server 10.0
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2010-06-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=868
+    - product: ArcGIS Server 9.3.1
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2009-07-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=751
+    - product: ArcIMS 9.3
+      spec: Web Map Service 1.1.1
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=675
+    - product: ArcIMS 9.3
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=675
+    - product: ArcGIS Server 9.3
+      spec: Web Map Service 1.1.1
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=789
+    - product: ArcGIS Server 9.3
+      spec: Web Map Service (WMS) Implementation Specification 1.3.0
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=789
+    - product: ArcIMS 9.2
+      spec: Web Map Service 1.1.1
+      certified: '2006-10-24'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=537
+    - product: ArcGIS Server 9.2
+      spec: Web Map Service 1.1.1
+      certified: '2006-10-24'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=544
+    - product: ArcIMS 9.0
+      spec: Web Map Service 1.1.1
+      certified: '2005-08-25'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=369
+    - product: ArcIMS 9.1
+      spec: Web Map Service 1.1.1
+      certified: '2005-08-25'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=370
+    standard_versions:
+    - Web Map Service (WMS) Implementation Specification 1.3.0
+    - Web Map Service 1.1.1
+  note: OGC's compliance test (CITE executable test suite) was passed and the certification is current in OGC's
+    implementation register
+  also_declared:
+  - evidence_kind: own-docs
+    evidence: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wfs-services.htm
+    quote: Serving your data through a WFS service allows any application that can work with web services to access
+      geographic features from your map or enterprise geodatabase. Unlike the OGC Web Map Service (WMS), which returns
+      an image of a map, the
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: compatible
+  shape: ogc-wfs
+  degree: full
+  evidence_kind: conformance-register
+  evidence: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+  conformance:
+    certifications:
+    - product: ArcGIS Enterprise 12.1
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.5
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1864
+    - product: ArcGIS Enterprise 11.3
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2021-07-16'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.6
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2018-03-07'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Feature Service 1.0.0
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS 10.4 for Server
+      spec: Web Feature Service 1.0.0
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.3 for Server
+      spec: Web Feature Service 1.0.0
+      certified: '2015-01-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1251
+    - product: ArcGIS for Server 10.2
+      spec: Web Feature Service 1.0.0
+      certified: '2013-08-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1142
+    - product: ArcGIS for Server 10.1
+      spec: Web Feature Service 1.0.0
+      certified: '2012-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1066
+    - product: ArcGIS Server 10.0
+      spec: Web Feature Service 1.0.0
+      certified: '2010-06-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=868
+    - product: ArcGIS Server 9.3.1
+      spec: Web Feature Service 1.0.0
+      certified: '2009-07-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=751
+    - product: ArcGIS Server 9.3 SP1
+      spec: Web Feature Service 1.0.0
+      certified: '2009-06-22'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=635
+    - product: ArcIMS 9.3
+      spec: Web Feature Service 1.0.0
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=675
+    - product: ArcIMS 9.2
+      spec: Web Feature Service 1.0.0
+      certified: '2006-10-24'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=537
+    - product: ArcIMS 9.1 SP1
+      spec: Web Feature Service 1.0.0
+      certified: '2005-11-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=449
+    standard_versions:
+    - Web Feature Service 1.0.0
+    - Web Feature Service 2.0 Interface Standard (also ISO 19142) 2.0
+  note: OGC's compliance test (CITE executable test suite) was passed and the certification is current in OGC's
+    implementation register
+  also_declared:
+  - evidence_kind: own-docs
+    evidence: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-features-service.htm
+    quote: You can publish services that comply with the Open Geospatial Consortium (OGC), OGC API Features specification.
+      This is an open specification built on the legacy OGC Web Feature Services standards to serve geographic features
+      over the web.
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: compatible
+  shape: ogc-csw
+  degree: full
+  evidence_kind: conformance-register
+  evidence: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1238
+  conformance:
+    certifications:
+    - product: Esri Geoportal Server 1.2.5
+      spec: Catalogue Service Implementation Specification 2.0.2
+      certified: '2014-09-15'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1238
+    - product: Esri Geoportal Server 1.2.4
+      spec: Catalogue Service Implementation Specification 2.0.2
+      certified: '2013-08-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=921
+    - product: Esri Geoportal Server 1.2.2
+      spec: Catalogue Service Implementation Specification 2.0.2
+      certified: '2012-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1067
+    - product: ArcGIS Server Geoportal Extension 10.0
+      spec: Catalogue Service Implementation Specification 2.0.2
+      certified: '2010-06-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=862
+    - product: ArcGIS Server Geoportal Extension 9.3.1
+      spec: Catalogue Service Implementation Specification 2.0.2
+      certified: '2009-07-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=753
+    standard_versions:
+    - Catalogue Service Implementation Specification 2.0.2
+  note: OGC's compliance test (CITE executable test suite) was passed and the certification is current in OGC's
+    implementation register
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: compatible
+  shape: ogc-wcs
+  degree: full
+  evidence_kind: conformance-register
+  evidence: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+  conformance:
+    certifications:
+    - product: ArcGIS Enterprise 12.1
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 12.1
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 12.1
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 11.4
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.4
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.3
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.3
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.3
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.3
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.2
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.2
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.1
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.1
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.0
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 11.0
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2022-08-08'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1744
+    - product: ArcGIS Enterprise 10.9
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2021-07-28'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2021-07-28'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2021-07-28'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.9
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2021-07-28'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1690
+    - product: ArcGIS Enterprise 10.8
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.8
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2020-03-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1602
+    - product: ArcGIS Enterprise 10.7
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.7
+      spec: Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+      certified: '2019-04-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1543
+    - product: ArcGIS Enterprise 10.6
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2018-02-23'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.6
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2018-02-23'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.6
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2018-02-23'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1470
+    - product: ArcGIS Enterprise 10.5
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2016-12-02'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS Enterprise 10.5
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2016-11-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1395
+    - product: ArcGIS 10.4 for Server
+      spec: 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.4 for Server
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.4 for Server
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2016-02-12'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1327
+    - product: ArcGIS 10.3 for Server
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2015-01-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1251
+    - product: ArcGIS 10.3 for Server
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2015-01-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1251
+    - product: ArcGIS for Server 10.2
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2013-07-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1142
+    - product: ArcGIS for Server 10.2
+      spec: Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+      certified: '2013-07-10'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1142
+    - product: ArcGIS for Server 10.1
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2012-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1066
+    - product: ArcGIS Server 10.0
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2010-06-01'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=868
+    - product: ArcGIS Server 9.3
+      spec: Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+      certified: '2008-10-09'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=789
+    standard_versions:
+    - 'WCS 2.0 Interface Standard- Core: Corrigendum 2.0.1'
+    - Web Coverage Service (WCS) Implementation Specification (Corrigendum) 1.0.0
+    - Web Coverage Service (WCS) Implementation Specification Corrigendum 1 1.1.1
+    - Web Coverage Service 2.0 Interface Standard - XML/POST Protocol Binding Extension 1.0.0
+  note: OGC's compliance test (CITE executable test suite) was passed and the certification is current in OGC's
+    implementation register
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: compatible
+  shape: ogc-api-features
+  degree: full
+  evidence_kind: conformance-register
+  evidence: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+  conformance:
+    certifications:
+    - product: ArcGIS Enterprise 12.1
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2026-09-17'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1895
+    - product: ArcGIS Enterprise 11.4
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1863
+    - product: ArcGIS Enterprise 11.5
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1864
+    - product: ArcGIS Enterprise 11.3
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2025-09-11'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1865
+    - product: ArcGIS Enterprise 11.2
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.2
+      spec: 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0'
+      certified: '2024-02-06'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1812
+    - product: ArcGIS Enterprise 11.1
+      spec: 'OGC API - Features - Part 1: Core 1.0'
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    - product: ArcGIS Enterprise 11.1
+      spec: 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0'
+      certified: '2023-06-26'
+      valid_until: '2027-06-22'
+      register_url: https://portal.ogc.org/public_ogc/compliance/product.php?pid=1780
+    standard_versions:
+    - 'OGC API - Features - Part 1: Core 1.0'
+    - 'OGC API - Features - Part 2: Coordinate Reference Systems by Reference 1.0'
+  note: OGC's compliance test (CITE executable test suite) was passed and the certification is current in OGC's
+    implementation register
+  also_declared:
+  - evidence_kind: own-docs
+    evidence: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-features-service.htm
+    quote: You can publish services that comply with the Open Geospatial Consortium (OGC), OGC API Features specification.
+      This is an open specification built on the legacy OGC Web Feature Services standards to serve geographic features
+      over the web.
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: shape-anchor
+  type: docs
+  direction: provider-built
+  channel: provider-built
+  relationship: compatible
+  shape: ogc-wmts
+  evidence_kind: own-docs
+  evidence: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wmts-services.htm
+  degree: declared-unqualified
+  quote: The Open Geospatial Consortium, Inc. (OGC), Web Map Tile Service (WMTS) specification is an international
+    specification for serving digital maps over the web using cached image tiles. When you create a cached map or
+    image service using ArcG
+  evidence_file: https://github.com/api-evangelist/esri/blob/main/evidence/compatibility/esri-ogc-3.md

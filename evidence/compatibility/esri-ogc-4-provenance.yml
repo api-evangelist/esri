@@ -1,0 +1,16 @@
+fetched: '2026-10-14'
+method: fetched
+source: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wfs-services.htm
+page: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wfs-services.htm
+file: esri-ogc-4.md
+bytes: 9012
+sha256: 3b9af5006fd240e6ad5fa8aeb4cc58531ad5906f40670b35521bd88eaa71875c
+anchor: ogc
+shape: ogc
+shapes_declared:
+- ogc-wfs
+- ogc-wms
+classification: declares-compatibility
+quote: You can publish services that comply with the Open Geospatial Consortium (OGC), Web Feature Server (WFS)
+  specification. This is an open specification for serving geographic features over the web.
+note: text extracted from the provider's own page (tags stripped), saved for evidence

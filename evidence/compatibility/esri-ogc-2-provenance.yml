@@ -1,0 +1,13 @@
+fetched: '2026-10-14'
+method: fetched
+source: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/what-is-a-wms-service.htm
+page: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/what-is-a-wms-service.htm
+file: esri-ogc-2.md
+bytes: 2883
+sha256: d4ca5f60994654b66198a325902089f80d4ae0a09cb52fce7622177ea5ab13a9
+anchor: ogc
+shape: ogc
+shapes_declared: []
+classification: no-compatibility-statement
+quote: null
+note: text extracted from the provider's own page (tags stripped), saved for evidence

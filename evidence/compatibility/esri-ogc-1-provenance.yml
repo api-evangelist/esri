@@ -1,0 +1,17 @@
+fetched: '2026-10-14'
+method: fetched
+source: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-features-service.htm
+page: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/ogc-features-service.htm
+file: esri-ogc-1.md
+bytes: 4294
+sha256: aef70e6d1578d7d1b17b9b833948aef55b5d9d0d4fd4035f9a355667554bbd10
+anchor: ogc
+shape: ogc
+shapes_declared:
+- ogc-api-features
+- ogc-wfs
+classification: declares-compatibility
+quote: You can publish services that comply with the Open Geospatial Consortium (OGC), OGC API Features specification.
+  This is an open specification built on the legacy OGC Web Feature Services standards to serve geographic features
+  over the web.
+note: text extracted from the provider's own page (tags stripped), saved for evidence

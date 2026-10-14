@@ -1,0 +1,16 @@
+fetched: '2026-10-14'
+method: fetched
+source: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wmts-services.htm
+page: https://enterprise.arcgis.com/en/server/latest/publish-services/windows/wmts-services.htm
+file: esri-ogc-3.md
+bytes: 3947
+sha256: 688a8098896f8f9780adf119c839c5b073031f5c0ca6bb90f173063efa320536
+anchor: ogc
+shape: ogc
+shapes_declared:
+- ogc-wmts
+classification: declares-compatibility
+quote: The Open Geospatial Consortium, Inc. (OGC), Web Map Tile Service (WMTS) specification is an international
+  specification for serving digital maps over the web using cached image tiles. When you create a cached map or
+  image service using ArcGIS Server, the service and its tiles are automatically acces
+note: text extracted from the provider's own page (tags stripped), saved for evidence

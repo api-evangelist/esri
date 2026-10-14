@@ -27,3 +27,22 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: esri-open-geospatial-consortium
+  label: Open Geospatial Consortium
+  partner: ogc
+  partner_name: Open Geospatial Consortium
+  type: register
+  channel: standard-directory
+  evidence: https://portal.ogc.org/public_ogc/compliance/implementing.php?org_match=Esri
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: portal.ogc.org/public_ogc/compliance
+    spec_file: null
+    role: implementation-registration
+    registered_name: Esri
+    register_id: Esri
+    detected_by: sweep-geospatial.py
+    detected: '2026-10-14'
+  status: not-a-workflow
+  arazzo: null
