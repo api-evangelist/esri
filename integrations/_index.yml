@@ -58,3 +58,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: esri-unity-own
+  label: Unity (own)
+  partner: unity
+  partner_name: Unity (own)
+  category: tools/integration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
