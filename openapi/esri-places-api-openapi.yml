@@ -128,13 +128,6 @@ paths:
           description: Place not found
 components:
   schemas:
-    Category:
-      type: object
-      properties:
-        categoryId:
-          type: string
-        label:
-          type: string
     Point:
       type: object
       properties:
@@ -146,6 +139,30 @@ components:
           description: Latitude
         spatialReference:
           $ref: '#/components/schemas/SpatialReference'
+    SpatialReference:
+      type: object
+      properties:
+        wkid:
+          type: integer
+          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
+        latestWkid:
+          type: integer
+    PlaceSummary:
+      type: object
+      properties:
+        placeId:
+          type: string
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/Point'
+        distance:
+          type: number
+          description: Distance from search point in meters
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
     Place:
       type: object
       properties:
@@ -211,30 +228,13 @@ components:
               type: string
             nextUrl:
               type: string
-    SpatialReference:
+    Category:
       type: object
       properties:
-        wkid:
-          type: integer
-          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
-        latestWkid:
-          type: integer
-    PlaceSummary:
-      type: object
-      properties:
-        placeId:
+        categoryId:
           type: string
-        name:
+        label:
           type: string
-        location:
-          $ref: '#/components/schemas/Point'
-        distance:
-          type: number
-          description: Distance from search point in meters
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

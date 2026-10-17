@@ -242,53 +242,6 @@ paths:
                 $ref: '#/components/schemas/SearchResults'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-            details:
-              type: array
-              items:
-                type: string
-    User:
-      type: object
-      properties:
-        username:
-          type: string
-        fullName:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
-          type: string
-          format: email
-        description:
-          type: string
-        role:
-          type: string
-          enum:
-          - org_admin
-          - org_publisher
-          - org_user
-          - account_admin
-        level:
-          type: string
-        created:
-          type: integer
-        modified:
-          type: integer
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupRef'
     ItemCollection:
       type: object
       properties:
@@ -304,6 +257,31 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Item'
+    Portal:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Portal organization ID
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        thumbnail:
+          type: string
+        culture:
+          type: string
+          description: Default language/locale (e.g., "en")
+        region:
+          type: string
+        created:
+          type: integer
+          description: Creation timestamp (milliseconds since epoch)
+        modified:
+          type: integer
     Item:
       type: object
       properties:
@@ -355,6 +333,15 @@ components:
             items:
               type: number
           description: Bounding box [[xmin,ymin],[xmax,ymax]]
+    GroupRef:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        access:
+          type: string
     SearchResults:
       type: object
       properties:
@@ -372,40 +359,53 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Item'
-    Portal:
+    Error:
       type: object
       properties:
-        id:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                type: string
+    User:
+      type: object
+      properties:
+        username:
           type: string
-          description: Portal organization ID
-        name:
+        fullName:
           type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
         description:
           type: string
-        url:
+        role:
           type: string
-          format: uri
-        thumbnail:
-          type: string
-        culture:
-          type: string
-          description: Default language/locale (e.g., "en")
-        region:
+          enum:
+          - org_admin
+          - org_publisher
+          - org_user
+          - account_admin
+        level:
           type: string
         created:
           type: integer
-          description: Creation timestamp (milliseconds since epoch)
         modified:
           type: integer
-    GroupRef:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        access:
-          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRef'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

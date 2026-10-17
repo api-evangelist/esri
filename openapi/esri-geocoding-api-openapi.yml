@@ -447,6 +447,25 @@ components:
               type: number
             ymax:
               type: number
+    Point:
+      type: object
+      properties:
+        x:
+          type: number
+          description: Longitude
+        y:
+          type: number
+          description: Latitude
+        spatialReference:
+          $ref: '#/components/schemas/SpatialReference'
+    SpatialReference:
+      type: object
+      properties:
+        wkid:
+          type: integer
+          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
+        latestWkid:
+          type: integer
     GeocodeResponse:
       type: object
       properties:
@@ -486,17 +505,6 @@ components:
               type: string
         location:
           $ref: '#/components/schemas/Point'
-    Point:
-      type: object
-      properties:
-        x:
-          type: number
-          description: Longitude
-        y:
-          type: number
-          description: Latitude
-        spatialReference:
-          $ref: '#/components/schemas/SpatialReference'
     GeocodeCandidate:
       type: object
       properties:
@@ -510,14 +518,6 @@ components:
         attributes:
           type: object
           additionalProperties: true
-    SpatialReference:
-      type: object
-      properties:
-        wkid:
-          type: integer
-          description: Well-known ID for the spatial reference (e.g., 4326 for WGS84)
-        latestWkid:
-          type: integer
   securitySchemes:
     apiKeyAuth:
       type: apiKey
