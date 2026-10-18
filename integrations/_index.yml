@@ -118,3 +118,16 @@
       latest_authorization: '2020-09-22'
   status: not-a-workflow
   arazzo: null
+- slug: esri-microsoft-teams-own
+  label: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_name: Microsoft Teams (own)
+  category: Microsoft Teams app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200002859
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
