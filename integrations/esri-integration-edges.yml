@@ -1,6 +1,7 @@
 generated: '2026-10-13'
 method: searched
 checked:
+- autodesk/integrations/autodesk-integration-edges.yml
 - https://api.nuget.org/v3
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
@@ -18,44 +19,153 @@ checked:
 - unity/integrations/unity-integration-edges.yml
 marketplace_apps: []
 edges:
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
+- partner_name: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
   partner_match: aggregator
   type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: distribution-channel
+  marketplace: vscode
+  channel: partner-built
+  relationship: platform-app
   direction: third-party
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=98a100e1-04d1-40b2-aa8a-619411d037d2
-  listing_count: 5
+  evidence: https://marketplace.visualstudio.com/publishers/Esri
+  listing_count: 1
   apps:
-  - ArcGIS Online
-  - Site Scan for ArcGIS
-  - ArcGIS Business Analyst Web App
-  - ArcGIS Telecom Management
-  - ArcGIS Online for Telecom
-  seller_name: Esri
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
-- partner_name: Microsoft Azure Marketplace
-  partner: microsoft-azure
-  partner_match: aggregator
-  type: marketplace
-  marketplace: azure-marketplace
-  channel: distribution
+  - ArcGIS API for JavaScript Snippets
+  publisher_name: Esri
+  badges:
+  - Verified publisher
+  - Verified domain
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@esri/arcgis-rest-basemap-sessions
+  channel: package-registry
   relationship: distribution-channel
-  direction: third-party
-  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Esri%2C%20Inc.
-  listing_count: 10
-  apps:
-  - ArcGIS for Microsoft Planetary Computer
-  - ArcGIS Indoors Maps
-  - ArcGIS for Microsoft Fabric
-  - ArcGIS Pro
-  - ArcGIS System
-  seller_name: Esri, Inc.
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@esri/arcgis-rest-basemap-sessions'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-basemap-sessions
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-demographics'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-demographics
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-elevation'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-elevation
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-feature-service'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-feature-service
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-geocoding'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-geocoding
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-places'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-places
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-portal'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-portal
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-request'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-request
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/arcgis-rest-routing'
+      version: 4.11.0
+      released: '2026-08-12'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/arcgis-rest-routing
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/calcite-components'
+      version: 5.1.2
+      released: '2026-10-16'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/calcite-components
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: '@esri/calcite-components-react'
+      version: 5.1.2
+      released: '2026-10-16'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@esri/calcite-components-react
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    - name: esri-loader
+      version: 3.7.0
+      released: '2024-02-26'
+      released_field: modified
+      lapsed: true
+      page: https://www.npmjs.com/package/esri-loader
+      repo_leg: github-org:esri
+      publisher_leg: email:esri.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 - partner_name: Open Geospatial Consortium
   partner: ogc
   detected_by: sweep-geospatial.py
@@ -1820,7 +1930,7 @@ edges:
     registered_name: Esri
     register_id: Esri
     detected_by: sweep-geospatial.py
-    detected: '2026-10-14'
+    detected: '2026-10-19'
 - partner_name: Open Geospatial Consortium
   partner: ogc
   detected_by: sweep-geospatial.py
@@ -2602,41 +2712,6 @@ edges:
     specification for serving digital maps over the web using cached image tiles. When you create a cached map or
     image service using ArcG
   evidence_file: https://github.com/api-evangelist/esri/blob/main/evidence/compatibility/esri-ogc-3.md
-- partner_name: Visual Studio Code Marketplace
-  partner: vs-code-marketplace
-  partner_match: aggregator
-  type: marketplace
-  marketplace: vscode
-  channel: partner-built
-  relationship: platform-app
-  direction: third-party
-  evidence: https://marketplace.visualstudio.com/publishers/Esri
-  listing_count: 1
-  apps:
-  - ArcGIS API for JavaScript Snippets
-  publisher_name: Esri
-  badges:
-  - Verified publisher
-  - Verified domain
-  detected_by: sweep-devtools.py
-  detected: '2026-10-14'
-- partner_name: Unity (own)
-  partner: unity
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537
-  mirror_of: unity/integrations/unity-integration-edges.yml
-  apps:
-  - ArcGIS Maps SDK for Unity
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  category: tools/integration
 - partner_name: FedRAMP
   partner: null
   partner_match: register
@@ -2684,6 +2759,25 @@ edges:
       latest_authorization: '2020-09-22'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
+- partner_name: Autodesk (own)
+  partner: autodesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.autodesk.com/apps/1a6f2c32-8958-4179-a9bc-e086207918a9
+  mirror_of: autodesk/integrations/autodesk-integration-edges.yml
+  apps:
+  - ArcGIS® for Autodesk® Forma®
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: SPCMKR
+  publisher_verified:
+  - autodesk-digital-signature
 - partner_name: Microsoft Teams (own)
   partner: microsoft-teams
   partner_match: mirror
@@ -2703,134 +2797,60 @@ edges:
   category: Microsoft Teams app
   publisher_verified:
   - Microsoft 365 Certified
-- partner_name: npm registry
-  partner: npm
-  partner_match: register
-  type: register
-  direction: provider-built
-  category: official SDK (JavaScript/TypeScript)
-  evidence: https://www.npmjs.com/package/@esri/arcgis-rest-basemap-sessions
-  channel: package-registry
+- partner_name: Unity (own)
+  partner: unity
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://assetstore.unity.com/packages/tools/integration/arcgis-maps-sdk-for-unity-258537
+  mirror_of: unity/integrations/unity-integration-edges.yml
+  apps:
+  - ArcGIS Maps SDK for Unity
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: tools/integration
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
   relationship: distribution-channel
-  contract_reference:
-    register: npm registry (public registry JSON)
-    spec_file: null
-    language: JavaScript/TypeScript
-    packages:
-    - name: '@esri/arcgis-rest-basemap-sessions'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-basemap-sessions
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-demographics'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-demographics
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-elevation'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-elevation
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-feature-service'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-feature-service
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-geocoding'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-geocoding
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-places'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-places
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-portal'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-portal
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-request'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-request
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/arcgis-rest-routing'
-      version: 4.11.0
-      released: '2026-08-12'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/arcgis-rest-routing
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/calcite-components'
-      version: 5.1.2
-      released: '2026-10-16'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/calcite-components
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: '@esri/calcite-components-react'
-      version: 5.1.2
-      released: '2026-10-16'
-      released_field: modified
-      lapsed: false
-      page: https://www.npmjs.com/package/@esri/calcite-components-react
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    - name: esri-loader
-      version: 3.7.0
-      released: '2024-02-26'
-      released_field: modified
-      lapsed: true
-      page: https://www.npmjs.com/package/esri-loader
-      repo_leg: github-org:esri
-      publisher_leg: email:esri.com
-      matched_by: domain
-    current: true
-    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
-      24 months'
-    detected_by: sweep-official-sdks.py
-    detected: '2026-10-18'
-  detected_by: sweep-official-sdks.py
-  first_seen: '2026-10-18'
+  direction: third-party
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=98a100e1-04d1-40b2-aa8a-619411d037d2
+  listing_count: 5
+  apps:
+  - ArcGIS Online
+  - Site Scan for ArcGIS
+  - ArcGIS Business Analyst Web App
+  - ArcGIS Telecom Management
+  - ArcGIS Online for Telecom
+  seller_name: Esri
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Esri%2C%20Inc.
+  listing_count: 10
+  apps:
+  - ArcGIS for Microsoft Planetary Computer
+  - ArcGIS Indoors Maps
+  - ArcGIS for Microsoft Fabric
+  - ArcGIS Business Analyst Web App
+  - ArcGIS for Microsoft
+  seller_name: Esri, Inc.
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 source:
 - https://marketplace.visualstudio.com/vscode
