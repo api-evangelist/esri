@@ -17,6 +17,7 @@ checked:
 - https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/suppliers
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 - unity/integrations/unity-integration-edges.yml
+- chef-software/integrations/chef-software-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Visual Studio Code Marketplace
@@ -2759,6 +2760,44 @@ edges:
       latest_authorization: '2020-09-22'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=98a100e1-04d1-40b2-aa8a-619411d037d2
+  listing_count: 5
+  apps:
+  - ArcGIS Online
+  - Site Scan for ArcGIS
+  - ArcGIS Business Analyst Web App
+  - ArcGIS Telecom Management
+  - ArcGIS Online for Telecom
+  seller_name: Esri
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Esri%2C%20Inc.
+  listing_count: 10
+  apps:
+  - ArcGIS for Microsoft Planetary Computer
+  - ArcGIS Indoors Maps
+  - ArcGIS for Microsoft Fabric
+  - ArcGIS Business Analyst Web App
+  - ArcGIS for Microsoft
+  seller_name: Esri, Inc.
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 - partner_name: Autodesk (own)
   partner: autodesk
   partner_match: mirror
@@ -2814,43 +2853,37 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: tools/integration
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
-  partner_match: aggregator
+- partner_name: Chef Software (chef-supermarket)
+  partner: chef-software
+  partner_match: mirror
+  mirror_match: register
   type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: distribution-channel
+  relationship: platform-app
   direction: third-party
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=98a100e1-04d1-40b2-aa8a-619411d037d2
-  listing_count: 5
+  channel: partner-built
+  marketplace: chef-supermarket
+  evidence: https://supermarket.chef.io/cookbooks/arcgis-desktop
+  mirror_of: chef-software/integrations/chef-software-integration-edges.yml
   apps:
-  - ArcGIS Online
-  - Site Scan for ArcGIS
-  - ArcGIS Business Analyst Web App
-  - ArcGIS Telecom Management
-  - ArcGIS Online for Telecom
-  seller_name: Esri
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
-- partner_name: Microsoft Azure Marketplace
-  partner: microsoft-azure
-  partner_match: aggregator
-  type: marketplace
-  marketplace: azure-marketplace
-  channel: distribution
-  relationship: distribution-channel
-  direction: third-party
-  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Esri%2C%20Inc.
-  listing_count: 10
-  apps:
-  - ArcGIS for Microsoft Planetary Computer
-  - ArcGIS Indoors Maps
-  - ArcGIS for Microsoft Fabric
-  - ArcGIS Business Analyst Web App
-  - ArcGIS for Microsoft
-  seller_name: Esri, Inc.
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
+  - arcgis-desktop
+  - arcgis-egdb
+  - arcgis-enterprise
+  - arcgis-geoevent
+  - arcgis-insights
+  - arcgis-license-manager
+  - arcgis-mission
+  - arcgis-notebooks
+  - arcgis-pro
+  - arcgis-repository
+  - arcgis-video
+  - arcgis-workflow-manager
+  - esri-iis
+  - esri-tomcat
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: configuration-management content listing (Chef cookbook)
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
 source:
 - https://marketplace.visualstudio.com/vscode
