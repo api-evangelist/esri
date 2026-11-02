@@ -1,0 +1,525 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://location.arcgis.com/pricing/
+sources:
+- https://location.arcgis.com/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T120612
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Usage-based price list for ArcGIS Location Platform services with free monthly tiers; support tiers
+  priced separately.
+plan_count: 35
+currency: USD
+plans:
+- name: Basemap tiles
+  price_text: 2M free then $0.15 per 1,000 tiles
+  currency: USD
+  period: per-use
+  unit: 1,000 tiles
+  included_quota: 2M free
+  overage: $0.15 per 1,000 tiles
+- name: Basemap sessions
+  price_text: 1K free then $4 per 1,000 sessions
+  currency: USD
+  period: per-use
+  unit: 1,000 sessions
+  included_quota: 1K free
+  overage: $4 per 1,000 sessions
+- name: Static maps
+  price_text: 1K free then $0.9 per 1,000 static maps
+  currency: USD
+  period: per-use
+  unit: 1,000 static maps
+  included_quota: 1K free
+- name: Nearby and extent search
+  price_text: 500 free then $8 per 1,000 requests
+  currency: USD
+  period: per-use
+  unit: 1,000 requests
+  included_quota: 500 free
+- name: Place attributes
+  price_text: 100 free then $0.05 per 1,000 places
+  currency: USD
+  period: per-use
+  unit: 1,000 places
+  included_quota: 100 free
+- name: Address attributes
+  price_text: 100 free then $0.1 per 1,000 places
+  currency: USD
+  period: per-use
+  unit: 1,000 places
+  included_quota: 100 free
+- name: Details attributes
+  price_text: 100 free then $0.13 per 1,000 places
+  currency: USD
+  period: per-use
+  unit: 1,000 places
+  included_quota: 100 free
+- name: Location attributes
+  price_text: 100 free then $0.35 per 1,000 places
+  currency: USD
+  period: per-use
+  unit: 1,000 places
+  included_quota: 100 free
+- name: Geocodes (not stored)
+  price_text: 20K free then $0.5 per 1,000 geocodes
+  currency: USD
+  period: per-use
+  unit: 1,000 geocodes
+  included_quota: 20K free
+- name: Geocodes (stored)
+  price_text: $4 per 1,000 geocodes
+  price: 4
+  currency: USD
+  period: per-use
+  unit: 1,000 geocodes
+  included_quota: $0
+- name: Batch geocodes (stored)
+  price_text: $4 per 1,000 geocodes
+  price: 4
+  currency: USD
+  period: per-use
+  unit: 1,000 geocodes
+  included_quota: $0
+- name: Routes
+  price_text: 20K free then $0.5 per 1,000 routes
+  currency: USD
+  period: per-use
+  unit: 1,000 routes
+  included_quota: 20K free
+- name: Routes (stop-optimized)
+  price_text: $50 per 1,000 routes
+  price: 50
+  currency: USD
+  period: per-use
+  unit: 1,000 routes
+  included_quota: $0
+- name: Service areas
+  price_text: 5K free then $50 per 1,000 service areas
+  currency: USD
+  period: per-use
+  unit: 1,000 service areas
+  included_quota: 5K free
+- name: Fleet routes
+  price_text: $100 per 1,000 routes
+  price: 100
+  currency: USD
+  period: per-use
+  unit: 1,000 routes
+  included_quota: $0
+- name: Last mile delivery
+  price_text: $25 per 1,000 orders
+  price: 25
+  currency: USD
+  period: per-use
+  unit: 1,000 orders
+  included_quota: $0
+- name: Closest facility routes
+  price_text: $50 per 1,000 routes
+  price: 50
+  currency: USD
+  period: per-use
+  unit: 1,000 routes
+  included_quota: $0
+- name: Location-allocation demand points
+  price_text: $10 per 1,000 demand points
+  price: 10
+  currency: USD
+  period: per-use
+  unit: 1,000 demand points
+  included_quota: $0
+- name: Travel cost matrix
+  price_text: $0.05 per 1,000 origin destination pairs
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: 1,000 origin destination pairs
+  included_quota: $0
+- name: Snap to roads
+  price_text: $4 per 1,000 points
+  price: 4
+  currency: USD
+  period: per-use
+  unit: 1,000 points
+  included_quota: $0
+- name: Enrichment attributes
+  price_text: $1 per 1,000 attributes
+  price: 1
+  currency: USD
+  period: per-use
+  unit: 1,000 attributes
+  included_quota: $0
+- name: Demographic reports
+  price_text: $1 per report
+  price: 1
+  currency: USD
+  period: per-use
+  unit: report
+  included_quota: $0
+- name: Elevation values
+  price_text: 50K free then $1 per 1,000 points
+  currency: USD
+  period: per-use
+  unit: 1,000 points
+  included_quota: 50K free
+- name: Spatial analysis (find/combine/summarize/patterns/geometries)
+  price_text: $0.1 per 1,000 features
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: 1,000 features
+  included_quota: $0
+- name: Features (storage)
+  price_text: 250 MB free then $0.0044 per additional MB
+  currency: USD
+  period: per-use
+  unit: MB
+  included_quota: 250 MB free
+- name: Tiles, files and attachments (storage)
+  price_text: 250 MB free then $0.00012 per additional MB
+  currency: USD
+  period: per-use
+  unit: MB
+  included_quota: 250 MB free
+- name: Feature queries (bandwidth)
+  price_text: 125 MB free then $0.0008 per additional MB
+  currency: USD
+  period: per-use
+  unit: MB
+  included_quota: 125 MB free
+- name: Feature edits (bandwidth)
+  price_text: 125 MB free then $0.0008 per additional MB
+  currency: USD
+  period: per-use
+  unit: MB
+  included_quota: 125 MB free
+- name: Vector tiles (bandwidth)
+  price_text: 25 GB free then $0.43 per additional GB
+  currency: USD
+  period: per-use
+  unit: GB
+  included_quota: 25 GB free
+- name: Map tiles (bandwidth)
+  price_text: 25 GB free then $0.43 per additional GB
+  currency: USD
+  period: per-use
+  unit: GB
+  included_quota: 25 GB free
+- name: Tiles generated
+  price_text: 25K free then $0.12 per 1,000 tiles
+  currency: USD
+  period: per-use
+  unit: 1,000 tiles
+  included_quota: 25K free
+- name: Community support
+  price_text: Free with all pricing configurations
+  period: none
+- name: Technical support
+  price_text: $2,500 /year
+  price: 2500
+  currency: USD
+  period: year
+  included_quota: Billed annually
+- name: Additional support services
+  price_text: Contact Sales
+  period: none
+- name: Services Retainer – 8 hours
+  price_text: Contact Sales
+  period: none
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - data
+  - object
+  - request
+  plans:
+  - name: Basemap tiles
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Basemap sessions
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Static maps
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Nearby and extent search
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Place attributes
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Address attributes
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Details attributes
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Location attributes
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Geocodes (not stored)
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Geocodes (stored)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Batch geocodes (stored)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Routes
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Routes (stop-optimized)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Service areas
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Fleet routes
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Last mile delivery
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Closest facility routes
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Location-allocation demand points
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Travel cost matrix
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Snap to roads
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Enrichment attributes
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Demographic reports
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Elevation values
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Spatial analysis (find/combine/summarize/patterns/geometries)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Features (storage)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Tiles, files and attachments (storage)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Feature queries (bandwidth)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Feature edits (bandwidth)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Vector tiles (bandwidth)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Map tiles (bandwidth)
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Tiles generated
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Community support
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Technical support
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Additional support services
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Services Retainer – 8 hours
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
