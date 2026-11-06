@@ -2,6 +2,7 @@
 generated: '2026-10-28'
 method: searched
 source: https://location.arcgis.com/pricing/
+name: Esri API Plans
 sources:
 - https://location.arcgis.com/pricing/
 provenance:
@@ -236,7 +237,7 @@ plans:
   price_text: Contact Sales
   period: none
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
