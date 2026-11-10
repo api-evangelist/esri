@@ -108,6 +108,27 @@ Which operations an agent can call, which act, and which need a human in the loo
 
 - [Esri Agentic Access](https://apis.io/agentic-access/esri/esri-agentic-access/)
 
+#### JSON Schema (10)
+
+The data models the API reads and writes.
+
+- [Candidate](https://apis.io/schemas/esri/esri-candidate/)
+- [GeocodeResponse](https://apis.io/schemas/esri/esri-geocode-response/)
+- [Item](https://apis.io/schemas/esri/esri-item/)
+- [ItemCollection](https://apis.io/schemas/esri/esri-item-collection/)
+- [Place](https://apis.io/schemas/esri/esri-place/)
+- [PlacesResponse](https://apis.io/schemas/esri/esri-places-response/)
+- [Portal](https://apis.io/schemas/esri/esri-portal/)
+- [ReverseGeocodeResponse](https://apis.io/schemas/esri/esri-reverse-geocode-response/)
+- [SearchResults](https://apis.io/schemas/esri/esri-search-results/)
+- [User](https://apis.io/schemas/esri/esri-user/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Esri Context](https://apis.io/jsonld/esri/esri-context/)
+
 #### Collections (4)
 
 Postman and Open Collection request collections.
@@ -133,6 +154,12 @@ OpenAPI overlays, including conversational phrasing for each operation.
 - [Esri Routing Api Overlay](https://apis.io/overlays/esri/esri-routing-api-overlay/)
 - [Esri Routing Api Phrasing Overlay](https://apis.io/overlays/esri/esri-routing-api-phrasing-overlay/)
 
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Esri API Rules](https://apis.io/rules/esri/esri-rules/)
+
 #### Security (4)
 
 Authentication, trust centre, and vulnerability disclosure.
@@ -148,11 +175,12 @@ The permissions the API asks for.
 
 - [Esri Scopes](https://apis.io/scopes/esri/esri-scopes/)
 
-#### Plans and pricing (1)
+#### Plans and pricing (2)
 
 Published plans, tiers and prices.
 
 - [Esri Plans Pricing](https://apis.io/plans/esri/esri-plans-pricing/)
+- [Esri Price Estimates](https://apis.io/plans/esri/esri-price-estimates/)
 
 #### Rate limits (1)
 
